@@ -1,0 +1,81 @@
+<div class="row t_subtitle c_rich_black mb-2">
+    <div class="col">
+        Payment
+    </div>
+</div>
+<form action="">
+    <div class="row t_subtitle mb-4 c_rich_black">
+        <div class="col">
+            <label class="t_pre_title form-label" for="date_from">From</label>
+            <input type="date" name="date_from" class="form-control border-white c_davys_grey" id="">
+        </div>
+        <div class="col">
+            <label class="t_pre_title form-label" for="date_from">To</label>
+            <input type="date" name="date_to" class="form-control border-white c_davys_grey" id="">
+        </div>
+        <div class="col">
+            <label class="t_pre_title form-label" for="date_from">Status</label>
+            <select name="payment_status" class="form-control border-white c_davys_grey" id="">
+                <option value="1">All</option>
+                <option value="2">Proceed</option>
+                <option value="3">Cancelled</option>
+                <option value="4">On Hold</option>
+            </select>
+        </div>
+        <div class="col">
+            <label class="t_pre_title form-label" for="date_from">Sort</label>
+            <select name="payment_sort" class="form-control border-white c_davys_grey" id="">
+                <option value="1">Newest First</option>
+                <option value="2">Olderst First</option>
+                <option value="3">Price: Low to High</option>
+                <option value="4">Price: High to Low</option>
+            </select>
+        </div>
+    </div>
+</form>
+<div class="data_list">
+    <div class="row rounded-3 bg_white c_rich_black mb-4">
+        <div class="col p-3">Description</div>
+        <div class="col p-3">Amount</div>
+        <div class="col p-3">Date</div>
+        <div class="col p-3">Status</div>
+        <div class="col p-3">Method</div>
+    </div>
+    <div class="data_list rounded-3 bg_white">
+        <div class="row border_aspire position-relative">
+            <div class="col p-3">Grade 11 Sinhala Monthly Fees</div>
+            <div class="col p-3">LKR 1,200</div>
+            <div class="col p-3">2021.08.01</div>
+            <div class="col p-3">
+                <div class="circle_8 bg_success"></div>
+                Proceed
+            </div>
+            <div class="col p-3">
+                <img src="/assets/images/icons/icon_visa.png" alt="mdo" width="20" height="20">
+                Visa
+            </div>
+            <div class="data_list hover_show">
+                <div class="row overlay_gradient position-absolute top-0 w-100 h-100">
+                    <div class="border-start border-5 bc_medium_blue d-flex  justify-content-end p-3 align-items-center gap-4">
+                    <a href="#"><img src="/assets/images/icons/icon_view.png" alt="mdo" width="30" height="30"></a>
+                    <img src="/assets/images/icons/icon_print.png" alt="mdo" width="30" height="30">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="border-bottom"></span>
+        <div class="row">
+            <div class="col p-3">Grade 11 Sinhala Monthly Fees</div>
+            <div class="col p-3">LKR 1,200</div>
+            <div class="col p-3">2021.08.01</div>
+            <div class="col p-3">
+                <div class="circle_8 bg_success"></div>
+                Proceed
+            </div>
+            <div class="col p-3">
+                <img src="/assets/images/icons/icon_visa.png" alt="mdo" width="20" height="20">
+                Visa
+            </div>
+        </div>
+    </div>
+</div>

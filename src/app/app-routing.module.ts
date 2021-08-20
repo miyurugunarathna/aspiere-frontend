@@ -4,8 +4,13 @@ import { StudentListComponent } from './components/studentregistration/student-l
 import { AddStudentComponent } from './components/studentregistration/add-student/add-student.component';
 
 const routes: Routes = [
+  {
+    path: 'app',
+    loadChildren: () => import('./layout/dashboard/dashboard.module').then(module => module.DashboardModule)
+  },
+
   { path: 'students', component: StudentListComponent},
-  { path: 'add-student', component: AddStudentComponent}
+  { path: 'add-student', component: AddStudentComponent},
 ];
 
 @NgModule({

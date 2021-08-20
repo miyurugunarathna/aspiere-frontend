@@ -23,7 +23,7 @@ import { AddStudentComponent } from './components/studentregistration/add-studen
     ]),
     AppRoutingModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
