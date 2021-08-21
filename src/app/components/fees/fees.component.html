@@ -1,0 +1,86 @@
+<div class="row t_subtitle mb-2">
+    <div class="col">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item c_rich_black active" aria-current="page">Fees</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class="row gx-4 gy-4">
+    <div class="col-12 col-sm-12 col-lg-8 col-xl-9">
+        <div class="data_list">
+            <div class="row rounded-3 bg_white c_rich_black mb-4">
+                <div class="col p-3">Fees Name</div>
+                <div class="col p-3">Fees Type</div>
+                <div class="col p-3">Amount</div>
+                <div class="col p-3">Repayment</div>
+            </div>
+            <div class="data_list rounded-3 bg_white">
+                <div class="row border_aspire position-relative">
+                    <div class="col p-3">Default</div>
+                    <div class="col p-3">Class Fee</div>
+                    <div class="col p-3">LKR 1,000</div>
+                    <div class="col p-3">One time</div>
+                    <div class="data_list hover_show">
+                        <div class="row overlay_gradient position-absolute top-0 w-100 h-100">
+                            <div class="border-start border-5 bc_medium_blue d-flex  justify-content-end p-3 align-items-center gap-4">
+                            <a href="#"><img src="/assets/images/icons/icon_edit.png" alt="mdo" width="30" height="30"></a>
+                            <img src="/assets/images/icons/icon_delete.png" alt="mdo" width="30" height="30">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="border-bottom"></span>
+                <div class="row border_aspire position-relative">
+                    <div class="col p-3">Default</div>
+                    <div class="col p-3">Class Fee</div>
+                    <div class="col p-3">LKR 1,000</div>
+                    <div class="col p-3">One time</div>
+                    <div class="data_list hover_show">
+                        <div class="row overlay_gradient position-absolute top-0 w-100 h-100">
+                            <div class="border-start border-5 bc_medium_blue d-flex  justify-content-end p-3 align-items-center gap-4">
+                            <a href="#"><img src="/assets/images/icons/icon_edit.png" alt="mdo" width="30" height="30"></a>
+                            <img src="/assets/images/icons/icon_delete.png" alt="mdo" width="30" height="30">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-12 col-lg-4 col-xl-3">
+        <div class="row mb-4">
+            <span class="t_subtitle c_rich_black">Add New Fees</span>
+        </div>
+        <div class="d-flex flex-column gap-4 c_rich_black">
+            <div class="col">
+                <label class="t_pre_title form-label" for="fees_name">Fees Name</label>
+                <input type="text" name="fees_name" placeholder="Default" class="form-control border-white c_davys_grey" id="">
+            </div>
+            <div class="col">
+                <label class="t_pre_title form-label" for="fees_type">Fees Type</label>
+                <select name="fees_type" class="form-control form-select border-white c_davys_grey" id="">
+                    <option value="1">Class Fees</option>
+                    <option value="2">Tute Fees</option>
+                </select>
+            </div>
+            <div class="col input-group">
+                <label class="t_pre_title form-label" for="fees_amount">Amount</label>
+                <div class="input-group">
+                  <span class="input-group-text border-white">LKR</span>
+                  <input type="number" name="fees_amount" placeholder="1000" class="form-control border-white c_davys_grey" id="">
+                </div>
+            </div>
+            <div class="col">
+                <label class="t_pre_title form-label" for="fees_repayment">Repayment</label>
+                <select name="fees_repayment" class="form-control form-select border-white c_davys_grey" id="">
+                    <option value="1">Per Month</option>
+                    <option value="2">Per Year</option>
+                    <option value="2">One Time</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary rounded-pill t_button">Add</button>
+        </div>
+    </div>
+</div>
