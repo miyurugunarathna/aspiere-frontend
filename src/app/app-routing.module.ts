@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BadgeComponent } from './badge/badge.component';
-
 import { StudentListComponent } from './components/studentregistration/student-list/student-list.component';
 import { AddStudentComponent } from './components/studentregistration/add-student/add-student.component';
 
