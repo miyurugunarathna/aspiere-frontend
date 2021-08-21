@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { StudentListComponent } from './components/studentregistration/student-list/student-list.component';
 import { AddStudentComponent } from './components/studentregistration/add-student/add-student.component';
 
@@ -23,6 +25,7 @@ import { AddStudentComponent } from './components/studentregistration/add-studen
     ]),
     AppRoutingModule,
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
   ],
   providers: [],

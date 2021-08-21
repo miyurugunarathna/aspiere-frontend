@@ -1,6 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap');
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #faf8f8;
+  padding: 2px;
+  border-radius: 10px;
+  
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 12px;
+  font-size: 16px;
+  text-align: justify;
+}
+
+.grid-container-badge-grade {
+  display: grid;
+  grid-template-columns: auto;
+  background-color: #faf8f8;
+  padding: 2px;
+  border-radius: 10px;
+}
+
+
 
 html {
     background-color: #F6F6F6;
@@ -127,10 +151,6 @@ body {
 .bg_surface { background-color: #F6F6F6; }
 .bg_white { background-color: #FFFFFF; }
 
-.bc_medium_blue {
-    border-color: #183EFB !important;
-}
-
 .border_aspire {
     border-bottom: 1px solid #F6F6F6;
 }
@@ -160,15 +180,3 @@ body {
     display: inline-block;
 }
 
-.overlay_gradient {
-    background-image: linear-gradient(to right,#F6F6F669,#F6F6F6E6);
-}
-
-.hover_show {
-    opacity: 0;
-    transition: ease-in-out 0.3s;
-}
-
-.hover_show:hover {
-    opacity: 1;
-}
