@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FeesComponent } from 'src/app/components/fees/fees.component';
 import { PaymentComponent } from 'src/app/components/payment/payment.component';
 import { ViewPaymentComponent } from 'src/app/components/payment/view-payment/view-payment.component';
+import { TestComponent } from 'src/app/components/test/test.component';
 import { DashboardComponent } from './dashboard.component';
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
       {
         path: '',
         children: [
+          { path: '', component: TestComponent },
           { path: 'payment', component: PaymentComponent },
           { path: 'payment/view', component: ViewPaymentComponent },
           { path: 'fees', component: FeesComponent },
