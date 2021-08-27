@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { StudentListComponent } from './components/studentregistration/student-list/student-list.component';
 import { AddStudentComponent } from './components/studentregistration/add-student/add-student.component';
+import { TestComponent } from './components/test/test.component';
 
 @NgModule({
   declarations: [
