@@ -1,3 +1,4 @@
+import { BadgeComponent } from './../../components/badge/badge.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FeesComponent } from 'src/app/components/fees/fees.component';
@@ -16,8 +17,10 @@ const routes: Routes = [
         children: [
           { path: '', component: TestComponent },
           { path: 'payment', component: PaymentComponent },
+
           { path: 'payment/view', component: ViewPaymentComponent },
           { path: 'fees', component: FeesComponent },
+
         ]
       }
     ]
