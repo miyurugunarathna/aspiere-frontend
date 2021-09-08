@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css">
+<br>
+<div class="container">
+    
+    <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-4">
+        <div class="col">
+            <div class="card radius-15 bg-primary">
+                <div class="card-body text-center">
+                    <div class="p-4 radius-15">
+                        <img src="https://www.theaspireacademy.org.uk/wp-content/uploads/2019/03/exam.png" width="110" height="110" class="rounded-circle shadow p-1 bg-white" alt="">
+                        <h5 class="mb-0 mt-5 text-white">Create Exam</h5>
+                        <p class="mb-3 text-white"></p>
+                        <br><br><br>
+                        <div class="d-grid"> <a [routerLink]="['/app/exams/create-exam',teacherID]" class="btn btn-white radius-10"  class="btn btn-white radius-10" style="width: 80px; margin: auto;">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card radius-15 bg-primary">
+                <div class="card-body text-center">
+                    <div class="p-4 radius-15">
+                        <img src="https://png.pngtree.com/png-clipart/20210418/original/pngtree-quiz-logo-icon-vector-png-image_6234100.jpg" width="110" height="110" class="rounded-circle shadow p-1 bg-white" alt="">
+                        <h5 class="mb-0 mt-5 text-white">Create Quiz</h5>
+                        <p class="mb-3 text-white"></p>
+                        <br><br><br>
+                        <div class="d-grid"> <a [routerLink]="['/app/exams/create-quiz',teacherID]" class="btn btn-white radius-10"  class="btn btn-white radius-10" style="width: 80px; margin: auto;">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card radius-15 bg-primary">
+                <div class="card-body text-center">
+                    <div class="p-4 radius-15">
+                        <img src="https://www.gpjalna.ac.in/Assets/img/128/005-test.png" width="110" height="110" class="rounded-circle shadow p-1 bg-white" alt="">
+                        <h5 class="mb-0 mt-5 text-white">Add Result</h5>
+                        <p class="mb-3 text-dark"></p>
+                        <br><br><br>
+                        <div class="d-grid"> <a [routerLink]="['/app/exams/addresult',teacherID]" class="btn btn-white radius-10"  class="btn btn-white radius-10" style="width: 80px; margin: auto;">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card radius-15 bg-primary">
+                <div class="card-body text-center">
+                    <div class="p-4 radius-15">
+                        <img src="https://pcsc.instructure.com/courses/50/files/1070/preview?verifier=QdpVzmlEE38l7rjdLJ1GF955dhZFx8uAMEPkJyr5" width="110" height="110" class="rounded-circle shadow p-1 bg-white" alt="">
+                        <h5 class="mb-0 mt-5 text-white">Publish Assignment</h5>
+                        <p class="mb-3 text-dark"></p>
+                        <br><br><br>
+                        <div class="d-grid"> <a href="#" class="btn btn-white radius-10" style="width: 80px; margin: auto; ">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1>{{teacherID}}</h1> 
+    </div>
+</div>
