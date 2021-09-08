@@ -1,0 +1,37 @@
+<div class="col-md-10 offset-md-1">
+<h2>Students List</h2>
+
+    <div class="col-md-6">
+        <button (click) = "addStudent()" class="btn btn-primary">Add New Student</button>
+    </div>
+
+<table class="table mt-3">
+    <thead class="table-light">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let student of students">
+            <td> {{ student.fname }} </td>
+            <td> {{ student.lname }} </td>
+            <td> {{ student.dob }} </td>
+            <td> {{ student.gender }} </td>
+            <td> {{ student.email }} </td>
+            <td> {{ student.phone }} </td>
+            <td>
+                <a (click) = "viewStudent(student.id)"><img src="/assets/images/icons/icon_view.png" width="30"></a>
+                &nbsp;<a (click) = "editStudent(student.id)"><img src="/assets/images/icons/icon_edit.png" width="30"></a>
+                &nbsp;<a (click) = "deleteStudent(student.id)"><img src="/assets/images/icons/icon_delete.png" width="30"></a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+                                                    
+</div>
