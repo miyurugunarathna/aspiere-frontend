@@ -1,3 +1,6 @@
+import { FormsModule } from '@angular/forms';
+import { BadgeComponent } from './../../components/badge/badge.component';
+import { FreeCardComponent } from 'src/app/components/free-card/free-card.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,13 +14,18 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     DashboardComponent,
+
+    BadgeComponent,
+    FreeCardComponent,
     FeesComponent
+
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+
   ]
 })
 export class DashboardModule { }

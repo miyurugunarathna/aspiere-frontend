@@ -1,4 +1,5 @@
 import { BadgeComponent } from './../../components/badge/badge.component';
+import { FreeCardComponent } from './../../components/free-card/free-card.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FeesComponent } from 'src/app/components/fees/fees.component';
@@ -18,7 +19,8 @@ const routes: Routes = [
         children: [
           { path: '', component: TestComponent },
           { path: 'payment', component: PaymentComponent },
-
+          { path: 'badge', component: BadgeComponent },
+          {path : 'free-card', component: FreeCardComponent},
           { path: 'payment/view', component: ViewPaymentComponent },
           { path: 'fees', component: FeesComponent },
 
