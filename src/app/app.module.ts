@@ -1,5 +1,6 @@
+import { BadgeService } from './services/badge.service';
 import { FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,17 +12,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StudentListComponent } from './components/studentregistration/student-list/student-list.component';
 import { AddStudentComponent } from './components/studentregistration/add-student/add-student.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     StudentListComponent,
     AddStudentComponent,
+    
   ],
   imports: [
+    HttpClientModule,
     FormsModule,
     RouterModule.forRoot( [
       {path: 'students', component: StudentListComponent},
       {path: 'add-student', component: AddStudentComponent},
+      
     ]),
     AppRoutingModule,
     BrowserModule,
