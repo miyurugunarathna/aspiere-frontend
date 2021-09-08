@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { StudentListComponent } from './components/studentregistration/student-list/student-list.component';
 import { AddStudentComponent } from './components/studentregistration/add-student/add-student.component';
+import { DashboardModule } from './layout/dashboard/dashboard.module';
+import { FeeService } from './services/fees/fee.service';
 
 
 @NgModule({
@@ -31,9 +33,10 @@ import { AddStudentComponent } from './components/studentregistration/add-studen
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    DashboardModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [FeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
