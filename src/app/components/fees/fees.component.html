@@ -1,3 +1,35 @@
+
+<div class="row" id="deleteConfime" style="display: none;">
+    <div class="modal-asp d-flex align-items-center" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content border-0 rounded-4">
+                <div class="modal-body p-4 text-left">
+                <h6 class="t_subtitle c_rich_black">Are you sure to delete this fee?</h6>
+                <span class="t_body">If you delete this fee, it cannot be undone. Please make sure that before taking the action.</span>
+                </div>
+                <div class="d-flex gap-4 justify-content-center my-4 p-0">
+                <button type="button" (click)="onDismiss('deleteConfime')" class="btn c_rich_black bg_surface col-5 rounded-2">Cancel</button>
+                <button type="button" (click)="deleteFee(delID)" class="btn c_white bg_medium_blue col-5 rounded-2">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row position-relative" style="z-index: 1; display: none;" id="insideNotice">
+    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 p-0 position-fixed bottom-0 end-0">
+        <div class="row d-flex align-items-center bg_white p-3 m-4 rounded-3 gap-4" style="box-shadow: 0 0 15px 0 #77777777;">
+            <div class="col-auto">
+                <img src="/assets/images/icons/icon_correct.png" alt="mdo" width="30" height="30">
+            </div>
+            <div class="col">
+                {{ addMessage }}
+            </div>
+            <div class="col-auto">
+                <a class="cursor_p" (click)="onDismiss('insideNotice')"><img src="/assets/images/icons/icon_close.svg" alt="mdo" width="15" height="15"></a>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="row t_subtitle mb-2">
     <div class="col">
         <nav aria-label="breadcrumb">
@@ -16,51 +48,43 @@
                 <div class="col p-3">Amount</div>
                 <div class="col p-3">Repayment</div>
             </div>
-            <div class="data_list rounded-3 bg_white">
+            <div *ngFor="let fee of fees" class="data_list rounded-3 bg_white">
                 <div class="row border_aspire position-relative">
-                    <div class="col p-3">Default</div>
-                    <div class="col p-3">Class Fee</div>
-                    <div class="col p-3">LKR 1,000</div>
-                    <div class="col p-3">One time</div>
+                    <div class="col p-3">{{ fee.feeName }}</div>
+                    <div class="col p-3" *ngIf="fee.feeType == '1'">Class Fees</div>
+                    <div class="col p-3" *ngIf="fee.feeType == '2'">Tute Fees</div>
+                    <div class="col p-3">LKR {{ fee.amount }}</div>
+                    <div class="col p-3" *ngIf="fee.frequency == 1">Per Month</div>
+                    <div class="col p-3" *ngIf="fee.frequency == 2">Per Year</div>
+                    <div class="col p-3" *ngIf="fee.frequency == 3">One Time</div>
                     <div class="data_list hover_show">
                         <div class="row overlay_gradient position-absolute top-0 w-100 h-100">
                             <div class="border-start border-5 bc_medium_blue d-flex  justify-content-end p-3 align-items-center gap-4">
-                            <a href="#"><img src="/assets/images/icons/icon_edit.png" alt="mdo" width="30" height="30"></a>
-                            <img src="/assets/images/icons/icon_delete.png" alt="mdo" width="30" height="30">
+                            <a class="cursor_p" (click)="getFee( fee.feeID )"><img src="/assets/images/icons/icon_edit.png" alt="mdo" width="30" height="30"></a>
+                            <a class="cursor_p" (click)="deleteConfime( fee.feeID )"><img src="/assets/images/icons/icon_delete.png" alt="mdo" width="30" height="30"></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <span class="border-bottom"></span>
-                <div class="row border_aspire position-relative">
-                    <div class="col p-3">Default</div>
-                    <div class="col p-3">Class Fee</div>
-                    <div class="col p-3">LKR 1,000</div>
-                    <div class="col p-3">One time</div>
-                    <div class="data_list hover_show">
-                        <div class="row overlay_gradient position-absolute top-0 w-100 h-100">
-                            <div class="border-start border-5 bc_medium_blue d-flex  justify-content-end p-3 align-items-center gap-4">
-                            <a href="#"><img src="/assets/images/icons/icon_edit.png" alt="mdo" width="30" height="30"></a>
-                            <img src="/assets/images/icons/icon_delete.png" alt="mdo" width="30" height="30">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div *ngIf="fees.length == 0" class="data_list rounded-3 bg_white p-3 text-center">
+                No fees to show. Please add one to show.
             </div>
         </div>
     </div>
-    <div class="col-12 col-sm-12 col-lg-4 col-xl-3">
+    <div *ngIf="feeOne.feeID == ''; else UpdateBox" class="col-12 col-sm-12 col-lg-4 col-xl-3">
         <div class="row mb-4">
-            <span class="t_subtitle c_rich_black">Add New Fees</span>
+            <span id="addOrUpdateFee" class="t_subtitle c_rich_black">Add New Fee</span>
         </div>
-        <div class="d-flex flex-column gap-4 c_rich_black">
+        <form class="d-flex flex-column gap-4 c_rich_black" #addFeeForm="ngForm" (ngSubmit)="addFee(addFeeForm)">
             <div class="col">
                 <label class="t_pre_title form-label" for="fees_name">Fees Name</label>
-                <input type="text" name="fees_name" placeholder="Default" class="form-control border-white c_davys_grey" id="">
+                <input type="text" ngModel name="feeName" required placeholder="Default" class="form-control border-white c_davys_grey" id="">
             </div>
             <div class="col">
                 <label class="t_pre_title form-label" for="fees_type">Fees Type</label>
-                <select name="fees_type" class="form-control form-select border-white c_davys_grey" id="">
+                <select ngModel="1" name="feeType" required class="form-control form-select border-white c_davys_grey" id="">
                     <option value="1">Class Fees</option>
                     <option value="2">Tute Fees</option>
                 </select>
@@ -69,18 +93,54 @@
                 <label class="t_pre_title form-label" for="fees_amount">Amount</label>
                 <div class="input-group">
                   <span class="input-group-text border-white">LKR</span>
-                  <input type="number" name="fees_amount" placeholder="1000" class="form-control border-white c_davys_grey" id="">
+                  <input type="number" required ngModel name="amount" placeholder="1000" class="form-control border-white c_davys_grey" id="">
                 </div>
             </div>
             <div class="col">
                 <label class="t_pre_title form-label" for="fees_repayment">Repayment</label>
-                <select name="fees_repayment" class="form-control form-select border-white c_davys_grey" id="">
+                <select ngModel="1" name="frequency"  ng-selected="2" required class="form-control form-select border-white c_davys_grey" id="">
                     <option value="1">Per Month</option>
                     <option value="2">Per Year</option>
                     <option value="2">One Time</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary rounded-pill t_button">Add</button>
-        </div>
+            <button type="submit" [disabled]="addFeeForm.invalid" id="btnAddOrUpdate" class="btn btn-primary rounded-pill t_button">Add</button>
+        </form>
     </div>
+    <ng-template #UpdateBox>
+    <div class="col-12 col-sm-12 col-lg-4 col-xl-3">
+        <div class="row mb-4">
+            <span id="addOrUpdateFee" class="t_subtitle c_rich_black">Update Fee</span>
+        </div>
+        <form class="d-flex flex-column gap-4 c_rich_black" #updateFeeForm="ngForm" (ngSubmit)="updateFee(updateFeeForm, feeOne.feeID)">
+            <div class="col">
+                <label class="t_pre_title form-label" for="fees_name">Fees Name</label>
+                <input type="text" ngModel="{{ feeOne.feeName }}" name="feeName"  required placeholder="Default" class="form-control border-white c_davys_grey" id="">
+            </div>
+            <div class="col">
+                <label class="t_pre_title form-label" for="fees_type">Fees Type</label>
+                <select ngModel="{{ feeOne.feeType }}" name="feeType" required class="form-control form-select border-white c_davys_grey" id="">
+                    <option value="1" selected>Class Fees</option>
+                    <option value="2">Tute Fees</option>
+                </select>
+            </div>
+            <div class="col input-group">
+                <label class="t_pre_title form-label" for="fees_amount">Amount</label>
+                <div class="input-group">
+                  <span class="input-group-text border-white">LKR</span>
+                  <input type="number" required ngModel="{{ feeOne.amount }}" name="amount" placeholder="1000" class="form-control border-white c_davys_grey" id="">
+                </div>
+            </div>
+            <div class="col">
+                <label class="t_pre_title form-label" for="fees_repayment">Repayment</label>
+                <select ngModel="{{ feeOne.frequency }}" name="frequency" required class="form-control form-select border-white c_davys_grey" id="">
+                    <option value="1">Per Month</option>
+                    <option value="2">Per Year</option>
+                    <option value="2">One Time</option>
+                </select>
+            </div>
+            <button type="submit" [disabled]="updateFeeForm.invalid" id="btnAddOrUpdate" class="btn btn-primary rounded-pill t_button">Update</button>
+        </form>
+    </div>
+    </ng-template>
 </div>

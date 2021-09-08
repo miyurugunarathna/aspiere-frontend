@@ -115,12 +115,12 @@ body {
 .c_success { color: #28E094; }
 .c_warning { color: #FFEB4D; }
 .c_surface { color: #F6F6F6; }
-.c_white { color: #FFFFFF; }
+.c_white { color: #FFFFFF !important; }
 
 .bg_black { background-color: #000000; }
 .bg_rich_black { background-color: #121212; }
 .bg_davys_grey { background-color: #595959; }
-.bg_medium_blue { background-color: #183EFB; }
+.bg_medium_blue { background-color: #183EFB !important; }
 .bg_error { background-color: #E30425; }
 .bg_success { background-color: #28E094; }
 .bg_warning { background-color: #FFEB4D; }
@@ -192,4 +192,19 @@ body {
 .progress-bar-vertical .progress-bar {
     width: 1rem;
     background-color: #28E094;
+}
+
+.cursor_p {
+    cursor: pointer;
+}
+
+.modal-asp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: #F1F1F1C8;
+    backdrop-filter: blur(8px);
 }
