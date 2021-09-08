@@ -10,8 +10,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ViewStudentComponent implements OnInit {
 
-  id: string;
-  student: Student;
+  id: string="";
+  student: Student|any;
 
   constructor(private route: ActivatedRoute, private router: Router,
     private studentService: StudentService) { }

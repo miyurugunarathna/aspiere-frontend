@@ -8,7 +8,7 @@ import { environment } from "src/environments/environment";
     providedIn: 'root'
 })
 export class StudentService {
-
+    private baseUrl = 'http://localhost:8085/api/';
     constructor (private http: HttpClient) { }
 
     getAll(): Observable<Student[]> {

@@ -1,4 +1,4 @@
-export class Teacher {
+export interface Teacher {
     id: string;
     pid: string;
     fname: string;
@@ -12,7 +12,10 @@ export class Teacher {
     bank: string;
     branch: string;
     accnum: number;
+
+    
 }
+
 
 export interface Qualifications {
     title: string;

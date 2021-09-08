@@ -14,7 +14,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class ListallexamComponent implements OnInit {
   sid="";
   public exams:Exam[] =[];
-  public updateExam:Exam | undefined;
+  public updateExam:Exam | any;
   public deleteExam:Exam | any;
   
   constructor(private route:ActivatedRoute,private examService:ExamService) { }

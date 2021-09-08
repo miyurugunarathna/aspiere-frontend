@@ -16,6 +16,16 @@ import { StudentListComponent } from './components/studentregistration/student-l
 import { AddStudentComponent } from './components/studentregistration/add-student/add-student.component';
 import { DashboardModule } from './layout/dashboard/dashboard.module';
 import { FeeService } from './services/fees/fee.service';
+import { ListallexamComponent } from './components/exam/listallexam/listallexam.component';
+import { CreateExamComponent } from './components/exam/create-exam/create-exam.component';
+import { ListQuizComponent } from './components/quiz/list-quiz/list-quiz.component';
+import { CreateQuizComponent } from './components/quiz/create-quiz/create-quiz.component';
+import { AddresultComponent } from './components/result/addresult/addresult.component';
+import { ListResultComponent } from './components/result/list-result/list-result.component'; 
+import { ExamsComponent } from './components/exams/exams.component';
+import { AttendExamComponent } from './components/view-exam/attend-exam/attend-exam.component';
+import { DisplayAllMarksComponent } from './components/view-exam/display-all-marks/display-all-marks.component';
+import { EnrollExamComponent } from './components/view-exam/enroll-exam/enroll-exam.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +35,16 @@ import { FeeService } from './services/fees/fee.service';
     ViewStudentComponent,
     EditStudentComponent,
     AddTeacherComponent,
+    ListallexamComponent,
+    CreateExamComponent,
+    ListQuizComponent,
+    CreateQuizComponent,
+    AddresultComponent,
+    ListResultComponent,
+    ExamsComponent,
+    AttendExamComponent,
+    DisplayAllMarksComponent,
+    EnrollExamComponent
   ],
   imports: [
     HttpClientModule,

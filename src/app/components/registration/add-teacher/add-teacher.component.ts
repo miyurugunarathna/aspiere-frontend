@@ -43,7 +43,7 @@ export class AddTeacherComponent implements OnInit {
 
   newTeacher(): void {
     this.submitted = false;
-    this.teacher = new Teacher();
+    
   }
 
   reset() {
@@ -60,7 +60,7 @@ saveTeacher() {
   alert('Saved')
   this.personService.create(this.teacher).subscribe ( data =>
     console.log(data), error => console.log(error));
-    this.teacher = new Teacher();
+    
     this.router.navigate(['/teachers'])
 }
 
