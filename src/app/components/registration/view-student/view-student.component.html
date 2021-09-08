@@ -1,0 +1,26 @@
+<div class="col-md-10 offset-md-1">
+  <h2>Student Details</h2> 
+
+  <hr/>
+  <div *ngIf="student">
+    <div>
+      <label><b>Name: </b></label> {{student.fname}}&nbsp;{{student.lname}}
+    </div>
+    <div>
+      <label><b>Date of Birth: </b></label> {{ student.dob }}
+    </div>
+    <div>
+      <label><b>Gender: </b></label> {{ student.gender }}
+    </div>
+    <div>
+      <label><b>Email: </b></label> {{ student.email }}
+    </div>
+    <div>
+      <label><b>Contact Number: </b></label> {{ student.phone }}
+    </div>
+  </div>
+
+  <br>
+  <button (click)="list()" class="btn btn-primary">Back to Student List</button><br>
+</div>
+
