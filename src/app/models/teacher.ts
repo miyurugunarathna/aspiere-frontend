@@ -12,6 +12,8 @@ export class Teacher {
     bank: string;
     branch: string;
     accnum: number;
+    approved: string;
+    active: boolean;
 }
 
 export interface Qualifications {

@@ -8,4 +8,6 @@ export class Student {
     email: string;
     phone: string;
     password: string;
+	approved: string;
+    active: boolean;
 }

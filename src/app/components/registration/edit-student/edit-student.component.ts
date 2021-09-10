@@ -19,6 +19,9 @@ export class EditStudentComponent implements OnInit {
   email: string;
   phone: string;
   password: string;
+  approved: string;
+  active: string;
+
   student: Student;
 
   constructor(private route: ActivatedRoute,private router: Router,

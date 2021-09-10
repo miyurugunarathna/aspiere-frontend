@@ -9,13 +9,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AddTeacherComponent } from './components/registration/add-teacher/add-teacher.component';
-import { EditStudentComponent } from './components/registration/edit-student/edit-student.component';
+import { StudentListComponent } from './components/registration/student-list/student-list.component';
+import { AddStudentComponent } from './components/registration/add-student/add-student.component';
 import { ViewStudentComponent } from './components/registration/view-student/view-student.component';
-import { StudentListComponent } from './components/studentregistration/student-list/student-list.component';
-import { AddStudentComponent } from './components/studentregistration/add-student/add-student.component';
+import { EditStudentComponent } from './components/registration/edit-student/edit-student.component';
 import { DashboardModule } from './layout/dashboard/dashboard.module';
 import { FeeService } from './services/fees/fee.service';
+import { CreateExamComponent } from './components/exam/create-exam/create-exam.component';
+import { CreateQuizComponent } from './components/quiz/create-quiz/create-quiz.component';
+import { ListQuizComponent } from './components/quiz/list-quiz/list-quiz.component';
+import { ExamsComponent } from './components/exams/exams.component';
+import { ListallexamComponent } from './components/exam/listallexam/listallexam.component';
+import { ListResultComponent } from './components/result/list-result/list-result.component';
+import { AddresultComponent } from './components/result/addresult/addresult.component';
+import { AttendExamComponent } from './components/view-exam/attend-exam/attend-exam.component';
+import { TeacherListComponent } from './components/registration/teacher-list/teacher-list.component';
+import { AddTeacherComponent } from './components/registration/add-teacher/add-teacher.component';
+import { ViewTeacherComponent } from './components/registration/view-teacher/view-teacher.component';
+import { EditTeacherComponent } from './components/registration/edit-teacher/edit-teacher.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +36,17 @@ import { FeeService } from './services/fees/fee.service';
     ViewStudentComponent,
     EditStudentComponent,
     AddTeacherComponent,
+    ExamsComponent,
+    CreateExamComponent,
+    ListallexamComponent,
+    AttendExamComponent,
+    CreateQuizComponent,
+    AddresultComponent,
+    ListResultComponent,
+    ListQuizComponent,
+    TeacherListComponent,
+    ViewTeacherComponent,
+    EditTeacherComponent
   ],
   imports: [
     HttpClientModule,
@@ -35,7 +57,11 @@ import { FeeService } from './services/fees/fee.service';
       {path: 'add-student', component: AddStudentComponent},
       {path: 'edit-student', component: EditStudentComponent},
       {path: 'view-student', component: ViewStudentComponent},
+      {path: 'teachers', component: StudentListComponent},
       {path: 'add-teacher', component: AddTeacherComponent},
+      {path: 'view-teacher', component: ViewTeacherComponent},
+      {path: 'edit-teacher', component: EditTeacherComponent},
+
     ]),
     AppRoutingModule,
     BrowserModule,
