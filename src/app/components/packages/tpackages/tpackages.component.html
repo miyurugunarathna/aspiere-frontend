@@ -1,0 +1,213 @@
+
+<!-- Delete Confirm Modal -->
+
+<div class="row" id="deleteConfirm" style="display: none;">
+    <div class="modal-asp d-flex align-items-center" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content border-0 rounded-4">
+                <div class="modal-body p-4 text-left">
+                <h6 class="t_subtitle c_rich_black">Are you sure to delete this Package?</h6>
+                <span class="t_body">If you delete this Package, it cannot be undone. Please make sure that before taking the action.</span>
+                </div>
+                <div class="d-flex gap-4 justify-content-center my-4 p-0">
+                <button type="button" (click)="onDismiss('deleteConfirm')" class="btn c_rich_black bg_surface col-5 rounded-2">Cancel</button>
+                <button type="button" (click)="deletePackage(delID)" class="btn c_white bg_medium_blue col-5 rounded-2">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- END  Delete Confirm Modal -->
+
+
+<!-- Display message -->
+
+<div class="row position-relative" style="z-index: 1; display: none;" id="insideNotice">
+    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 p-0 position-fixed bottom-0 end-0">
+        <div class="row d-flex align-items-center bg_white p-3 m-4 rounded-3 gap-4" style="box-shadow: 0 0 15px 0 #77777777;">
+            <div class="col-auto">
+                <img src="/assets/images/icons/icon_correct.png" alt="mdo" width="30" height="30">
+            </div>
+            <div class="col">
+                {{ addMessage }}
+            </div>
+            <div class="col-auto">
+                <a class="cursor_p" (click)="onDismiss('insideNotice')"><img src="/assets/images/icons/icon_close.svg" alt="mdo" width="15" height="15"></a>
+            </div>
+        </div>
+    </div>
+</div> 
+
+
+ <!-- END Display message -->
+
+<!-- Topic -->
+
+<div class="row t_subtitle mb-2">
+    <div class="col">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item c_rich_black active" aria-current="page">Packages</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- END Topic -->
+
+<!-- Package Data Table-->
+<div class="row gx-4 gy-4">
+    <div class="col-12 col-sm-12 col-lg-8 col-xl-9">
+        <div class="data_list">
+            <div class="row rounded-3 bg_white c_rich_black mb-4">
+                <div class="col p-3">Package ID</div>
+                <div class="col p-3">Name</div>
+                <div class="col p-3">Users</div>
+                <div class="col p-3">Created</div>
+                <div class="col p-3">Modified</div>
+            </div>
+            <div *ngFor="let tpackage of tpackages" class="data_list rounded-3 bg_white">
+                <div class="row border_aspire position-relative">
+                    <div class="col p-3">{{tpackage.id}}</div>
+                    <div class="col p-3">{{tpackage.packageName}}</div>
+                    <div class="col p-3">10</div>
+                    <div class="col p-3">{{tpackage.createdDate}}</div>
+                    <div class="col p-3">{{tpackage.modifiedDate}}</div>
+                    <div class="data_list hover_show">
+                        <div class="row overlay_gradient position-absolute top-0 w-100 h-100">
+                            <div class="border-start border-5 bc_medium_blue d-flex  justify-content-end p-3 align-items-center gap-4">
+                            <a class="cursor_p" (click)="getPackage( tpackage.id )"><img src="/assets/images/icons/icon_edit.png" alt="mdo" width="30" height="30"></a>
+                            <a class="cursor_p" (click)="deleteConfirm( tpackage.id )"><img src="/assets/images/icons/icon_delete.png" alt="mdo" width="30" height="30"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="border-bottom"></span>
+            </div>
+
+             <div *ngIf="tpackages.length == 0" class="data_list rounded-3 bg_white p-3 text-center">
+                No Packages to show. Please add one to show.
+            </div> 
+        </div>
+    </div>
+
+<!-- Package Data Table-->
+
+
+
+<div *ngIf="tpackageOne.id == 0; else UpdateBox" class="col-12 col-sm-12 col-lg-4 col-xl-3">
+    <div class="row mb-4">
+        <span id="addOrUpdatePackage" class="t_subtitle c_rich_black">Add New Package</span>
+    </div>
+
+<form class="d-flex flex-column gap-4 c_rich_black" #addPackageForm="ngForm" (ngSubmit)="addPackage(addPackageForm)">
+    <div class="col">
+        <label class="t_pre_title form-label" for="package_name">Package</label>
+        <input type="text" ngModel name="packageName" required placeholder="Platinum" class="form-control border-white c_davys_grey" id="">
+    </div>
+
+    
+     <div class="col">
+        <label class="t_pre_title form-label" for="fees_type">Commision Type</label>
+        <select ngModel="1" name="comType" required class="form-control form-select border-white c_davys_grey" id="">
+            <option value="1">Percentage</option>
+            <option value="2">Fixed</option>
+        </select>
+    </div>
+
+    <div class="col">
+        <label class="t_pre_title form-label" for="commison">commison</label>
+        <input type="number" ngModel name="commission" placeholder="100" class="form-control border-white c_davys_grey" id="">
+    </div>
+
+
+        <div class="col input-group">
+        <label class="t_pre_title form-label" for="annual_fee">Annual Fee</label>
+        <div class="input-group">
+          <span class="input-group-text border-white">LKR</span>
+          <input type="number" ngModel name="annualFee" placeholder="100" class="form-control border-white c_davys_grey" id="">
+            </div>
+             </div>
+
+        <div class="col input-group">
+            <label class="t_pre_title form-label" for="monthlyFee">Monthly Fee</label>
+            <div class="input-group">
+             <span class="input-group-text border-white">LKR</span>
+            <input type="number" ngModel name="monthlyFee" placeholder="50" class="form-control border-white c_davys_grey" id="">
+            </div>
+        </div>
+
+        <div class="col">
+        <label class="t_pre_title form-label" for="classes">classes</label>
+        <input type="number" ngModel name="maxCourse" placeholder="100" class="form-control border-white c_davys_grey" id="">
+        </div>
+
+
+        <div class="col">
+        <label class="t_pre_title form-label" for="students">students</label>
+        <input type="number" ngModel name="maxStudent" placeholder="1000" class="form-control border-white c_davys_grey" id="">
+        </div>
+
+        <button type="submit" [disabled]="addPackageForm.invalid" id="btnAddOrUpdate" class="btn btn-primary rounded-pill t_button">Add</button>
+        </form>
+
+
+     </div>
+
+
+<ng-template #UpdateBox>
+<div class="col-12 col-sm-12 col-lg-4 col-xl-3">
+<div class="row mb-4">
+    <span id="addOrUpdatePackage" class="t_subtitle c_rich_black">Update Package</span>
+</div>
+<form class="d-flex flex-column gap-4 c_rich_black" #updatePackageForm="ngForm" (ngSubmit)="updatePackage(updatePackageForm, tpackageOne.id)">
+    <div class="col">
+        <label class="t_pre_title form-label" for="fees_name">Fees Name</label>
+        <input type="text" ngModel="{{ tpackageOne.packageName }}" name="packageName"  required placeholder="Default" class="form-control border-white c_davys_grey" id="">
+    </div>
+       <div class="col">
+        <label class="t_pre_title form-label" for="fees_type">Commision Type</label>
+        <select ngModel="{{tpackageOne.comType}}" name="comType" required class="form-control form-select border-white c_davys_grey" id="">
+            <option value="1">Percentage</option>
+            <option value="2">Fixed</option>
+        </select>
+    </div>
+
+    <div class="col">
+        <label class="t_pre_title form-label" for="commison">commison</label>
+        <input type="number" ngModel="{{tpackageOne.commission}}" name="commission" placeholder="100" class="form-control border-white c_davys_grey" id="">
+    </div>
+
+
+        <div class="col input-group">
+        <label class="t_pre_title form-label" for="annual_fee">Annual Fee</label>
+        <div class="input-group">
+          <span class="input-group-text border-white">LKR</span>
+          <input type="number" ngModel="{{tpackageOne.annualFee}}" name="annualFee" placeholder="100" class="form-control border-white c_davys_grey" id="">
+            </div>
+             </div>
+
+        <div class="col input-group">
+            <label class="t_pre_title form-label" for="monthlyFee">Monthly Fee</label>
+            <div class="input-group">
+             <span class="input-group-text border-white">LKR</span>
+            <input type="number" ngModel="{{tpackageOne.monthlyFee}}" name="monthlyFee" placeholder="50" class="form-control border-white c_davys_grey" id="">
+            </div>
+        </div>
+
+        <div class="col">
+        <label class="t_pre_title form-label" for="classes">classes</label>
+        <input type="number" ngModel="{{tpackageOne.maxCourse}}" name="maxCourse" placeholder="100" class="form-control border-white c_davys_grey" id="">
+        </div>
+
+
+        <div class="col">
+        <label class="t_pre_title form-label" for="students">students</label>
+        <input type="number" ngModel="{{tpackageOne.maxStudent}}" name="maxStudent" placeholder="1000" class="form-control border-white c_davys_grey" id="">
+        </div>
+    <button type="submit" [disabled]="updatePackageForm.invalid" id="btnAddOrUpdate" class="btn btn-primary rounded-pill t_button">Update</button>
+</form>
+</div>
+</ng-template>
+</div> 

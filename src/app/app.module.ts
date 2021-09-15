@@ -29,6 +29,7 @@ import { AddTeacherComponent } from './components/registration/add-teacher/add-t
 import { ViewTeacherComponent } from './components/registration/view-teacher/view-teacher.component';
 import { EditTeacherComponent } from './components/registration/edit-teacher/edit-teacher.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,11 +50,13 @@ import { EditTeacherComponent } from './components/registration/edit-teacher/edi
     EnrollExamComponent,
     TeacherListComponent,
     ViewTeacherComponent,
-    EditTeacherComponent
+    EditTeacherComponent,
+    AppComponent
   ],
   imports: [
     HttpClientModule,
     FormsModule,
+    BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot( [
       {path: 'students', component: StudentListComponent},
@@ -64,7 +67,6 @@ import { EditTeacherComponent } from './components/registration/edit-teacher/edi
       {path: 'add-teacher', component: AddTeacherComponent},
       {path: 'view-teacher', component: ViewTeacherComponent},
       {path: 'edit-teacher', component: EditTeacherComponent},
-
     ]),
     AppRoutingModule,
     BrowserModule,

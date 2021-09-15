@@ -26,6 +26,7 @@ import { AddTeacherComponent } from 'src/app/components/registration/add-teacher
 import { ViewTeacherComponent } from 'src/app/components/registration/view-teacher/view-teacher.component';
 import { EditTeacherComponent } from 'src/app/components/registration/edit-teacher/edit-teacher.component';
 import { TeacherListComponent } from 'src/app/components/registration/teacher-list/teacher-list.component';
+import { TpackagesComponent } from 'src/app/components/packages/tpackages/tpackages.component';
 
 const routes: Routes = [
   {
@@ -59,7 +60,9 @@ const routes: Routes = [
           { path: 'teachers', component: TeacherListComponent},
           { path: 'add-teacher', component: AddTeacherComponent },
           { path: 'view-teacher', component: ViewTeacherComponent},
-          { path: 'edit-teacher', component: EditTeacherComponent}
+          { path: 'edit-teacher', component: EditTeacherComponent},
+          { path: 'packages', component: TpackagesComponent },
+
         ]
       }
     ]
