@@ -1,16 +1,27 @@
+import { isConstructorDeclaration } from "typescript";
+
 export class Student {
     id: string;
-    sid: string;
+    pid: string;
     fname: string;
     lname: string;
+    dob: String;
+    gender: string;
     email: string;
-    
-   
-    constructor() {
-        this.id = '';
-        this.sid = '';
-        this.fname = '';
-        this.lname = '';
-        this.email = '';
+    phone: string;
+    password: string
+
+    constructor(){
+        this.dob="";
+        this.email="";
+        this.fname="";
+        this.gender="";
+        this.id="";
+        this.lname="";
+        this.password="";
+        this.phone="";
+        this.pid="";
     }
+
 }
+
