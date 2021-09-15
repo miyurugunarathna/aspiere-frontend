@@ -20,9 +20,10 @@ const routes: Routes = [
           { path: '', component: TestComponent },
           { path: 'payment', component: PaymentComponent },
           { path: 'badge', component: BadgeComponent },
-          {path : 'free-card', component: FreeCardComponent},
+          { path: 'free-card', component: FreeCardComponent },
           { path: 'payment/view', component: ViewPaymentComponent },
           { path: 'fees', component: FeesComponent },
+          { path: 'payConfirm', component: PayConfirmComponent},
 
         ]
       }

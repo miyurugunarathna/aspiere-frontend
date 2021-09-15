@@ -111,7 +111,7 @@ body {
 .c_rich_black { color: #121212 !important; }
 .c_davys_grey { color: #595959; }
 .c_medium_blue { color: #183EFB; }
-.c_error { color: #E30425; }
+.c_error { color: #E30425 !important; }
 .c_success { color: #28E094; }
 .c_warning { color: #FFEB4D; }
 .c_surface { color: #F6F6F6; }

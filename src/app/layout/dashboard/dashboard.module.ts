@@ -8,15 +8,18 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FeesComponent } from 'src/app/components/fees/fees.component';
+import { PaymentComponent } from 'src/app/components/payment/payment.component';
+import { ViewPaymentComponent } from 'src/app/components/payment/view-payment/view-payment.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-
     BadgeComponent,
     FreeCardComponent,
-    FeesComponent
+    FeesComponent,
+    PaymentComponent,
+    ViewPaymentComponent,
 
   ],
   imports: [
