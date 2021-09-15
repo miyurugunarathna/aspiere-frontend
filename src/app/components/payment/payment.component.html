@@ -1,6 +1,10 @@
-<div class="row t_subtitle c_rich_black mb-2">
+<div class="row t_subtitle mb-2">
     <div class="col">
-        Payment
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item c_rich_black active" aria-current="page">Payment</li>
+            </ol>
+        </nav>
     </div>
 </div>
 <form action="">
@@ -42,40 +46,32 @@
         <div class="col p-3">Method</div>
     </div>
     <div class="data_list rounded-3 bg_white">
-        <div class="row border_aspire position-relative">
-            <div class="col p-3">Grade 11 Sinhala Monthly Fees</div>
-            <div class="col p-3">LKR 1,200</div>
-            <div class="col p-3">2021.08.01</div>
+        <div *ngFor="let payment of payments" class="row border_aspire position-relative">
+            <div class="col p-3">{{ payment.description }}</div>
+            <div class="col p-3">{{ payment.currency }} {{ payment.amount }}</div>
+            <div class="col p-3">{{ onlyDate(payment.issuedDate) }}</div>
             <div class="col p-3">
-                <div class="circle_8 bg_success"></div>
-                Proceed
+                <p *ngIf="payment.statusCode == 2">Success</p>
+                <p *ngIf="payment.statusCode == 0">Pending</p>
+                <p *ngIf="payment.statusCode == -1">Canceled</p>
+                <p *ngIf="payment.statusCode == -2">Failed</p>
+                <p *ngIf="payment.statusCode == -3">Chared Back</p>
             </div>
             <div class="col p-3">
-                <img src="/assets/images/icons/icon_visa.png" alt="mdo" width="20" height="20">
-                Visa
+                <p *ngIf="payment.method == ''">-</p>
+                <p *ngIf="payment.method != ''">{{ payment.method }}</p>
             </div>
             <div class="data_list hover_show">
                 <div class="row overlay_gradient position-absolute top-0 w-100 h-100">
                     <div class="border-start border-5 bc_medium_blue d-flex  justify-content-end p-3 align-items-center gap-4">
-                    <a href="#"><img src="/assets/images/icons/icon_view.png" alt="mdo" width="30" height="30"></a>
-                    <img src="/assets/images/icons/icon_print.png" alt="mdo" width="30" height="30">
+                    <a [routerLink]="['/app/payment/view']" [queryParams]="{ order_id : payment.paymentID }"><img src="/assets/images/icons/icon_view.png" alt="mdo" width="30" height="30"></a>
                     </div>
                 </div>
             </div>
         </div>
         <span class="border-bottom"></span>
-        <div class="row">
-            <div class="col p-3">Grade 11 Sinhala Monthly Fees</div>
-            <div class="col p-3">LKR 1,200</div>
-            <div class="col p-3">2021.08.01</div>
-            <div class="col p-3">
-                <div class="circle_8 bg_success"></div>
-                Proceed
-            </div>
-            <div class="col p-3">
-                <img src="/assets/images/icons/icon_visa.png" alt="mdo" width="20" height="20">
-                Visa
-            </div>
-        </div>
+    </div>
+    <div *ngIf="payments.length == 0" class="data_list rounded-3 bg_white p-3 text-center">
+        No Payments to show. Please make your payments and come back.
     </div>
 </div>

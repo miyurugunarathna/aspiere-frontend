@@ -8,9 +8,9 @@ html {
 
 body {
     font-family: 'Work Sans', sans-serif !important;
-    font-size: 16px;
-    color: #595959;
-    background-color: #F6F6F6;
+    font-size: 16px !important;
+    color: #595959 !important;
+    background-color: #F6F6F6 !important;
 }
 
 /* Typo */
@@ -108,23 +108,23 @@ body {
 
 /* Color */
 .c_black { color: #000000; }
-.c_rich_black { color: #121212; }
+.c_rich_black { color: #121212 !important; }
 .c_davys_grey { color: #595959; }
 .c_medium_blue { color: #183EFB; }
-.c_error { color: #E30425; }
+.c_error { color: #E30425 !important; }
 .c_success { color: #28E094; }
 .c_warning { color: #FFEB4D; }
 .c_surface { color: #F6F6F6; }
-.c_white { color: #FFFFFF; }
+.c_white { color: #FFFFFF !important; }
 
 .bg_black { background-color: #000000; }
 .bg_rich_black { background-color: #121212; }
 .bg_davys_grey { background-color: #595959; }
-.bg_medium_blue { background-color: #183EFB; }
+.bg_medium_blue { background-color: #183EFB !important; }
 .bg_error { background-color: #E30425; }
 .bg_success { background-color: #28E094; }
 .bg_warning { background-color: #FFEB4D; }
-.bg_surface { background-color: #F6F6F6; }
+.bg_surface { background-color: #F6F6F6 !important; }
 .bg_white { background-color: #FFFFFF; }
 
 .bc_medium_blue {
@@ -136,17 +136,25 @@ body {
 }
 
 .has-search .form-control {
-    padding-left: 2.375rem;
+    padding-left: 2.375rem !important;
     border: none;
 }
 
 .has-search .form-control-feedback {
     position: absolute;
     display: block;
-    width: 36px;
-    height: 36px;
-    padding: 6px;
+    width: 43px;
+    height: 43px;
+    padding: 8px;
     pointer-events: none;
+}
+
+.form-control {
+    padding: .6rem .75rem !important;
+}
+
+.btn {
+    padding: .75rem .75rem !important;
 }
 
 .data_list > .row {
@@ -171,4 +179,32 @@ body {
 
 .hover_show:hover {
     opacity: 1;
+}
+
+.progress-bar-vertical {
+    width: 1rem;
+    height: 100% !important;
+    display: flex;
+    align-items: flex-end;
+    background-color: #F6F6F6 !important;
+}
+
+.progress-bar-vertical .progress-bar {
+    width: 1rem;
+    background-color: #28E094;
+}
+
+.cursor_p {
+    cursor: pointer;
+}
+
+.modal-asp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: #F1F1F1C8;
+    backdrop-filter: blur(8px);
 }

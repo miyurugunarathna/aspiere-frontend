@@ -1,0 +1,77 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<div class="container" >
+
+    <div id="content" class="content p-0">
+        <div class="profile-header">
+            <br>
+            <div class="profile-header-cover"></div>
+    
+            <div class="profile-header-content">
+                <div class="profile-header-img">
+                    <img src="https://image.freepik.com/vecteurs-libre/test-examen-ligne-distance_108855-1371.jpg" alt="" />
+                </div>
+               
+                <div class="profile-header-info">
+                    <h4 class="m-t-sm">Net Exam</h4>
+                    <p class="m-b-sm">Aspire</p>
+                    
+                </div>
+                <br>
+            </div>
+            <br><br>
+           
+        </div>
+        
+
+        <br><br><br>
+
+        <div class="container bootstrap snippets bootdey">
+            <div class="table-responsive">
+                <!-- PROJECT TABLE -->
+                <table class="table colored-header datatable project-list">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Date Start</th>
+                            <th>Days to Deadline</th>
+                            <th>Progress</th>
+                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr  *ngFor="let marks of  markses">
+                            <td>{{marks.sid}}</td>
+                            <td>{{marks.key}}</td>
+                            <td>{{marks.mid}}</td>
+                            
+                            <td><span class="label label-warning">{{marks. q_marks}}</span></td>
+                            
+                        </tr>
+                     
+                    </tbody>
+                </table>
+                <!-- END PROJECT TABLE -->
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>display-all-marks works!</p>
+{{examKey}}

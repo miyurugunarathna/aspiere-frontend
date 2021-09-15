@@ -1,0 +1,66 @@
+
+<div class="form-box">
+<div class="button-box">
+    <div id="btn"></div>
+    <a [routerLink]="['/app/exams/create-exam',sid]"><button type="button" class="toggle-btn">Create Exam</button></a>
+    <a [routerLink]="['/app/exams/listallexam',sid]"><button type="button" class="toggle-btn">View All</button></a>
+</div>
+<div   class="container" id="main-container">
+<form #addForm="ngForm" (ngSubmit)="onAddExam(addForm)" >
+    <table>
+        <tr>
+            <span style="margin-left: 350px;">{{sid}}</span>
+            <td><input type="hidden" ngModel="{{sid}}"  class ="input-field" name="teacherID"   ></td>
+        </tr>
+        
+        <tr>
+            <td><input type="text" ngModel class ="input-field" name="classID"   placeholder="Class ID" required></td>
+        </tr>
+        <tr>
+            <td><input type="text" ngModel class ="input-field" name="subjectID"   placeholder="Subject ID" required></td>
+        </tr>
+        <tr>
+            <td><input type="text" ngModel class ="input-field" name="examName" placeholder="Exam Name" required></td>
+        </tr>
+        
+    </table>
+    
+    <br>
+    <br>
+    <div>
+        <div class="buttnreg">
+            <input [disabled]="addForm.invalid" type="submit" class="addbtn" id="sub" name="sub" value="Add">
+            <button class="setbtn" id="sub1" name="sub1" onclick="reset()">Cancel</button>
+        </div>
+        
+    </div>
+    
+    
+</form>
+
+
+<!-- add Modal -->
+<div class="modal fade" id="addExamModal" tabindex="-1" role="dialog" aria-labelledby="addExamModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div  class="modal-header bg-success text-white">
+          <h5 class="modal-title" id="deleteModalLabel">Create Exam</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          
+         
+        </div>
+        
+        <div class="modal-body">
+          <p>Exam Created Successfuly</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+          
+        </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
