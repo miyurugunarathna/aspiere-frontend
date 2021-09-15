@@ -27,6 +27,10 @@ export class ViewStudentComponent implements OnInit {
         this.student = data;
       }, error => console.log(error));
   }
+  
+  editStudent(id: string) {
+    this.router.navigate(['update-student', id]);
+  }
 
   list(){
     this.router.navigate(['students']);

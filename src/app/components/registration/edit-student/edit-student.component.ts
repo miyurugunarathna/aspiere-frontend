@@ -10,16 +10,19 @@ import { StudentService } from 'src/app/services/student.service';
 })
 export class EditStudentComponent implements OnInit {
 
-  id: string="";
-  sid: string="";
-  fname: string="";
-  lname: string="";
-  dob: Date = new Date("0/0/00");
-  gender: string="";
-  email: string="";
-  phone: string="";
-  password: string="";
-  student: Student| any;
+  id: string;
+  sid: string;
+  fname: string;
+  lname: string;
+  dob: Date;
+  gender: string;
+  email: string;
+  phone: string;
+  password: string;
+  approved: string;
+  active: string;
+
+  student: Student;
 
   constructor(private route: ActivatedRoute,private router: Router,
     private studentService: StudentService) { }

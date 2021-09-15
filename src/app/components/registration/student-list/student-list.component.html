@@ -1,4 +1,6 @@
-<div class="col-md-10 offset-md-1">
+<div class="container" id="main-container">
+    <div class="col-md-12 col-12 col-sm-12" >
+    <div class="card" >
 <h2>Students List</h2>
 
     <div class="col-md-6">
@@ -14,6 +16,8 @@
             <th>Gender</th>
             <th>Email</th>
             <th>Phone</th>
+            <th>Approved?</th>
+            <th>Active?</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -25,6 +29,8 @@
             <td> {{ student.gender }} </td>
             <td> {{ student.email }} </td>
             <td> {{ student.phone }} </td>
+            <td> {{ student.approved }} </td>
+            <td> {{ student.active }} </td>
             <td>
                 <a (click) = "viewStudent(student.id)"><img src="/assets/images/icons/icon_view.png" width="30"></a>
                 &nbsp;<a (click) = "editStudent(student.id)"><img src="/assets/images/icons/icon_edit.png" width="30"></a>
@@ -33,5 +39,6 @@
         </tr>
     </tbody>
 </table>
-                                                    
+</div>                                           
+</div>
 </div>

@@ -18,6 +18,14 @@ import { DashboardComponent } from './dashboard.component';
 import { AttendExamComponent } from 'src/app/components/view-exam/attend-exam/attend-exam.component';
 import { EnrollExamComponent } from 'src/app/components/view-exam/enroll-exam/enroll-exam.component';
 import { DisplayAllMarksComponent } from 'src/app/components/view-exam/display-all-marks/display-all-marks.component';
+import { AddStudentComponent } from 'src/app/components/registration/add-student/add-student.component';
+import { StudentListComponent } from 'src/app/components/registration/student-list/student-list.component';
+import { ViewStudentComponent } from 'src/app/components/registration/view-student/view-student.component';
+import { EditStudentComponent } from 'src/app/components/registration/edit-student/edit-student.component';
+import { AddTeacherComponent } from 'src/app/components/registration/add-teacher/add-teacher.component';
+import { ViewTeacherComponent } from 'src/app/components/registration/view-teacher/view-teacher.component';
+import { EditTeacherComponent } from 'src/app/components/registration/edit-teacher/edit-teacher.component';
+import { TeacherListComponent } from 'src/app/components/registration/teacher-list/teacher-list.component';
 
 const routes: Routes = [
   {
@@ -44,6 +52,14 @@ const routes: Routes = [
           { path: 'payment/view', component: ViewPaymentComponent },
           { path: 'fees', component: FeesComponent },
           { path: 'payConfirm', component: PayConfirmComponent},
+          { path: 'students', component: StudentListComponent },
+          { path: 'add-student', component: AddStudentComponent },
+          { path: 'view-student', component: ViewStudentComponent},
+          { path: 'edit-student', component: EditStudentComponent},
+          { path: 'teachers', component: TeacherListComponent},
+          { path: 'add-teacher', component: AddTeacherComponent },
+          { path: 'view-teacher', component: ViewTeacherComponent},
+          { path: 'edit-teacher', component: EditTeacherComponent}
         ]
       }
     ]

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Student } from 'src/app/models/student';
 import { StudentService } from 'src/app/services/student.service';
 import { Router } from '@angular/router';
-import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-student-list',
@@ -13,11 +12,6 @@ export class StudentListComponent implements OnInit {
 
   students: Student[] = [];
   sid = '';
-
-  page = 1;
-  count = 0;
-  pageSize = 5;
-  pageSizes = [5,10,15];
   
   constructor(private studentService: StudentService, private router: Router) { }
 
@@ -32,7 +26,7 @@ export class StudentListComponent implements OnInit {
   }
 
   addStudent() {
-    this.router.navigate(['add-student']);
+    this.router.navigate(['app/add-student']);
   }
   
   viewStudent(id: string) {

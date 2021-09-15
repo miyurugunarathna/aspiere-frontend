@@ -1,8 +1,8 @@
 <div class="container" id="main-container">
     <div class="col-md-6 offset-md-3">
         <div class="card" >
-            <h3>Create Teacher</h3>
-    <form #TeacherForm = "ngForm" (ngSubmit) = "onSubmit()" method = "POST">
+            <h3>Edit Teacher</h3>
+    <form #UpdateTeacherForm = "ngForm" (ngSubmit) = "onSubmit()" method = "POST">
         <div class="card" >
             
         <div class="form-group">
@@ -150,12 +150,41 @@
                 [(ngModel)] = "teacher.accnum" #bank="ngModel">
         </div>
     </div>
+
+    <div class="card" >    
+    <div class="form-group">
+        <label> Approved Status</label>
+        <div class="form-check">
+            <input type="radio" id = "approved" name = "approved" value="Pending"
+                [(ngModel)] = "teacher.approved" #approved="ngModel">
+            <label>&nbsp;Pending</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" id = "approved" name = "approved" value="Approved"
+                [(ngModel)] = "teacher.approved" #approved="ngModel">
+            <label>&nbsp;Approved</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" id = "approved" name = "approved" value="Rejected"
+                [(ngModel)] = "teacher.approved" #approved="ngModel">
+            <label>&nbsp;Rejected</label>
+        </div>
+    </div>
+<br>
+
+    <div class="form-check form-switch">
+        <label class="form-check-label" for="active">Active</label>
+        <input type="checkbox" id="active" name = "active"
+            [(ngModel)]="teacher.active" #active="ngModel" class="form-check-input">
+    </div>
+</div>
+
     </form>
 </div>
     
 
-    <button class="btn btn-primary" [disabled]="!TeacherForm.valid" type="submit">Submit</button>
-    &nbsp;<button class="btn btn-primary" (click)="reset()">Reset</button>
+<button class="btn btn-primary" [disabled]="!UpdateTeacherForm.valid" type="submit">Update</button>
+&nbsp;<button class="btn btn-primary" (click)="discard()">Discard</button>
 
-    <p>Form Value: {{ TeacherForm.value | json }}</p>
+    <p>Form Value: {{ UpdateTeacherForm.value | json }}</p>
 </div>

@@ -30,6 +30,8 @@ export class AddTeacherComponent implements OnInit {
     bank: '',
     branch: '',
     accnum: 0,
+    approved: 'Pending',
+    active: true
   };
   
   submitted = false;
@@ -58,7 +60,7 @@ export class AddTeacherComponent implements OnInit {
 
 saveTeacher() {
   alert('Saved')
-  this.personService.create(this.teacher).subscribe ( data =>
+  this.personService.createTeacher(this.teacher).subscribe ( data =>
     console.log(data), error => console.log(error));
     
     this.router.navigate(['/teachers'])
