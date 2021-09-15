@@ -2,6 +2,10 @@ import { BadgeComponent } from './../../components/badge/badge.component';
 import { FreeCardComponent } from './../../components/free-card/free-card.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ClassComponent } from 'src/app/components/class/class.component';
+import { CoursesComponent } from 'src/app/components/courses/courses.component';
+import { SubjectComponent } from 'src/app/components/subject/subject.component';
+import { TeachercourseviewComponent } from 'src/app/components/teachercourseview/teachercourseview.component';
 import { FeesComponent } from 'src/app/components/fees/fees.component';
 import { PayConfirmComponent } from 'src/app/components/payment/pay-confirm/pay-confirm.component';
 import { PaymentComponent } from 'src/app/components/payment/payment.component';
@@ -28,6 +32,7 @@ import { EditTeacherComponent } from 'src/app/components/registration/edit-teach
 import { TeacherListComponent } from 'src/app/components/registration/teacher-list/teacher-list.component';
 import { TpackagesComponent } from 'src/app/components/packages/tpackages/tpackages.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -38,6 +43,10 @@ const routes: Routes = [
         children: [
           { path: '', component: TestComponent },
           { path: 'payment', component: PaymentComponent },
+          { path: 'subject', component: SubjectComponent },
+          { path: 'class', component: ClassComponent },
+          { path: 'courses', component: CoursesComponent },
+          { path: 'teachercourseview', component: TeachercourseviewComponent },
           { path: 'exams',component:ExamsComponent},
           { path: 'exams/create-exam/:teacherID',component:CreateExamComponent},
           { path: 'exams/listallexam/:teacherID',component:ListallexamComponent},
@@ -62,7 +71,6 @@ const routes: Routes = [
           { path: 'view-teacher', component: ViewTeacherComponent},
           { path: 'edit-teacher', component: EditTeacherComponent},
           { path: 'packages', component: TpackagesComponent },
-
         ]
       }
     ]

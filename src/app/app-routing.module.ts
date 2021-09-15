@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { StudentListComponent } from './components/registration/student-list/student-list.component';
 import { AddStudentComponent } from './components/registration/add-student/add-student.component';
 import { ViewStudentComponent } from './components/registration/view-student/view-student.component';
@@ -12,6 +11,7 @@ import { EditTeacherComponent } from './components/registration/edit-teacher/edi
 import { ViewPaymentComponent } from './components/payment/view-payment/view-payment.component';
 import { BadgeComponent } from './components/badge/badge.component';
 import { CreateQuizComponent } from './components/quiz/create-quiz/create-quiz.component';
+
 
 const routes: Routes = [
   {
