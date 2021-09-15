@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Student } from 'src/app/models/student';
 import { StudentService } from 'src/app/services/student.service';
 import { Router } from '@angular/router';
-import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-student-list',
@@ -31,16 +30,39 @@ export class StudentListComponent implements OnInit {
     });
   }
 
-  addStudent() {
-    this.router.navigate(['add-student']);
+  findById(): void {
+    this.page = 1;
+    this.retrieveStudents();
   }
-  
+
+  retrieveStudents(): void {
+    const param = this.getRequestParams(this.sid, this.page, this.pageSize);
+  }
+
+  getRequestParams(searchID: string, page: number, pageSize: number): any {
+    let params: any = {};
+
+    if (searchID) {
+      params['sid'] = searchID;
+    }
+
+    if (page) {
+      params['page'] = page-1;
+    }
+
+    if (pageSize) {
+      params['size'] = pageSize;
+    }
+
+    return params;
+  }
+
   viewStudent(id: string) {
     this.router.navigate(['view-student', id]);
   }
 
   editStudent(id: string) {
-    this.router.navigate(['update-student', id]);
+    this.router.navigate(['edit-student', id]);
   }
 
   deleteStudent(id: string) {

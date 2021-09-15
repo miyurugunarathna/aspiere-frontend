@@ -1,6 +1,4 @@
-<div class="container" id="main-container">
-    <div class="col-md-6 offset-md-3">
-    <div class="card" >
+<div class="col-md-6 offset-md-3">
     <h3>Create Student</h3>
     <form #AddStudentForm = "ngForm" (ngSubmit) = "onSubmit()" method = "POST">
     
@@ -78,6 +76,5 @@
         <button class="btn btn-primary" [disabled]="!AddStudentForm.valid" type="submit">Submit</button>
 
     </form>
-    </div>
     <p>Form Value: {{ AddStudentForm.value | json }}</p>
 </div>

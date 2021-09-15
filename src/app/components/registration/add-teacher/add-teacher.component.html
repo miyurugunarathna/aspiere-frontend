@@ -1,10 +1,7 @@
-<div class="container" id="main-container">
-    <div class="col-md-6 offset-md-3">
-        <div class="card" >
-            <h3>Create Teacher</h3>
+<div class="col-md-6 offset-md-3">
+    <h3>Create Teacher</h3>
     <form #TeacherForm = "ngForm" (ngSubmit) = "onSubmit()" method = "POST">
-        <div class="card" >
-            
+    <div style="border: 1px solid blue; padding: 10px; width: 600px; margin: 5px;">
         <div class="form-group">
             <label> First Name</label>
             <input type="text" class ="form-control" id = "fname" name = "fname"
@@ -75,8 +72,9 @@
                     <div *ngIf="password.errors?.required">Password is required.</div>
                 </div>
         </div>
+
     </div>
-    <div class="card" >
+    <div style="border: 1px solid blue; padding: 10px; width: 600px; margin: 5px;">
 
         <!-- <div class="input-group mb-3" *ngFor="let i = index" [ngModelGroup]="i"> -->
             <fieldset ngModelGroup="qualification">
@@ -116,7 +114,7 @@
         <!-- </div> -->
 
     </div>
-    <div class="card" >    
+    <div style="border: 1px solid blue; padding: 10px; width: 600px; margin: 5px;">    
 
         <div class="form-group">
             <label> Bank</label>
@@ -149,13 +147,11 @@
             <input type="text" class ="form-control" id = "accnum" name = "accnum"
                 [(ngModel)] = "teacher.accnum" #bank="ngModel">
         </div>
-    </div>
-    </form>
-</div>
-    
 
+    </div>
     <button class="btn btn-primary" [disabled]="!TeacherForm.valid" type="submit">Submit</button>
     &nbsp;<button class="btn btn-primary" (click)="reset()">Reset</button>
 
+    </form>
     <p>Form Value: {{ TeacherForm.value | json }}</p>
 </div>

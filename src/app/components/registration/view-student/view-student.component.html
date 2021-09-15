@@ -1,6 +1,4 @@
-<div class="container" id="main-container">
-  <div class="col-md-6 offset-md-3">
-  <div class="card" >
+<div class="col-md-10 offset-md-1">
   <h2>Student Details</h2> 
 
   <hr/>
@@ -20,18 +18,9 @@
     <div>
       <label><b>Contact Number: </b></label> {{ student.phone }}
     </div>
-	<div>
-      <label><b>Approved Status: </b></label> {{ student.approved }}
-    </div>
-    <div>
-      <label><b>Active Status: </b></label> {{ student.active }}
-    </div>
   </div>
 
   <br>
-  <button (click) = "editStudent(student.id)" class="btn btn-info">Edit</button>
-    &nbsp;<button (click)="list()" class="btn btn-primary">Back to Student List</button>
-  </div>
-  </div>
+  <button (click)="list()" class="btn btn-primary">Back to Student List</button><br>
 </div>
 

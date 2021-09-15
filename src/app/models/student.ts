@@ -9,8 +9,19 @@ export class Student {
     gender: string;
     email: string;
     phone: string;
-    password: string;
-	approved: string;
-    active: boolean;
+    password: string
+
+    constructor(){
+        this.dob="";
+        this.email="";
+        this.fname="";
+        this.gender="";
+        this.id="";
+        this.lname="";
+        this.password="";
+        this.phone="";
+        this.pid="";
+    }
+
 }
 

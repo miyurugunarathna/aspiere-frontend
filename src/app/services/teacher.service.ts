@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable, throwError } from "rxjs";
+import { catchError, retry } from "rxjs/Operators";
 import { Teacher } from "../models/teacher";
 import { environment } from "src/environments/environment";
 
@@ -16,32 +17,36 @@ export class TeacherService {
 
     constructor (private http: HttpClient) { }
 
-    getAllTeachers(): Observable<Teacher[]> {
+    getAll(): Observable<Teacher[]> {
         const getAllURL = environment.baseUrl + '/teachers/';
         return this.http.get<Teacher[]>(getAllURL);
     }
 
-    getTeacher(id: string): Observable<Object> {
+    get(id: string): Observable<Object> {
         const getURL = environment.baseUrl + '/teacher/' + id;
         return this.http.get(getURL);
     }
 
-    createTeacher(teacher: Teacher): Observable<void> {
+    create(teacher: Teacher): Observable<void> {
         const addURL = environment.baseUrl + '/addteacher/';
         return this.http.post<void>(addURL, teacher);
     }
 
-    updateTeacher(id: string, teacher: Teacher): Observable<any> {
-        const editURL = environment.baseUrl + '/updateTeacher/' + id;
+    createTeacher(teacher: Teacher): Observable<any> {
+        return this.http.post(TeacherService.POST_TEACHER_URL, teacher, { headers:this.headers });
+    }
+
+    update(id: string, teacher: Teacher): Observable<Object> {
+        const editURL = environment.baseUrl + '/edit/' + id;
         return this.http.put(editURL, teacher);
     }
 
-    deleteTeacher(id: string): Observable<any> {
-        const delURL = environment.baseUrl + '/deleteTeacher/' + id;
+    delete(id: string): Observable<any> {
+        const delURL = environment.baseUrl + '/delete/' + id;
         return this.http.delete(delURL);
     }
 
-    deleteAllTeachers(): Observable<any> {
+    deleteAll(): Observable<any> {
         return this.http.delete('${baseURL}/delete');
     }
 
