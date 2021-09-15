@@ -9,6 +9,8 @@ import { ViewPaymentComponent } from 'src/app/components/payment/view-payment/vi
 import { TestComponent } from 'src/app/components/test/test.component';
 import { DashboardComponent } from './dashboard.component';
 import { TpackagesComponent } from 'src/app/components/packages/tpackages/tpackages.component';
+import { MypackageComponent } from 'src/app/components/packages/mypackage/mypackage.component';
+import { ChangepackageComponent } from 'src/app/components/packages/changepackage/changepackage.component';
 
 const routes: Routes = [
   {
@@ -25,7 +27,8 @@ const routes: Routes = [
           { path: 'payment/view', component: ViewPaymentComponent },
           { path: 'fees', component: FeesComponent },
           { path: 'packages', component: TpackagesComponent },
-
+          { path: 'mypackage', component: MypackageComponent },
+          { path: 'changepackage', component: ChangepackageComponent },
         ]
       }
     ]

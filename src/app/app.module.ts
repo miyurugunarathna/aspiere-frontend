@@ -12,12 +12,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { DashboardModule } from './layout/dashboard/dashboard.module';
 import { FeeService } from './services/fees/fee.service';
+import { MypackageComponent } from './components/packages/mypackage/mypackage.component';
+import { ChangepackageComponent } from './components/packages/changepackage/changepackage.component';
 
 
 @NgModule({
   declarations: [
     
-    AppComponent
+    AppComponent,
+          MypackageComponent,
+          ChangepackageComponent
     
    
   ],
