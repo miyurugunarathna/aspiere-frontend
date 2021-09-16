@@ -14,7 +14,6 @@ import { CoursesComponent } from 'src/app/components/courses/courses.component';
 import { FeesComponent } from 'src/app/components/fees/fees.component';
 import { PaymentComponent } from 'src/app/components/payment/payment.component';
 import { ViewPaymentComponent } from 'src/app/components/payment/view-payment/view-payment.component';
-import { AddStudentComponent } from 'src/app/components/registration/add-student/add-student.component';
 import { TpackagesComponent } from 'src/app/components/packages/tpackages/tpackages.component';
 import { FeesComponent } from 'src/app/components/fees/fees.component';
 import { RegisterComponent } from 'src/app/components/register/register/register.component';
@@ -27,7 +26,7 @@ import { ProfileComponent } from 'src/app/components/profile/profile/profile.com
     SubjectComponent,
     TeachercourseviewComponent,
     ClassComponent,
-    CoursesComponent
+    CoursesComponent,
     TpackagesComponent,
     BadgeComponent,
     FreeCardComponent,
@@ -35,8 +34,6 @@ import { ProfileComponent } from 'src/app/components/profile/profile/profile.com
     PaymentComponent,
     ViewPaymentComponent,
     AddStudentComponent,
-    FeesComponent
-
   ],
   imports: [
     CommonModule,

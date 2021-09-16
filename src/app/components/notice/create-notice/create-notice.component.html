@@ -1,0 +1,64 @@
+
+<div class="form-box">
+    <div class="button-box">
+        <div id="btn"></div>
+        <a [routerLink]="['/app/notices/create-notice']"><button type="button" class="toggle-btn">Create Notice</button></a>
+        <a [routerLink]="['/app/notices/list-notice']"><button type="button" class="toggle-btn">View All</button></a>
+    </div>
+    <div class="container" id="main-container">
+    <form #addForm="ngForm" (ngSubmit)="onAddNotice(addForm)" >
+        <table>
+            
+            
+            <tr>
+                <td><input type="text" ngModel class ="input-field" name="title"   placeholder="Title" required></td>
+            </tr>
+            <tr>
+                <td><textarea ngModel name="description"
+                    rows="10" cols="50" class ="input-field" placeholder="Write something here" required></textarea></td>
+            </tr>
+            <tr>
+                <td><input type="date" ngModel class ="input-field" name="date" placeholder="Date" required></td>
+            </tr>
+            
+        </table>
+        
+        <br>
+        <br>
+        <div>
+            <div class="buttnreg">
+                <input [disabled]="addForm.invalid" type="submit" class="addbtn" id="sub" name="sub" value="Add">
+                <button class="setbtn" id="sub1" name="sub1" onclick="reset()">Cancel</button>
+            </div>
+            
+        </div>
+        
+        
+    </form>
+
+    
+<!-- add Modal -->
+<div class="modal fade" id="addNoticeModal" tabindex="-1" role="dialog" aria-labelledby="addNoticeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div  class="modal-header bg-success text-white">
+          <h5 class="modal-title" id="deleteModalLabel">Add Notice</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          
+         
+        </div>
+        
+        <div class="modal-body">
+          <p>Notice Created Successfuly</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+          
+        </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    

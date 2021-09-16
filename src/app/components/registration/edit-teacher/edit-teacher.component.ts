@@ -35,7 +35,7 @@ export class EditTeacherComponent implements OnInit {
     private teacherService: TeacherService) { }
 
   ngOnInit(): void {
-    this.teacher = new Teacher();
+    // this.teacher = new Teacher();
 
     this.id = this.route.snapshot.params['id'];
     
@@ -53,7 +53,7 @@ export class EditTeacherComponent implements OnInit {
   updateTeacher() {
     this.teacherService.update(this.id, this.teacher)
       .subscribe(data => console.log(data), error => console.log(error));
-    this.teacher = new Teacher();
+    // this.teacher = new Teacher();
     this.router.navigate(['/teachers'])
   }
 

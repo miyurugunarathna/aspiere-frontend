@@ -16,6 +16,9 @@ import { ViewStudentComponent } from './components/registration/view-student/vie
 import { EditStudentComponent } from './components/registration/edit-student/edit-student.component';
 import { DashboardModule } from './layout/dashboard/dashboard.module';
 import { FeeService } from './services/fees/fee.service';
+import { MypackageComponent } from './components/packages/mypackage/mypackage.component';
+import { ChangepackageComponent } from './components/packages/changepackage/changepackage.component';
+import { ListallexamComponent } from './components/exam/listallexam/listallexam.component';
 import { CreateExamComponent } from './components/exam/create-exam/create-exam.component';
 import { CreateQuizComponent } from './components/quiz/create-quiz/create-quiz.component';
 import { ListQuizComponent } from './components/quiz/list-quiz/list-quiz.component';
@@ -30,9 +33,18 @@ import { ViewTeacherComponent } from './components/registration/view-teacher/vie
 import { EditTeacherComponent } from './components/registration/edit-teacher/edit-teacher.component';
 import { LoginComponent } from './components/login/login/login.component';
 import { RegisterComponent } from './components/register/register/register.component';
+import { NoticesComponent } from './components/notices/notices.component';
+import { CreateNoticeComponent } from './components/notice/create-notice/create-notice.component';
+import { ListNoticeComponent } from './components/notice/list-notice/list-notice.component';
+import { StudentchatComponent } from './components/chat/studentchat/studentchat.component';
+import { TeacherchatComponent } from './components/chat/teacherchat/teacherchat.component';
 
 @NgModule({
   declarations: [
+    
+    AppComponent,
+    MypackageComponent,
+    ChangepackageComponent,
     AppComponent,
     StudentListComponent,
     AddStudentComponent,
@@ -52,6 +64,11 @@ import { RegisterComponent } from './components/register/register/register.compo
     EditTeacherComponent,
     LoginComponent,
     RegisterComponent,
+    NoticesComponent,
+    CreateNoticeComponent,
+    ListNoticeComponent,
+    StudentchatComponent,
+    TeacherchatComponent,
   ],
   imports: [
     HttpClientModule,
