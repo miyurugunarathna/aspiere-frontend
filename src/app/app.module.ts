@@ -30,6 +30,8 @@ import { ViewTeacherComponent } from './components/registration/view-teacher/vie
 import { EditTeacherComponent } from './components/registration/edit-teacher/edit-teacher.component';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -21,15 +21,15 @@ export class BadgeService {
     }
 
     public getBadge(badgeID: string): Observable<Badge> {
-        return this.http.get<Badge>(`${this.apiServerUrl}/badge/${badgeID}`);
+        return this.http.get<Badge>(`${this.apiServerUrl}badge/${badgeID}`);
       }
 
     public addBadge(badge: Badge) : Observable <string> {
         return this.http.post<string> (`${this.apiServerUrl}addbadge`, badge, {responseType: 'text' as 'json'});
     }
 
-    public updateBadge(badge: Badge, badgeID : string) : Observable <Badge> {
-        return this.http.put<Badge> (`${this.apiServerUrl}badge/update/${badgeID}`, badge, {responseType: 'text' as 'json'});
+    public updateBadge(badge: Badge, badgeID : string) : Observable <string> {
+        return this.http.put<string> (`${this.apiServerUrl}badge/update/${badgeID}`, badge, {responseType: 'text' as 'json'});
     }
     
     public deleteBadge(badgeID: String) : Observable <void> {

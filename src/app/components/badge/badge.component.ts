@@ -78,7 +78,7 @@ export class BadgeComponent implements OnInit {
   
   public updateBadge(updateBadgeForm: NgForm, id:string): void {
     this.badgeService.updateBadge(updateBadgeForm.value, id).subscribe(
-      (response) => {
+      (response : any) => {
         console.log(response);
         updateBadgeForm.reset();
         let insideNotice = document.getElementById('insideNotice');
