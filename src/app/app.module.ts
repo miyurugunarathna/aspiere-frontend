@@ -14,6 +14,8 @@ import { ViewStudentComponent } from './components/registration/view-student/vie
 import { EditStudentComponent } from './components/registration/edit-student/edit-student.component';
 import { DashboardModule } from './layout/dashboard/dashboard.module';
 import { FeeService } from './services/fees/fee.service';
+import { MypackageComponent } from './components/packages/mypackage/mypackage.component';
+import { ChangepackageComponent } from './components/packages/changepackage/changepackage.component';
 import { ListallexamComponent } from './components/exam/listallexam/listallexam.component';
 import { CreateExamComponent } from './components/exam/create-exam/create-exam.component';
 import { ListQuizComponent } from './components/quiz/list-quiz/list-quiz.component';
@@ -30,10 +32,12 @@ import { ViewTeacherComponent } from './components/registration/view-teacher/vie
 import { EditTeacherComponent } from './components/registration/edit-teacher/edit-teacher.component';
 
 
-
-
 @NgModule({
   declarations: [
+    
+    AppComponent,
+    MypackageComponent,
+    ChangepackageComponent,
     AppComponent,
     StudentListComponent,
     AddStudentComponent,
@@ -53,7 +57,6 @@ import { EditTeacherComponent } from './components/registration/edit-teacher/edi
     TeacherListComponent,
     ViewTeacherComponent,
     EditTeacherComponent,
-    AppComponent
   ],
   imports: [
     HttpClientModule,
