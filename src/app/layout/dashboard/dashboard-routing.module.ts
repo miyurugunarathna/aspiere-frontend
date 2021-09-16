@@ -36,6 +36,9 @@ import { CreateNoticeComponent } from 'src/app/components/notice/create-notice/c
 import { ListNoticeComponent } from 'src/app/components/notice/list-notice/list-notice.component';
 import { StudentchatComponent } from 'src/app/components/chat/studentchat/studentchat.component';
 import { TeacherchatComponent } from 'src/app/components/chat/teacherchat/teacherchat.component';
+import { MypackageComponent } from 'src/app/components/packages/mypackage/mypackage.component';
+import { ChangepackageComponent } from 'src/app/components/packages/changepackage/changepackage.component';
+
 
 const routes: Routes = [
   {
@@ -79,7 +82,9 @@ const routes: Routes = [
           { path: 'notices/create-notice',component:CreateNoticeComponent},
           { path: 'notices/list-notice',component:ListNoticeComponent},
           { path: 'studentchat/:sid',component:StudentchatComponent},
-          { path: 'teacherchat/:tid',component:TeacherchatComponent}
+          { path: 'teacherchat/:tid',component:TeacherchatComponent},
+          { path: 'mypackage', component: MypackageComponent },
+          { path: 'changepackage', component: ChangepackageComponent },
         ]
       }
     ]

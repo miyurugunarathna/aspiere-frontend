@@ -1,0 +1,90 @@
+<div class="row t_subtitle">
+    <div class="col">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                
+                <li class="breadcrumb-item c_rich_black active" aria-current="page">My Package</li>
+            </ol>
+        </nav>
+    </div>
+  </div>
+ 
+<div class="row">
+    <div class="col"><div class="c_rich_black t_bold">Package ID</div></div>
+    <div class="col"><div class="c_rich_black t_bold">Package</div></div>
+  </div>
+
+  <div class="row">
+    <div class="col"><div class="c_rich_black t_h3">#P{{ tpackageOne.id }}</div></div>
+    <div class="col"><div class="c_rich_black t_h3">Package</div></div>
+  </div>
+<br>
+  <div class="row">
+    <div class="col"><div class="c_rich_black t_bold">Commision Structure</div></div>
+    <div class="col"><div class="c_rich_black t_bold">Fee Structure</div></div>
+  </div>
+  
+  <br>
+
+  <div class="row">
+    <div class="col"><div class="t_bold">Type</div></div>
+    <div class="col"><div class="c_rich_black t_bold">
+        <div *ngIf="tpackageOne.comType == 1">Percentage</div>
+        <div *ngIf="tpackageOne.comType == 2">Fixed</div>
+    </div></div>
+    <div class="col"><div class="t_bold">Annual Fee(Rs.)</div></div>
+    <div class="col"><div class="c_rich_black t_bold">{{ tpackageOne.annualFee }}</div></div>
+  </div>
+
+  <div class="row">
+    <div class="col"><div class="t_bold">Commision</div></div>
+    <div class="col"><div class="c_rich_black t_bold">
+        <div *ngIf="tpackageOne.comType == 1">{{ tpackageOne.commission}}%</div>
+        <div *ngIf="tpackageOne.comType == 2">Rs. {{ tpackageOne.commission}}</div>
+    </div></div>
+    <div class="col"><div class="t_bold">Monthly Fee(Rs.)</div></div>
+    <div class="col"><div class="c_rich_black t_bold">{{ tpackageOne.monthlyFee }}</div></div>
+  </div>
+
+  <br>
+
+ 
+ 
+  <div class="row">
+    <div class="col"><div class="c_rich_black t_bold">Package Utilization</div></div>
+  </div>
+
+  <br>
+
+  <div class="row">
+    <div class="col"><div class="t_bold">Category</div></div>
+    <div class="col"><div class="t_bold">Total</div></div>
+    <div class="col"><div class="t_bold">Used</div></div>
+    <div class="col"><div class="t_bold">Remaining</div></div>
+</div>
+
+<div class="row">
+    <div class="col"><div class="c_rich_black t_bold">Classes</div></div>
+    <div class="col"><div class="c_rich_black t_bold">{{ tpackageOne.maxCourse }}</div></div>
+    <div class="col"><div class="c_rich_black t_bold"></div></div>
+    <div class="col"><div class="c_rich_black t_bold"></div></div>
+</div>
+
+<div class="row">
+    <div class="col"><div class="c_rich_black t_bold">Students</div></div>
+    <div class="col"><div class="c_rich_black t_bold">{{ tpackageOne.maxStudent }}</div></div>
+    <div class="col"><div class="c_rich_black t_bold"></div></div>
+    <div class="col"><div class="c_rich_black t_bold"></div></div>
+</div>
+
+<br>
+<div class="row">
+    <div class="col"><button type="submit" class="btn btn-primary rounded-pill t_button" style="padding: 2px;">Utilization Report</button>
+    </div>
+    <div class="col"><button type="submit" class="btn btn-primary rounded-pill t_button" style="padding: 2px;">Change Package</button>
+    </div>
+    <div class="col"></div>
+    <div class="col"></div>
+</div>
+
+
