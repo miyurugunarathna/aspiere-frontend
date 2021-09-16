@@ -1,0 +1,87 @@
+
+
+   
+        
+    <div   class="container" id="main-container">
+      <div class="container" >
+
+        <div id="content" class="content p-0">
+            <div class="profile-header">
+                <br>
+                <div class="profile-header-cover"></div>
+        
+                <div class="profile-header-content">
+                    <div class="profile-header-img">
+                        <img src=" https://collegiateacademy.co.uk/wp-content/uploads/2021/01/50192-9-exam-image-hq-image-free-png.png" alt="" />
+                    </div>
+                   
+                    <div class="profile-header-info">
+                        <h4 class="m-t-sm">Net Exam</h4>
+                        <p class="m-b-sm">Aspire</p>
+                        
+                    </div>
+                    <br>
+                </div>
+                <br><br>
+               
+            </div>
+            <br><br><br>
+    <form #addForm="ngForm" (ngSubmit)="onAddAnswer(addForm)" >
+        <div *ngFor="let quiz of quizzes let i= index">
+
+          <input type="hidden" ngModel="{{key}}"  class ="input-field" name="key"   >
+          <input type="hidden" ngModel="{{studentID}}"  class ="input-field" name="studentID" >
+
+        <label  class="form-label" style="margin-left: 180px;">Q{{i+1}})  {{quiz.question}}</label><br><br>
+    
+        <div style="margin-left: 200px;">
+        <input type="radio"   ngModel  style="margin-right: 10px; margin-left: 10px;" name="answer{{i}}" value="A" >{{quiz.opt1}}<br>
+        <input type="radio"   ngModel  style="margin-right: 10px; margin-left: 10px;" name="answer{{i}}" value="B">{{quiz.opt2}}<br>
+        <input type="radio"   ngModel  style="margin-right: 10px;margin-left: 10px;" name="answer{{i}}" value="C" >{{quiz.opt3}}<br>
+        <input type="radio"   ngModel  style="margin-right: 10px;margin-left: 10px;" name="answer{{i}}" value="D" >{{quiz.opt4}}<br>
+        </div>
+        <br><br>
+       </div>
+        <br>
+        <br>
+        <div>
+            <div class="buttnreg">
+                <input   [disabled]="addForm.invalid"  type="submit" class="addbtn" id="sub" name="sub" value="Add">
+                
+            </div>
+            {{key}}<br>
+            {{studentID}}<br>
+            
+        </div>
+        
+        
+    </form>
+
+    
+<!-- add Modal -->
+<div class="modal fade" id="addQuizModal" tabindex="-1" role="dialog" aria-labelledby="addQuizModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div  class="modal-header bg-success text-white">
+          <h5 class="modal-title" id="deleteModalLabel">Create Quiz</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          
+         
+        </div>
+        
+        <div class="modal-body">
+          <p>Quiz Created Successfuly</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+          
+        </div>
+      
+      </div>
+    </div>
+  </div>
+        </div>
+</div>
+    </div>
+   
+    

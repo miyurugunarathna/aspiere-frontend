@@ -24,6 +24,8 @@ export class FeesComponent implements OnInit {
     this.getFees();
   }
 
+  
+  
   public onDismiss(dismisEle: string): void {
     let inNoClose = document.getElementById(dismisEle);
     if(inNoClose?.style.display === 'block') {
