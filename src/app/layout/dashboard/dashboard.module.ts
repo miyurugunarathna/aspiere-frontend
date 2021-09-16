@@ -22,7 +22,7 @@ import { TpackagesComponent } from 'src/app/components/packages/tpackages/tpacka
     SubjectComponent,
     TeachercourseviewComponent,
     ClassComponent,
-    CoursesComponent
+    CoursesComponent,
     TpackagesComponent,
     BadgeComponent,
     FreeCardComponent,
