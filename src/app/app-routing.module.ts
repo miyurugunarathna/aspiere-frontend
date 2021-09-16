@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { StudentListComponent } from './components/registration/student-list/student-list.component';
 import { AddStudentComponent } from './components/registration/add-student/add-student.component';
 import { ViewStudentComponent } from './components/registration/view-student/view-student.component';
@@ -11,7 +12,10 @@ import { EditTeacherComponent } from './components/registration/edit-teacher/edi
 import { ViewPaymentComponent } from './components/payment/view-payment/view-payment.component';
 import { BadgeComponent } from './components/badge/badge.component';
 import { CreateQuizComponent } from './components/quiz/create-quiz/create-quiz.component';
-
+import { LoginComponent } from './components/login/login/login.component';
+import { RegisterComponent } from './components/register/register/register.component';
+import { ProfileComponent } from './components/profile/profile/profile.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -19,14 +23,17 @@ const routes: Routes = [
     loadChildren: () => import('./layout/dashboard/dashboard.module').then(module => module.DashboardModule)
   },
 
-  { path: 'students', component: StudentListComponent},
-  { path: 'app/add-student', component: AddStudentComponent},
-  { path: 'view-student/:id', component: ViewStudentComponent},
-  { path: 'update-student/:id', component: EditStudentComponent},
-  { path: 'teachers', component: TeacherListComponent},
-  { path: 'app/add-teacher', component: AddTeacherComponent},
-  { path: 'view-teacher/:id', component: ViewTeacherComponent},
-  { path: 'update-teacher/:id', component: EditTeacherComponent},
+  { path: 'student/all', component: StudentListComponent},
+  { path: 'student/add', component: AddStudentComponent},
+  { path: 'student/view/:id', component: ViewStudentComponent},
+  { path: 'student/update/:id', component: EditStudentComponent},
+  { path: 'teacher/all', component: TeacherListComponent},
+  { path: 'teacher/add', component: AddTeacherComponent},
+  { path: 'teacher/view/:id', component: ViewTeacherComponent},
+  { path: 'teacher/update/:id', component: EditTeacherComponent},
+  { path: 'register', component: RegisterComponent},
+  { path: 'student/login', component: LoginComponent},
+  { path: 'profile', component: ProfileComponent},
   { path: 'view-payment', component: ViewPaymentComponent},
   { path: 'badge', component: BadgeComponent},
   { path: 'quiz', component: CreateQuizComponent}

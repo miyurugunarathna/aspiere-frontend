@@ -1,48 +1,86 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { Observable, throwError } from "rxjs";
+import { Observable, of } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 import { Teacher } from "../models/teacher";
 import { environment } from "src/environments/environment";
 
-//const baseURL = 'http://localhost:8085/api/';
+const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
 @Injectable({
     providedIn: 'root'
 })
+
 export class TeacherService {
 
-    private static readonly POST_TEACHER_URL = '/api/teacher';
-    private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    isLoggedIn = false;
+    redirectUrl: string;
 
     constructor (private http: HttpClient) { }
 
-    getAllTeachers(): Observable<Teacher[]> {
-        const getAllURL = environment.baseUrl + '/teachers/';
+    getAll(): Observable<Teacher[]> {
+        const getAllURL = environment.baseUrl + '/teacher/all';
         return this.http.get<Teacher[]>(getAllURL);
     }
 
-    getTeacher(id: string): Observable<Object> {
-        const getURL = environment.baseUrl + '/teacher/' + id;
+    get(id: string): Observable<any> {
+        const getURL = environment.baseUrl + '/teacher/get/' + id;
         return this.http.get(getURL);
     }
 
-    createTeacher(teacher: Teacher): Observable<void> {
-        const addURL = environment.baseUrl + '/addteacher/';
+    create(teacher: Teacher): Observable<void> {
+        const addURL = environment.baseUrl + '/teacher/add/';
         return this.http.post<void>(addURL, teacher);
     }
 
-    updateTeacher(id: string, teacher: Teacher): Observable<any> {
-        const editURL = environment.baseUrl + '/updateTeacher/' + id;
+    update(id: string, teacher: Teacher): Observable<Object> {
+        const editURL = environment.baseUrl + '/teacher/update/' + id;
         return this.http.put(editURL, teacher);
     }
 
-    deleteTeacher(id: string): Observable<any> {
-        const delURL = environment.baseUrl + '/deleteTeacher/' + id;
+    delete(id: string): Observable<any> {
+        const delURL = environment.baseUrl + '/teacher/delete/' + id;
         return this.http.delete(delURL);
     }
 
-    deleteAllTeachers(): Observable<any> {
-        return this.http.delete('${baseURL}/delete');
-    }
+    login(data: any): Observable<any> {
+        alert(data);
+        const loginUrl = environment.baseUrl + '/teacher/login';
+        return this.http.post<any>(loginUrl, data)
+          .pipe(
+            tap(_ => this.isLoggedIn = true),
+            catchError(this.handleError('login', []))
+          );
+      }
+    
+      logout(): Observable<any> {
+        const logoutUrl = environment.baseUrl + '/teacher/logout';
+        return this.http.get<any>(logoutUrl)
+          .pipe(
+            tap(_ => this.isLoggedIn = false),
+            catchError(this.handleError('logout', []))
+          );
+      }
+
+      private handleError<T>(operation = 'operation', result?: T) {
+        return (error: any): Observable<T> => {
+    
+          console.error(error); // log to console instead
+          this.log(`${operation} failed: ${error.message}`);
+          alert(error.message);
+    
+          return of(result as T);
+        };
+      }
+    
+      private log(message: string) {
+        console.log(message);
+      }
+    
+    
+    
+    
 
 }

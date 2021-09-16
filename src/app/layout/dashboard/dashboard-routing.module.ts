@@ -2,10 +2,6 @@ import { BadgeComponent } from './../../components/badge/badge.component';
 import { FreeCardComponent } from './../../components/free-card/free-card.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ClassComponent } from 'src/app/components/class/class.component';
-import { CoursesComponent } from 'src/app/components/courses/courses.component';
-import { SubjectComponent } from 'src/app/components/subject/subject.component';
-import { TeachercourseviewComponent } from 'src/app/components/teachercourseview/teachercourseview.component';
 import { FeesComponent } from 'src/app/components/fees/fees.component';
 import { PayConfirmComponent } from 'src/app/components/payment/pay-confirm/pay-confirm.component';
 import { PaymentComponent } from 'src/app/components/payment/payment.component';
@@ -30,6 +26,9 @@ import { AddTeacherComponent } from 'src/app/components/registration/add-teacher
 import { ViewTeacherComponent } from 'src/app/components/registration/view-teacher/view-teacher.component';
 import { EditTeacherComponent } from 'src/app/components/registration/edit-teacher/edit-teacher.component';
 import { TeacherListComponent } from 'src/app/components/registration/teacher-list/teacher-list.component';
+import { LoginComponent } from 'src/app/components/login/login/login.component';
+import { RegisterComponent } from 'src/app/components/register/register/register.component';
+import { ProfileComponent } from 'src/app/components/profile/profile/profile.component';
 import { TpackagesComponent } from 'src/app/components/packages/tpackages/tpackages.component';
 import { NoticesComponent } from 'src/app/components/notices/notices.component';
 import { CreateNoticeComponent } from 'src/app/components/notice/create-notice/create-notice.component';
@@ -38,7 +37,6 @@ import { StudentchatComponent } from 'src/app/components/chat/studentchat/studen
 import { TeacherchatComponent } from 'src/app/components/chat/teacherchat/teacherchat.component';
 import { MypackageComponent } from 'src/app/components/packages/mypackage/mypackage.component';
 import { ChangepackageComponent } from 'src/app/components/packages/changepackage/changepackage.component';
-
 
 const routes: Routes = [
   {
@@ -50,10 +48,6 @@ const routes: Routes = [
         children: [
           { path: '', component: TestComponent },
           { path: 'payment', component: PaymentComponent },
-          { path: 'subject', component: SubjectComponent },
-          { path: 'class', component: ClassComponent },
-          { path: 'courses', component: CoursesComponent },
-          { path: 'teachercourseview', component: TeachercourseviewComponent },
           { path: 'exams',component:ExamsComponent},
           { path: 'exams/create-exam/:teacherID',component:CreateExamComponent},
           { path: 'exams/listallexam/:teacherID',component:ListallexamComponent},
@@ -65,18 +59,21 @@ const routes: Routes = [
           { path: 'enroll-exam/attend-exam/:key/:id',component:AttendExamComponent},
           { path: 'exams/display-all-marks/:key',component:DisplayAllMarksComponent},
           { path: 'badge', component: BadgeComponent },
-          { path: 'free-card', component: FreeCardComponent },
+          { path: 'free-card', component: FreeCardComponent},
           { path: 'payment/view', component: ViewPaymentComponent },
           { path: 'fees', component: FeesComponent },
+          { path: 'student/all', component: StudentListComponent },
+          { path: 'student/add', component: AddStudentComponent },
+          { path: 'student/view', component: ViewStudentComponent},
+          { path: 'student/edit', component: EditStudentComponent},
+          { path: 'teacher/all', component: TeacherListComponent},
+          { path: 'teacher/add', component: AddTeacherComponent },
+          { path: 'teacher/view', component: ViewTeacherComponent},
+          { path: 'teacher/edit', component: EditTeacherComponent},
+          { path: 'register', component: RegisterComponent},
+          { path: 'login', component: LoginComponent},
+          { path: 'profile', component: ProfileComponent}
           { path: 'payConfirm', component: PayConfirmComponent},
-          { path: 'students', component: StudentListComponent },
-          { path: 'add-student', component: AddStudentComponent },
-          { path: 'view-student', component: ViewStudentComponent},
-          { path: 'edit-student', component: EditStudentComponent},
-          { path: 'teachers', component: TeacherListComponent},
-          { path: 'add-teacher', component: AddTeacherComponent },
-          { path: 'view-teacher', component: ViewTeacherComponent},
-          { path: 'edit-teacher', component: EditTeacherComponent},
           { path: 'packages', component: TpackagesComponent },
           { path: 'notices',component:NoticesComponent},
           { path: 'notices/create-notice',component:CreateNoticeComponent},

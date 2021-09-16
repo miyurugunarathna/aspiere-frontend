@@ -1,21 +1,22 @@
-export interface Teacher {
+export class Teacher {
     id: string;
     pid: string;
     fname: string;
     lname: string;
-    dob: Date;
+    dob: string;
     gender: string;
     email: string;
     phone: string;
     password: string;
+    role: string;
+    approved: string;
+    active: boolean;
+    roles: Array<string>;
     qualifications: Qualifications;
     bank: string;
     branch: string;
-    accnum: number;
-    approved: string;
-    active: boolean;
+    accnum: string;
 }
-
 
 export interface Qualifications {
     title: string;

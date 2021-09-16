@@ -45,6 +45,15 @@
         </div>
 
         <div class="form-group">
+            <label> Upload a Photo</label>
+            <div class="input-group">
+                <input type="file" class ="form-control" id = "pic" name = "pic"
+                    (change) = "onImageChange($event)">
+            </div>
+            <img class="img-thumbnail" width="200px" *ngIf="imgURL" [src]="imgURL" class="image">
+        </div>
+
+        <div class="form-group">
             <label> Contact Number</label>
         </div>
         <div class="input-group mb-3">
@@ -63,6 +72,7 @@
                 required [(ngModel)] = "student.email" #email="ngModel">
                 <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
                     <div *ngIf="email.errors?.required">Email is required.</div>
+                    <div *ngIf="email.errors?.email">Invalid email address</div>
                 </div>
         </div>
 
@@ -74,10 +84,15 @@
                     <div *ngIf="password.errors?.required">Password is required.</div>
                 </div>
         </div>
+
         <br>
         <button class="btn btn-primary" [disabled]="!AddStudentForm.valid" type="submit">Submit</button>
 
     </form>
+    <div class="alert alert-success" *ngIf="isSuccessful">
+        Your registration is successful!
+        <button (click)="login()" class="btn btn-primary">Login</button>
+    </div>
     </div>
     <p>Form Value: {{ AddStudentForm.value | json }}</p>
 </div>

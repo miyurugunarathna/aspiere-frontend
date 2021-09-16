@@ -1,8 +1,10 @@
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BadgeService } from './services/badge.service';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthInterceptor } from './helpers/auth.interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,18 +20,19 @@ import { MypackageComponent } from './components/packages/mypackage/mypackage.co
 import { ChangepackageComponent } from './components/packages/changepackage/changepackage.component';
 import { ListallexamComponent } from './components/exam/listallexam/listallexam.component';
 import { CreateExamComponent } from './components/exam/create-exam/create-exam.component';
-import { ListQuizComponent } from './components/quiz/list-quiz/list-quiz.component';
 import { CreateQuizComponent } from './components/quiz/create-quiz/create-quiz.component';
-import { AddresultComponent } from './components/result/addresult/addresult.component';
-import { ListResultComponent } from './components/result/list-result/list-result.component'; 
+import { ListQuizComponent } from './components/quiz/list-quiz/list-quiz.component';
 import { ExamsComponent } from './components/exams/exams.component';
+import { ListallexamComponent } from './components/exam/listallexam/listallexam.component';
+import { ListResultComponent } from './components/result/list-result/list-result.component';
+import { AddresultComponent } from './components/result/addresult/addresult.component';
 import { AttendExamComponent } from './components/view-exam/attend-exam/attend-exam.component';
-import { DisplayAllMarksComponent } from './components/view-exam/display-all-marks/display-all-marks.component';
-import { EnrollExamComponent } from './components/view-exam/enroll-exam/enroll-exam.component';
 import { TeacherListComponent } from './components/registration/teacher-list/teacher-list.component';
 import { AddTeacherComponent } from './components/registration/add-teacher/add-teacher.component';
 import { ViewTeacherComponent } from './components/registration/view-teacher/view-teacher.component';
 import { EditTeacherComponent } from './components/registration/edit-teacher/edit-teacher.component';
+import { LoginComponent } from './components/login/login/login.component';
+import { RegisterComponent } from './components/register/register/register.component';
 import { NoticesComponent } from './components/notices/notices.component';
 import { CreateNoticeComponent } from './components/notice/create-notice/create-notice.component';
 import { ListNoticeComponent } from './components/notice/list-notice/list-notice.component';
@@ -48,19 +51,19 @@ import { TeacherchatComponent } from './components/chat/teacherchat/teacherchat.
     ViewStudentComponent,
     EditStudentComponent,
     AddTeacherComponent,
-    ListallexamComponent,
+    ExamsComponent,
     CreateExamComponent,
-    ListQuizComponent,
+    ListallexamComponent,
+    AttendExamComponent,
     CreateQuizComponent,
     AddresultComponent,
     ListResultComponent,
-    ExamsComponent,
-    AttendExamComponent,
-    DisplayAllMarksComponent,
-    EnrollExamComponent,
+    ListQuizComponent,
     TeacherListComponent,
     ViewTeacherComponent,
     EditTeacherComponent,
+    LoginComponent,
+    RegisterComponent,
     NoticesComponent,
     CreateNoticeComponent,
     ListNoticeComponent,
@@ -70,17 +73,19 @@ import { TeacherchatComponent } from './components/chat/teacherchat/teacherchat.
   imports: [
     HttpClientModule,
     FormsModule,
-    BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot( [
-      {path: 'students', component: StudentListComponent},
-      {path: 'add-student', component: AddStudentComponent},
-      {path: 'edit-student', component: EditStudentComponent},
-      {path: 'view-student', component: ViewStudentComponent},
-      {path: 'teachers', component: StudentListComponent},
-      {path: 'add-teacher', component: AddTeacherComponent},
-      {path: 'view-teacher', component: ViewTeacherComponent},
-      {path: 'edit-teacher', component: EditTeacherComponent},
+      {path: 'student/all', component: StudentListComponent},
+      {path: 'student/add', component: AddStudentComponent},
+      {path: 'student/edit', component: EditStudentComponent},
+      {path: 'student/view', component: ViewStudentComponent},
+      {path: 'teacher/all', component: StudentListComponent},
+      {path: 'teacher/add', component: AddTeacherComponent},
+      {path: 'teacher/view', component: ViewTeacherComponent},
+      {path: 'teacher/edit', component: EditTeacherComponent},
+      {path: 'login', component: LoginComponent},
+      {path: 'register', component: RegisterComponent}
+
     ]),
     AppRoutingModule,
     BrowserModule,
@@ -88,7 +93,11 @@ import { TeacherchatComponent } from './components/chat/teacherchat/teacherchat.
     DashboardModule,
     HttpClientModule,
   ],
-  providers: [FeeService],
+  providers: [ {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
