@@ -32,6 +32,12 @@ import { EditTeacherComponent } from './components/registration/edit-teacher/edi
 
 
 
+import { NoticesComponent } from './components/notices/notices.component';
+import { CreateNoticeComponent } from './components/notice/create-notice/create-notice.component';
+import { ListNoticeComponent } from './components/notice/list-notice/list-notice.component';
+import { StudentchatComponent } from './components/chat/studentchat/studentchat.component';
+import { TeacherchatComponent } from './components/chat/teacherchat/teacherchat.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +59,11 @@ import { EditTeacherComponent } from './components/registration/edit-teacher/edi
     TeacherListComponent,
     ViewTeacherComponent,
     EditTeacherComponent,
-    AppComponent
+    NoticesComponent,
+    CreateNoticeComponent,
+    ListNoticeComponent,
+    StudentchatComponent,
+    TeacherchatComponent,
   ],
   imports: [
     HttpClientModule,

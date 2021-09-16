@@ -1,0 +1,117 @@
+
+<div class="form-box">
+    <div class="button-box">
+        <div id="btn"></div>
+        <a [routerLink]="['/app/notices/create-notice']"><button type="button" class="toggle-btn">Create Notice</button></a>
+        <a [routerLink]="['/app/notices/list-notice']"><button type="button" class="toggle-btn">View All</button></a>
+    </div><br><br>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+
+<div class="page-content container note-has-grid">
+    <div class="container" id="main-container">
+    <div class="tab-content bg-transparent">
+        <div id="note-full-container" class="note-has-grid row">
+            <div class="col-md-4 single-note-item all-category" *ngFor="let notice of notices">
+                <div class="card card-body">
+                    <span class="side-stick"></span>
+                    <h5 class="note-title text-truncate w-75 mb-0" data-noteheading="Book a Ticket for Movie">{{notice.title}}<i class="point fa fa-circle ml-1 font-10"></i></h5>
+                    <p class="note-date font-12 text-muted">{{notice.date}}</p>
+                    <div class="note-content">
+                        <p class="note-inner-content text-muted" >{{notice.description}}.</p>
+                        <br>
+                        <p><span><b>ID : </b></span><b>{{notice.noticeID}}</b></p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        
+                    <a (click)="onOpenModel(notice,'edit')" class="text-info" data-toggle="tooltip" title="" data-original-title="Edit" style="margin-right: 10px;"><i class="fas fa-pencil-alt"></i></a>
+                    <a (click)="onOpenModel(notice,'delete')" class="text-danger" data-toggle="tooltip"  data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"   data-original-title="Delete"><i class="far fa-trash-alt"></i></a>
+                </div>
+                      
+                    
+                </div>
+            </div>
+           
+         
+           
+                        
+    <!-- Modal Add notes -->
+    <div class="modal fade" id="updateNoticeModal" tabindex="-1" role="dialog" aria-labelledby="addnotesmodalTitle" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content border-0">
+                <div class="modal-header bg-info text-white">
+                    <h5 class="modal-title text-white">Update Notice</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        
+                </div>
+                <div class="modal-body">
+                    <div class="notes-box">
+                        <div class="notes-content">
+                            <form action="javascript:void(0);" id="addnotesmodalTitle"  #editForm="ngForm">
+                                <div class="row">
+                                    <div class="col-md-12 mb-3">
+                                        <div class="note-title">
+                                            <label>NoticeID</label>
+                                            <input type="text"  ngModel="{{updateNotice?.noticeID}}" name="noticeID"  id="note-has-title" class="form-control" minlength="25" placeholder="NoticeID" required/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 mb-3">
+                                        <div class="note-title">
+                                            <label>Title</label>
+                                            <input type="text"  ngModel="{{updateNotice?.title}}" name="title"  id="note-has-title" class="form-control" minlength="25" placeholder="Title" required/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="note-description">
+                                            <label>Description</label>
+                                            <textarea ngModel="{{updateNotice?.description}}" name="description"  id="note-has-description" class="form-control" minlength="60" placeholder="Description" rows="3"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 mb-3">
+                                        <div class="note-title">
+                                            <label>Date</label>
+                                            <input type="date"  ngModel="{{updateNotice?.date}}" name="date"  id="note-has-title" class="form-control" minlength="25" placeholder="Date" required/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button (click)="onUpdateNotice(editForm.value)"  data-bs-dismiss="modal" type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Modal -->
+<div class="modal fade" id="deleteNoticeModal" tabindex="-1" role="dialog" aria-labelledby="deleteExamModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title" id="deleteModalLabel">Delete Notice</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">
+          <p>Are you sure you want to delete  {{deleteNotice?.noticeID}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+          <button  (click) = "ondeleteNotice(deleteNotice?.noticeID)"   class="btn btn-danger" data-bs-dismiss="modal">Yes</button>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+
+</div>
+    </div>
+</div>
+    
