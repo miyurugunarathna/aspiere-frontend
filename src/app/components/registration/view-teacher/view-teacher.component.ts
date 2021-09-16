@@ -19,7 +19,7 @@ export class ViewTeacherComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.teacher = new Teacher();
+    // this.teacher = new Teacher();
 
     this.id = this.route.snapshot.params['id'];
     
