@@ -19,11 +19,10 @@ export class EditTeacherComponent implements OnInit {
   email: string;
   phone: string;
   password: string;
-  qualifications: {
-    title: string;
+  role: string;
+  title: string;
   description: string;
   university: string;
-  };
   bank: string;
   branch: string;
   accnum: number;
@@ -40,7 +39,7 @@ export class EditTeacherComponent implements OnInit {
 
     this.id = this.route.snapshot.params['id'];
     
-     this.teacherService.getTeacher(this.id)
+     this.teacherService.get(this.id)
        .subscribe(data => {
          console.log(data)
     //     this.teacher = data;
@@ -52,14 +51,14 @@ export class EditTeacherComponent implements OnInit {
   }
 
   updateTeacher() {
-    this.teacherService.updateTeacher(this.id, this.teacher)
+    this.teacherService.update(this.id, this.teacher)
       .subscribe(data => console.log(data), error => console.log(error));
     this.teacher = new Teacher();
     this.router.navigate(['/teachers'])
   }
 
   discard() {
-    this.router.navigate(['/teachers'])
+    this.router.navigate(['/teacher/all'])
   }
 
 }

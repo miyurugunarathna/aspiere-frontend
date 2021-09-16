@@ -23,7 +23,7 @@ export class ViewTeacherComponent implements OnInit {
 
     this.id = this.route.snapshot.params['id'];
     
-     this.teacherService.getTeacher(this.id)
+     this.teacherService.get(this.id)
        .subscribe(data => {
          console.log(data)
          //this.teacher = data;
@@ -31,11 +31,11 @@ export class ViewTeacherComponent implements OnInit {
   }
   
   editTeacher(id: string) {
-    this.router.navigate(['update-teacher', id]);
+    this.router.navigate(['teacher/update', id]);
   }
 
   list(){
-    this.router.navigate(['teachers']);
+    this.router.navigate(['app/teacher/all']);
   }
 
 }

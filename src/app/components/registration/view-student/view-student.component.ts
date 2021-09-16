@@ -10,8 +10,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ViewStudentComponent implements OnInit {
 
-  id: string="";
-  student: Student|any;
+  id: string;
+  student: Student;
 
   constructor(private route: ActivatedRoute, private router: Router,
     private studentService: StudentService) { }
@@ -29,11 +29,11 @@ export class ViewStudentComponent implements OnInit {
   }
   
   editStudent(id: string) {
-    this.router.navigate(['update-student', id]);
+    this.router.navigate(['student/update', id]);
   }
 
   list(){
-    this.router.navigate(['students']);
+    this.router.navigate(['student/all']);
   }
 
 }

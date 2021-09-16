@@ -17,11 +17,12 @@ export class AddTeacherComponent implements OnInit {
     pid: '',
     fname: '',
     lname: '',
-    dob: new Date("0/0/00"),
+    dob: '',
     gender: '',
     email: '',
     phone: '',
     password: '',
+    role: '',
     qualifications: {
       title: '',
       description: '',
@@ -29,9 +30,10 @@ export class AddTeacherComponent implements OnInit {
     },
     bank: '',
     branch: '',
-    accnum: 0,
+    accnum: '',
     approved: 'Pending',
-    active: true
+    roles: [],
+    active: true,
   };
   
   submitted = false;
@@ -45,7 +47,7 @@ export class AddTeacherComponent implements OnInit {
 
   newTeacher(): void {
     this.submitted = false;
-    
+    this.teacher = new Teacher();
   }
 
   reset() {
@@ -60,9 +62,9 @@ export class AddTeacherComponent implements OnInit {
 
 saveTeacher() {
   alert('Saved')
-  this.personService.createTeacher(this.teacher).subscribe ( data =>
+  this.personService.create(this.teacher).subscribe ( data =>
     console.log(data), error => console.log(error));
-    
+    this.teacher = new Teacher();
     this.router.navigate(['/teachers'])
 }
 
