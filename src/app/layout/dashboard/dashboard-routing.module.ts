@@ -27,8 +27,6 @@ import { ViewTeacherComponent } from 'src/app/components/registration/view-teach
 import { EditTeacherComponent } from 'src/app/components/registration/edit-teacher/edit-teacher.component';
 import { TeacherListComponent } from 'src/app/components/registration/teacher-list/teacher-list.component';
 import { LoginComponent } from 'src/app/components/login/login/login.component';
-import { RegisterComponent } from 'src/app/components/register/register/register.component';
-import { ProfileComponent } from 'src/app/components/profile/profile/profile.component';
 import { TpackagesComponent } from 'src/app/components/packages/tpackages/tpackages.component';
 import { NoticesComponent } from 'src/app/components/notices/notices.component';
 import { CreateNoticeComponent } from 'src/app/components/notice/create-notice/create-notice.component';
@@ -70,9 +68,7 @@ const routes: Routes = [
           { path: 'teacher/add', component: AddTeacherComponent },
           { path: 'teacher/view', component: ViewTeacherComponent},
           { path: 'teacher/edit', component: EditTeacherComponent},
-          { path: 'register', component: RegisterComponent},
           { path: 'login', component: LoginComponent},
-          { path: 'profile', component: ProfileComponent}
           { path: 'payConfirm', component: PayConfirmComponent},
           { path: 'packages', component: TpackagesComponent },
           { path: 'notices',component:NoticesComponent},
