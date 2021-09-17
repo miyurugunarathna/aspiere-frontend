@@ -25,7 +25,7 @@ export class TpackageService {
   }
   
   public updatePackage(tpackage: Tpackage, id: number): Observable<string> {
-    return this.http.post<string>(`${this.apiURL2}/package/update/${id}`, tpackage, {responseType: 'text' as 'json'});
+    return this.http.put<string>(`${this.apiURL2}/package/update/${id}`, tpackage, {responseType: 'text' as 'json'});
   }
   
   public deletePackage(id: number): Observable<string> {
