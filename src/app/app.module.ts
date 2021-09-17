@@ -31,6 +31,7 @@ import { CreateNoticeComponent } from './components/notice/create-notice/create-
 import { ListNoticeComponent } from './components/notice/list-notice/list-notice.component';
 import { StudentchatComponent } from './components/chat/studentchat/studentchat.component';
 import { TeacherchatComponent } from './components/chat/teacherchat/teacherchat.component';
+import { ListallexamComponent } from './components/exam/listallexam/listallexam.component';
 
 @NgModule({
   declarations: [
