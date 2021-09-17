@@ -13,8 +13,6 @@ import { ViewPaymentComponent } from './components/payment/view-payment/view-pay
 import { BadgeComponent } from './components/badge/badge.component';
 import { CreateQuizComponent } from './components/quiz/create-quiz/create-quiz.component';
 import { LoginComponent } from './components/login/login/login.component';
-import { RegisterComponent } from './components/register/register/register.component';
-import { ProfileComponent } from './components/profile/profile/profile.component';
 import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
@@ -31,9 +29,7 @@ const routes: Routes = [
   { path: 'teacher/add', component: AddTeacherComponent},
   { path: 'teacher/view/:id', component: ViewTeacherComponent},
   { path: 'teacher/update/:id', component: EditTeacherComponent},
-  { path: 'register', component: RegisterComponent},
   { path: 'student/login', component: LoginComponent},
-  { path: 'profile', component: ProfileComponent},
   { path: 'view-payment', component: ViewPaymentComponent},
   { path: 'badge', component: BadgeComponent},
   { path: 'quiz', component: CreateQuizComponent}

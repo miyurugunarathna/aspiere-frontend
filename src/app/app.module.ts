@@ -16,11 +16,13 @@ import { ViewStudentComponent } from './components/registration/view-student/vie
 import { EditStudentComponent } from './components/registration/edit-student/edit-student.component';
 import { DashboardModule } from './layout/dashboard/dashboard.module';
 import { FeeService } from './services/fees/fee.service';
+import { MypackageComponent } from './components/packages/mypackage/mypackage.component';
+import { ChangepackageComponent } from './components/packages/changepackage/changepackage.component';
+import { ListallexamComponent } from './components/exam/listallexam/listallexam.component';
 import { CreateExamComponent } from './components/exam/create-exam/create-exam.component';
 import { CreateQuizComponent } from './components/quiz/create-quiz/create-quiz.component';
 import { ListQuizComponent } from './components/quiz/list-quiz/list-quiz.component';
 import { ExamsComponent } from './components/exams/exams.component';
-import { ListallexamComponent } from './components/exam/listallexam/listallexam.component';
 import { ListResultComponent } from './components/result/list-result/list-result.component';
 import { AddresultComponent } from './components/result/addresult/addresult.component';
 import { AttendExamComponent } from './components/view-exam/attend-exam/attend-exam.component';
@@ -29,10 +31,18 @@ import { AddTeacherComponent } from './components/registration/add-teacher/add-t
 import { ViewTeacherComponent } from './components/registration/view-teacher/view-teacher.component';
 import { EditTeacherComponent } from './components/registration/edit-teacher/edit-teacher.component';
 import { LoginComponent } from './components/login/login/login.component';
-import { RegisterComponent } from './components/register/register/register.component';
+import { NoticesComponent } from './components/notices/notices.component';
+import { CreateNoticeComponent } from './components/notice/create-notice/create-notice.component';
+import { ListNoticeComponent } from './components/notice/list-notice/list-notice.component';
+import { StudentchatComponent } from './components/chat/studentchat/studentchat.component';
+import { TeacherchatComponent } from './components/chat/teacherchat/teacherchat.component';
 
 @NgModule({
   declarations: [
+    
+    AppComponent,
+    MypackageComponent,
+    ChangepackageComponent,
     AppComponent,
     StudentListComponent,
     AddStudentComponent,
@@ -51,7 +61,11 @@ import { RegisterComponent } from './components/register/register/register.compo
     ViewTeacherComponent,
     EditTeacherComponent,
     LoginComponent,
-    RegisterComponent,
+    NoticesComponent,
+    CreateNoticeComponent,
+    ListNoticeComponent,
+    StudentchatComponent,
+    TeacherchatComponent,
   ],
   imports: [
     HttpClientModule,
@@ -66,8 +80,7 @@ import { RegisterComponent } from './components/register/register/register.compo
       {path: 'teacher/add', component: AddTeacherComponent},
       {path: 'teacher/view', component: ViewTeacherComponent},
       {path: 'teacher/edit', component: EditTeacherComponent},
-      {path: 'login', component: LoginComponent},
-      {path: 'register', component: RegisterComponent}
+      {path: 'login', component: LoginComponent}
 
     ]),
     AppRoutingModule,
