@@ -18,7 +18,6 @@ import { CreateExamComponent } from './components/exam/create-exam/create-exam.c
 import { CreateQuizComponent } from './components/quiz/create-quiz/create-quiz.component';
 import { ListQuizComponent } from './components/quiz/list-quiz/list-quiz.component';
 import { ExamsComponent } from './components/exams/exams.component';
-import { ListallexamComponent } from './components/exam/listallexam/listallexam.component';
 import { ListResultComponent } from './components/result/list-result/list-result.component';
 import { AddresultComponent } from './components/result/addresult/addresult.component';
 import { AttendExamComponent } from './components/view-exam/attend-exam/attend-exam.component';
@@ -76,7 +75,6 @@ import { TeacherchatComponent } from './components/chat/teacherchat/teacherchat.
       {path: 'teacher/view', component: ViewTeacherComponent},
       {path: 'teacher/edit', component: EditTeacherComponent},
       {path: 'login', component: LoginComponent},
-
     ]),
     AppRoutingModule,
     BrowserModule,

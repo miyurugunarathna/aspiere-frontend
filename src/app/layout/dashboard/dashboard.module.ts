@@ -14,6 +14,7 @@ import { FeesComponent } from 'src/app/components/fees/fees.component';
 import { PaymentComponent } from 'src/app/components/payment/payment.component';
 import { ViewPaymentComponent } from 'src/app/components/payment/view-payment/view-payment.component';
 import { TpackagesComponent } from 'src/app/components/packages/tpackages/tpackages.component';
+import { LoginComponent } from 'src/app/components/login/login/login.component';
 
 @NgModule({
   declarations: [
