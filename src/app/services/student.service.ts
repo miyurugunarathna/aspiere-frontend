@@ -20,33 +20,33 @@ export class StudentService {
     constructor (private http: HttpClient) { }
 
     getAll(): Observable<Student[]> {
-        const getAllURL = environment.baseUrl + '/student/all';
+        const getAllURL = environment.baseUrl + 'student/all';
         return this.http.get<Student[]>(getAllURL);
     }
 
     get(id: string): Observable<any> {
-        const getURL = environment.baseUrl + '/student/get/' + id;
+        const getURL = environment.baseUrl + 'student/get/' + id;
         return this.http.get(getURL);
     }
 
     create(student: Student): Observable<void> {
-        const addURL = environment.baseUrl + '/student/add/';
+        const addURL = environment.baseUrl + 'student/add/';
         return this.http.post<void>(addURL, student);
     }
 
     update(id: string, student: Student): Observable<Object> {
-        const editURL = environment.baseUrl + '/student/update/' + id;
+        const editURL = environment.baseUrl + 'student/update/' + id;
         return this.http.put(editURL, student);
     }
 
     delete(id: string): Observable<any> {
-        const delURL = environment.baseUrl + '/student/delete/' + id;
+        const delURL = environment.baseUrl + 'student/delete/' + id;
         return this.http.delete(delURL);
     }
 
     login(data: any): Observable<any> {
         alert(data);
-        const loginUrl = environment.baseUrl + '/student/login';
+        const loginUrl = environment.baseUrl + 'student/login';
         return this.http.post<any>(loginUrl, data)
           .pipe(
             tap(_ => this.isLoggedIn = true),
@@ -55,7 +55,7 @@ export class StudentService {
       }
     
       logout(): Observable<any> {
-        const logoutUrl = environment.baseUrl + '/student/logout';
+        const logoutUrl = environment.baseUrl + 'student/logout';
         return this.http.get<any>(logoutUrl)
           .pipe(
             tap(_ => this.isLoggedIn = false),
