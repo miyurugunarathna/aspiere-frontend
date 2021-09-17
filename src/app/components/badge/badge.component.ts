@@ -17,6 +17,7 @@ export class BadgeComponent implements OnInit {
   public badgeOne: Badges = new Badges;
   public addMessage: any;
   delID: any;
+  
 
   constructor(private badgeService: BadgeService, private router:Router) { }
 
@@ -113,8 +114,8 @@ export class BadgeComponent implements OnInit {
         console.log(response);
         let insideNotice = document.getElementById('insideNotice');
         if(insideNotice?.style.display) {
-          this.addMessage = response;
-          insideNotice.style.display = 'block';
+          //this.addMessage = response;
+          //insideNotice.style.display = 'block';
         }
         this.getBadges();
       },

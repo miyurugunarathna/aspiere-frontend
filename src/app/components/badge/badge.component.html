@@ -16,7 +16,7 @@
     </div>
 </div>
 
-<!-- <div class="row position-relative" style="z-index: 1; display: none;" id="insideNotice">
+<div class="row position-relative" style="z-index: 1; display: none;" id="insideNotice">
     <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 p-0 position-fixed bottom-0 end-0">
         <div class="row d-flex align-items-center bg_white p-3 m-4 rounded-3 gap-4" style="box-shadow: 0 0 15px 0 #77777777;">
             <div class="col-auto">
@@ -29,7 +29,8 @@
                 <a class="cursor_p" (click)="onDismiss('insideNotice')"><img src="/assets/images/icons/icon_close.svg" alt="mdo" width="15" height="15"></a>
             </div>
         </div>
-    </div> -->
+    </div>
+</div>
 
 <div class= "body">
 <div class="container-fluid" id="main-container">
@@ -44,7 +45,7 @@
             </div>
         </div>
         <br><br><br>
-        <div  class="col-6 col-md-4 col-lg-3 col-xl-8" style="box-shadow: 1px 0 20px 0 #c7c4c438;">
+        <div  class="col-6 col-md-4 col-lg-3 col-xl-8">
         <form action="">
             <div class="row t_subtitle mb-4 c_rich_black">
                 
@@ -74,6 +75,9 @@
                 <span class="border-bottom"></span>
                 
             </div>
+            <div *ngIf="badges.length == 0" class="data_list rounded-3 bg_white p-3 text-center">
+                No badges to show. Please add one to show.
+            </div>
         
         </div>
     </div>
@@ -93,7 +97,7 @@
                 <form class="d-flex flex-column gap-4 c_rich_black" #addBadgeForm="ngForm" (ngSubmit)="addBadge(addBadgeForm)">
                     <div class="col">
                         <label class="t_pre_title form-label" for="badge_name">Badge Name</label>
-                        <input type="text" ngModel name="badgeName" required placeholder="" class="form-control border-white c_davys_grey" id="">
+                        <input type="text" ngModel name="badgeName"  placeholder="" class="form-control border-white c_davys_grey" id="">
                     </div>
                     <div class="col">
                         <label class="t_pre_title form-label" for="grade">Grade</label>
@@ -111,7 +115,7 @@
                         <label class="t_pre_title form-label" for="description">Description</label>
                         <input type="text" ngModel name="description" required placeholder="" class="form-control border-white c_davys_grey" id="">
                     </div>
-                    <button type="submit" [disabled]="addBadgeForm.invalid" id="btnAddOrUpdate" class="btn btn-primary rounded-pill t_button">CREATE</button>
+                    <button type="submit"  [disabled]="addBadgeForm.invalid" id="btnAddOrUpdate" class="btn btn-primary rounded-pill t_button">CREATE</button>
                 </form>
             </div>
             
