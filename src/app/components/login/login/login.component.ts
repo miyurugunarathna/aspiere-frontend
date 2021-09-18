@@ -44,7 +44,16 @@ export class LoginComponent implements OnInit {
           this.isLoggedIn = true;
           alert(res.token);
           alert(res.username);
-          this.router.navigate(['students']);
+          let val = form.value;
+          if (res.username == 'student@gmail.com') {
+            this.router.navigate([`app/classes`]);
+          }
+          if (res.username == 'teacher@gmail.com') {
+            this.router.navigate([`teacher/classes`]);
+          }
+          if (res.username == 'admin@gmail.com') {
+            this.router.navigate([`admin/registrations`]);
+          }
         }
       }, (err) => {
         console.log(err);

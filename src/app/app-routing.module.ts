@@ -20,6 +20,16 @@ const routes: Routes = [
     loadChildren: () => import('./layout/dashboard/dashboard.module').then(module => module.DashboardModule)
   },
 
+  {
+    path: 'admin',
+    loadChildren: () => import('./layout/admin/admin.module').then(module => module.AdminModule)
+  },
+
+  {
+    path: 'teacher',
+    loadChildren: () => import('./layout/teacher/teacher.module').then(module => module.TeacherModule)
+  },
+
   { path: 'student/all', component: StudentListComponent},
   { path: 'student/add', component: AddStudentComponent},
   { path: 'student/view/:id', component: ViewStudentComponent},

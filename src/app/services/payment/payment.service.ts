@@ -10,7 +10,7 @@ export class PaymentService {
 
   constructor(private http:HttpClient) { }
 
-  private apiURL = 'http://localhost:8085/api';
+  private apiURL = 'http://localhost:8080/api';
 
   public getPayments(): Observable<Payment[]> {
     return this.http.get<Payment[]>(`${this.apiURL}/payments`);

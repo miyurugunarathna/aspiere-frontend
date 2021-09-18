@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  selector: 'app-teacher-side',
+  templateUrl: './teacher-side.component.html',
+  styleUrls: ['./teacher-side.component.css']
 })
-export class SidebarComponent implements OnInit {
+export class TeacherSideComponent implements OnInit {
 
   constructor(private router: Router) { }
 

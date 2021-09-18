@@ -32,6 +32,8 @@ import { ListNoticeComponent } from './components/notice/list-notice/list-notice
 import { StudentchatComponent } from './components/chat/studentchat/studentchat.component';
 import { TeacherchatComponent } from './components/chat/teacherchat/teacherchat.component';
 import { ListallexamComponent } from './components/exam/listallexam/listallexam.component';
+import { AdminModule } from './layout/admin/admin.module';
+import { TeacherModule } from './layout/teacher/teacher.module';
 
 @NgModule({
   declarations: [
@@ -82,6 +84,8 @@ import { ListallexamComponent } from './components/exam/listallexam/listallexam.
     BrowserAnimationsModule,
     DashboardModule,
     HttpClientModule,
+    AdminModule,
+    TeacherModule,
   ],
   providers: [ {
     provide: HTTP_INTERCEPTORS,

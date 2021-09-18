@@ -12,7 +12,7 @@ import { Badges } from '../models/badge/badge';
 })
 
 export class BadgeService {
-    private apiServerUrl = 'http://localhost:8085/api/';
+    private apiServerUrl = 'http://localhost:8080/api/';
 
     constructor (private http:HttpClient) {}
 

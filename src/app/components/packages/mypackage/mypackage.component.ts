@@ -19,7 +19,7 @@ public tpackageOne: Tpackage = new Tpackage;
 
   ngOnInit(): void {
     console.log(this.tpackageOne);
-    this.getPackage(10);
+    this.getPackage(28);
   }
 
 

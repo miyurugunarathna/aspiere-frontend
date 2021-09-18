@@ -10,7 +10,7 @@ export class TpackageService {
 
   constructor(private http:HttpClient) { }
 
-  private apiURL2 = 'http://localhost:8085/api';  
+  private apiURL2 = 'http://localhost:8080/api';  
 
   public getPackages(): Observable<Tpackage[]> {
     return this.http.get<Tpackage[]>(`${this.apiURL2}/packages`);

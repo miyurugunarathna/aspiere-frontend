@@ -10,7 +10,7 @@ export class FeeService {
 
   constructor(private http:HttpClient) { }
 
-  private apiURL = 'http://localhost:8085/api';
+  private apiURL = 'http://localhost:8080/api';
 
   public getFees(): Observable<Fee[]> {
     return this.http.get<Fee[]>(`${this.apiURL}/fees`);

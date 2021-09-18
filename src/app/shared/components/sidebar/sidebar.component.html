@@ -2,43 +2,43 @@
 <div class="d-flex flex-column p-3 bg_">
     <ul class="nav nav-pills t_subtitle d-flex flex-column mb-auto">
         <li class="nav-item">
-        <a href="#" class="nav-link c_medium_blue" aria-current="page">
+        <a [routerLink]="['/app/classes']" routerLinkActive="c_medium_blue" class="nav-link c_davys_grey">
             <img src="/assets/images/icons/icon_class.png" alt="mdo" width="30" height="30">
             Classes
         </a>
         </li>
         <li>
-        <a href="#" class="nav-link c_davys_grey">
+        <a [routerLink]="['/app/exams/listallexam/T01']" routerLinkActive="c_medium_blue" class="nav-link c_davys_grey">
             <img src="/assets/images/icons/icon_exams.png" alt="mdo" width="30" height="30">
             Exams
         </a>
         </li>
         <li>
-        <a href="#" class="nav-link c_davys_grey">
+        <a [routerLink]="['/app/list-result/T01']" routerLinkActive="c_medium_blue" class="nav-link c_davys_grey">
             <img src="/assets/images/icons/icon_grading.png" alt="mdo" width="30" height="30">
             Grading
         </a>
         </li>
         <li>
-        <a href="#" class="nav-link c_davys_grey">
+        <a [routerLink]="['/app/badge']" routerLinkActive="c_medium_blue" class="nav-link c_davys_grey">
             <img src="/assets/images/icons/icon_badge.png" alt="mdo" width="30" height="30">
             Badge
         </a>
         </li>
         <li>
-        <a href="#" class="nav-link c_davys_grey">
+        <a [routerLink]="['/app/studentchat/S01']" routerLinkActive="c_medium_blue" class="nav-link c_davys_grey">
             <img src="/assets/images/icons/Icon_qna.png" alt="mdo" width="30" height="30">
             Q &  A
         </a>
         </li>
         <li>
-        <a href="#" class="nav-link c_davys_grey">
+        <a [routerLink]="['/app/payment']" routerLinkActive="c_medium_blue" class="nav-link c_davys_grey">
             <img src="/assets/images/icons/icon_payment.png" alt="mdo" width="30" height="30">
             Payment
         </a>
         </li>
         <li>
-        <a href="#" class="nav-link c_davys_grey">
+        <a [routerLink]="['/app/notices/list-notice']" routerLinkActive="c_medium_blue" class="nav-link c_davys_grey">
             <img src="/assets/images/icons/icon_notice.png" alt="mdo" width="30" height="30">
             Notice
         </a>
@@ -46,7 +46,7 @@
     </ul>
     <ul class="nav nav-pills t_subtitle d-flex flex-column">
         <li class="nav-item">
-        <a href="#" class="nav-link c_davys_grey" aria-current="page">
+        <a (click)="logout()" class="nav-link c_davys_grey cursor_p" aria-current="page">
             <img src="/assets/images/icons/icon_logout.png" alt="mdo" width="30" height="30">
             Logout
         </a>

@@ -35,6 +35,7 @@ import { StudentchatComponent } from 'src/app/components/chat/studentchat/studen
 import { TeacherchatComponent } from 'src/app/components/chat/teacherchat/teacherchat.component';
 import { MypackageComponent } from 'src/app/components/packages/mypackage/mypackage.component';
 import { ChangepackageComponent } from 'src/app/components/packages/changepackage/changepackage.component';
+import { ClassComponent } from 'src/app/components/class/class.component';
 
 const routes: Routes = [
   {
@@ -44,7 +45,6 @@ const routes: Routes = [
       {
         path: '',
         children: [
-          { path: '', component: TestComponent },
           { path: 'payment', component: PaymentComponent },
           { path: 'exams',component:ExamsComponent},
           { path: 'exams/create-exam/:teacherID',component:CreateExamComponent},
@@ -52,7 +52,7 @@ const routes: Routes = [
           { path: 'exams/create-quiz/:teacherID',component:CreateQuizComponent},
           { path: 'exams/list-quiz/:teacherID',component:ListQuizComponent},
           { path: 'exams/addresult/:teacherID',component:AddresultComponent},
-          { path: 'exams/list-result/:teacherID',component:ListResultComponent},
+          { path: 'list-result/:teacherID',component:ListResultComponent},
           { path: 'enroll-exam',component:EnrollExamComponent},
           { path: 'enroll-exam/attend-exam/:key/:id',component:AttendExamComponent},
           { path: 'exams/display-all-marks/:key',component:DisplayAllMarksComponent},
@@ -68,7 +68,6 @@ const routes: Routes = [
           { path: 'teacher/add', component: AddTeacherComponent },
           { path: 'teacher/view', component: ViewTeacherComponent},
           { path: 'teacher/edit', component: EditTeacherComponent},
-          { path: 'login', component: LoginComponent},
           { path: 'payConfirm', component: PayConfirmComponent},
           { path: 'packages', component: TpackagesComponent },
           { path: 'notices',component:NoticesComponent},
@@ -78,6 +77,7 @@ const routes: Routes = [
           { path: 'teacherchat/:tid',component:TeacherchatComponent},
           { path: 'mypackage', component: MypackageComponent },
           { path: 'changepackage', component: ChangepackageComponent },
+          { path: 'classes', component: ClassComponent },
         ]
       }
     ]

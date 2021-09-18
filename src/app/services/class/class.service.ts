@@ -11,7 +11,7 @@ export class ClassService {
 
   constructor(private http:HttpClient) { }
 
-  private apiURL = 'http://localhost:8085/api';
+  private apiURL = 'http://localhost:8080/api';
 
   public getClasses(): Observable<Class[]> {
     return this.http.get<Class[]>(`${this.apiURL}/classes`);

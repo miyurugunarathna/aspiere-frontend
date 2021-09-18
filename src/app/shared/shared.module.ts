@@ -4,6 +4,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { AdminSideComponent } from './components/sidebar/admin-side/admin-side.component';
+import { TeacherSideComponent } from './components/sidebar/teacher-side/teacher-side.component';
 
 
 
@@ -12,6 +14,8 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
+    AdminSideComponent,
+    TeacherSideComponent,
   ],
   imports: [
     CommonModule,
@@ -20,7 +24,9 @@ import { RouterModule } from '@angular/router';
   exports: [
     HeaderComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    AdminSideComponent,
+    TeacherSideComponent,
   ]
 })
 export class SharedModule { }
