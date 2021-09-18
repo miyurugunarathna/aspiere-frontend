@@ -10,7 +10,7 @@ export class CoursesService {
 
   constructor(private http:HttpClient) { }
 
-  private apiURL = 'http://localhost:8085/api';
+  private apiURL = 'http://localhost:8080/api';
 
   public getCourses(): Observable<Courses[]> {
     return this.http.get<Courses[]>(`${this.apiURL}/courses`);

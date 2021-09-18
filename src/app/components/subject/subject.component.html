@@ -45,6 +45,7 @@
   <div class="container" id="main-container">
     <div class="row">
     <div *ngFor="let subject of subject" class="col-md-6 col-xl-3">
+      <a [routerLink]="['/teacher/courses']" class="nav-link c_davys_grey">
       <div class="card m-b-30">
         <div class="row" >
           <div class="latest-img-wrapper">
@@ -66,6 +67,7 @@
                   
       </div>
     </div>
+    </a>
     </div>
 
 

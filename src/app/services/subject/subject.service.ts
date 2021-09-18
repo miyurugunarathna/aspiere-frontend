@@ -10,7 +10,7 @@ export class SubjectService {
 
   constructor(private http:HttpClient) { }
 
-  private apiURL = 'http://localhost:8085/api';
+  private apiURL = 'http://localhost:8080/api';
 
   public getSubjects(): Observable<Subject[]> {
     return this.http.get<Subject[]>(`${this.apiURL}/subject`);
