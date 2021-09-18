@@ -1,6 +1,6 @@
 import { BadgeComponent } from './../../components/badge/badge.component';
 import { FreeCardComponent } from './../../components/free-card/free-card.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FeesComponent } from 'src/app/components/fees/fees.component';
 import { PayConfirmComponent } from 'src/app/components/payment/pay-confirm/pay-confirm.component';
@@ -35,6 +35,7 @@ import { StudentchatComponent } from 'src/app/components/chat/studentchat/studen
 import { TeacherchatComponent } from 'src/app/components/chat/teacherchat/teacherchat.component';
 import { MypackageComponent } from 'src/app/components/packages/mypackage/mypackage.component';
 import { ChangepackageComponent } from 'src/app/components/packages/changepackage/changepackage.component';
+
 
 const routes: Routes = [
   {
