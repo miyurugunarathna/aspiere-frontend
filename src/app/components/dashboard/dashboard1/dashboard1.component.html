@@ -1,0 +1,145 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+   <div class="row">
+      <div class="col-md-12">
+         <div id="content" class="content content-full-width">
+            <!-- begin profile -->
+            <div class="profile">
+               <div class="profile-header">
+                  <!-- BEGIN profile-header-cover -->
+                  <div class="profile-header-cover"></div>
+                  <!-- END profile-header-cover -->
+                  <!-- BEGIN profile-header-content -->
+                  <div class="profile-header-content" style="height: 300px;">
+                     <!-- BEGIN profile-header-img -->
+                    
+                     <!-- END profile-header-img -->
+                     <!-- BEGIN profile-header-info -->
+                   
+                     <!-- END profile-header-info -->
+                  </div>
+                  <!-- END profile-header-content -->
+                  <!-- BEGIN profile-header-tab -->
+                  
+                  <!-- END profile-header-tab -->
+               </div>
+            </div>
+            <!-- end profile -->
+            <!-- begin profile-content -->
+         </div>
+
+         <div class="card">
+            <div class="header">
+               <ul class="profile-header-tab nav nav-tabs" style="background-color: lightgray;">
+                  <li class="nav-item"><img class="img-fluid img-thumbnail" src="https://www.freeiconspng.com/uploads/megaphone-icon-0.png" alt="Awesome Image"  style="width: 60px; height: 60px;margin-right: 50px;"></li>
+                  <li class="nav-item" style="margin-top: 11px;"><h3>Latest Announcements</h3></li>
+                 
+               </ul>
+            </div>
+            <div class="body">
+                <ul class="comment-reply list-unstyled">
+                    <li class="row clearfix" *ngFor="let notice of notices">
+                        <div class="icon-box col-md-2 col-4"><img class="img-fluid img-thumbnail" src="https://www.pngitem.com/pimgs/m/13-139806_post-it-transparent-background-hd-png-download.png" alt="Awesome Image"  style="height: 100px;width: 100px;"></div>
+                        <div class="text-box col-md-10 col-8 p-l-0 p-r0">
+                            <h5 class="m-b-0">{{notice.title}}</h5>
+                            <p>{{notice.description}}. </p>
+                            <ul class="list-inline">
+                                <li><a href="javascript:void(0);">{{notice.date}}</a></li>
+                               
+                            </ul>
+                        </div>
+                    </li>
+                    
+                           </ul>
+                        </div>
+                       </div>
+        </div>
+
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container bootstrap snippets bootdeys">
+      <div class="row text-center">
+        <div class="col-sm-4">
+          <div class="contact-detail-box">
+            <i class="fa fa-th fa-3x text-colored"></i>
+            <h4>Get In Touch</h4>
+            <abbr title="Phone">P:</abbr> (123) 456-7890<br>
+            E: <a href="mailto:email@email.com" class="text-muted">email@email.com</a>
+          </div>
+        </div><!-- end col -->
+
+        <div class="col-sm-4">
+          <div class="contact-detail-box">
+            <i class="fa fa-map-marker fa-3x text-colored"></i>
+            <h4>Our Location</h4>
+
+            <address>
+            795 Folsom Ave, Suite 600<br>
+            San Francisco, CA 94107<br>
+          </address>
+          </div>
+        </div><!-- end col -->
+
+        <div class="col-sm-4">
+          <div class="contact-detail-box" >
+            <i class="fa fa-book fa-3x text-colored"></i>
+            <h4>24x7 Support</h4>
+
+            <p>Industry's standard dummy text.</p>
+            <h4 class="text-muted">1234 567 890</h4>
+          </div>
+        </div><!-- end col -->
+
+      </div>
+      <!-- end row -->
+
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed/v1/place?q=New+York+University&amp;key=AIzaSyBSFRN6WWGYwmFi498qXXsD2UwkbmD74v4" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width: 100%; height: 360px;"></iframe>
+          </div>
+        </div><!-- end col -->
+
+        <!-- Contact form -->
+        <div class="col-sm-6">
+          <form role="form" name="ajax-form" id="ajax-form" #addForm="ngForm" (ngSubmit)="onAddEnquiry(addForm)">
+
+            <div class="form-group">
+              <label for="name2">Name</label>
+              <input class="form-control"  ngModel  id="name2" name="name" onblur="if(this.value == '') this.value='Name'" onfocus="if(this.value == 'Name') this.value=''" type="text" value="Name">
+              <div class="error" id="err-name" style="display: none;">Please enter name</div>
+            </div> <!-- /Form-name -->
+
+            <div class="form-group">
+              <label for="email2">Email</label>
+              <input class="form-control" ngModel  id="email2" name="email" type="text" onfocus="if(this.value == 'E-mail') this.value='';" onblur="if(this.value == '') this.value='E-mail';" value="E-mail">
+              <div class="error" id="err-emailvld" style="display: none;">E-mail is not a valid format</div> 
+            </div> <!-- /Form-email -->
+
+            <div class="form-group">
+              <label for="message2">Message</label>
+              <textarea class="form-control" ngModel id="message2" name="message" rows="5" onblur="if(this.value == '') this.value='Message'" onfocus="if(this.value == 'Message') this.value=''">Message</textarea>
+
+              <div class="error" id="err-message" style="display: none;">Please enter message</div>
+            </div> <!-- /col -->
+
+            <div class="row">            
+              <div class="col-xs-12">
+                <div id="ajaxsuccess" class="text-success">E-mail was successfully sent.</div>
+                <div class="error" id="err-form" style="display: none;">There was a problem validating the form please check!</div>
+                <div class="error" id="err-timedout">The connection to the server timed out!</div>
+                <div class="error" id="err-state"></div>
+                <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary btn-shadow btn-rounded w-md" id="send">Submit</button>
+              </div> <!-- /col -->
+            </div> <!-- /row -->
+
+          </form> <!-- /form -->
+        </div> <!-- end col -->
+
+      </div> <!-- end row -->
+          
+    </div>
+
+      </div>
+   </div>
+

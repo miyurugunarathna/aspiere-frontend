@@ -86,4 +86,35 @@ export class ListResultComponent implements OnInit {
     );
  }
 
+
+ printReport(): void{
+  let dataType = 'application/vnd.ms-excel.sheet.macroEnabled.12';
+  let tableSelect = document.getElementById('result');
+  let tableHtml = tableSelect?.outerHTML.replace(/ /g,'%20');
+  let downloadLink = document.createElement('a');
+  document.body.appendChild(downloadLink);
+  downloadLink.href = 'data:'+dataType+', '+tableHtml;
+  downloadLink.download = 'Assignment-Marks.xls';
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+}
+
+printReport2(): void{
+  window.print();
+}
+
+public searchResult(Key:string):void{
+  const rest : Result[] =[];
+  for(const results of this.result){
+     if(results.term.toLowerCase().indexOf(Key.toLowerCase())!==-1 || results.studentID.toLowerCase().indexOf(Key.toLowerCase())!==-1 || results.status.toLowerCase().indexOf(Key.toLowerCase())!==-1 ){
+       rest.push(results);
+     }
+  }
+  this.result=rest;
+  if(rest.length ===0 || !Key){
+    this.getAllByTeacherID(this.sid);
+  }
+}
+
+
 }

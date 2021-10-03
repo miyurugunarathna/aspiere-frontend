@@ -18,6 +18,8 @@ import { CreateExamComponent } from './components/exam/create-exam/create-exam.c
 import { CreateQuizComponent } from './components/quiz/create-quiz/create-quiz.component';
 import { ListQuizComponent } from './components/quiz/list-quiz/list-quiz.component';
 import { ExamsComponent } from './components/exams/exams.component';
+import { EnrollExamComponent } from './components/view-exam/enroll-exam/enroll-exam.component';
+import { DisplayAllMarksComponent } from './components/view-exam/display-all-marks/display-all-marks.component';
 import { ListResultComponent } from './components/result/list-result/list-result.component';
 import { AddresultComponent } from './components/result/addresult/addresult.component';
 import { AttendExamComponent } from './components/view-exam/attend-exam/attend-exam.component';
@@ -34,6 +36,12 @@ import { TeacherchatComponent } from './components/chat/teacherchat/teacherchat.
 import { ListallexamComponent } from './components/exam/listallexam/listallexam.component';
 import { AdminModule } from './layout/admin/admin.module';
 import { TeacherModule } from './layout/teacher/teacher.module';
+import { ListquizmarksComponent } from './components/quiz/listquizmarks/listquizmarks.component';
+import { ListassignmentmarksComponent } from './components/quiz/listassignmentmarks/listassignmentmarks.component';
+import { Dashboard1Component } from './components/dashboard/dashboard1/dashboard1.component';
+import { ListallenquiriesComponent } from './components/notice/listallenquiries/listallenquiries.component';
+import { GradingComponent } from './components/Grading/grading/grading.component';
+import { ListStudentResultComponent } from './components/result/list-student-result/list-student-result.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +55,8 @@ import { TeacherModule } from './layout/teacher/teacher.module';
     EditStudentComponent,
     AddTeacherComponent,
     ExamsComponent,
+    EnrollExamComponent,
+    DisplayAllMarksComponent,
     CreateExamComponent,
     ListallexamComponent,
     AttendExamComponent,
@@ -63,6 +73,12 @@ import { TeacherModule } from './layout/teacher/teacher.module';
     ListNoticeComponent,
     StudentchatComponent,
     TeacherchatComponent,
+    ListquizmarksComponent,
+    ListassignmentmarksComponent,
+    Dashboard1Component,
+    ListallenquiriesComponent,
+    GradingComponent,
+    ListStudentResultComponent,
   ],
   imports: [
     HttpClientModule,
@@ -78,6 +94,17 @@ import { TeacherModule } from './layout/teacher/teacher.module';
       {path: 'teacher/view', component: ViewTeacherComponent},
       {path: 'teacher/edit', component: EditTeacherComponent},
       {path: 'login', component: LoginComponent},
+      { path: 'exams',component:ExamsComponent},
+      { path: 'exams/create-exam/:teacherID',component:CreateExamComponent},
+      { path: 'exams/listallexam/:teacherID',component:ListallexamComponent},
+      { path: 'exams/create-quiz/:teacherID',component:CreateQuizComponent},
+      { path: 'exams/list-quiz/:teacherID',component:ListQuizComponent},
+      { path: 'exams/addresult/:teacherID',component:AddresultComponent},
+      { path: 'list-result/:teacherID',component:ListResultComponent},
+      { path: 'notices/listallenquiries',component:ListallenquiriesComponent},
+      { path: 'enroll-exam',component:EnrollExamComponent},
+      { path: 'enroll-exam/attend-exam/:key/:id',component:AttendExamComponent},
+      { path: 'exams/display-all-marks/:key',component:DisplayAllMarksComponent}
     ]),
     AppRoutingModule,
     BrowserModule,

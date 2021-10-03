@@ -36,7 +36,12 @@ import { TeacherchatComponent } from 'src/app/components/chat/teacherchat/teache
 import { MypackageComponent } from 'src/app/components/packages/mypackage/mypackage.component';
 import { ChangepackageComponent } from 'src/app/components/packages/changepackage/changepackage.component';
 import { ClassComponent } from 'src/app/components/class/class.component';
-
+import { ListquizmarksComponent } from 'src/app/components/quiz/listquizmarks/listquizmarks.component';
+import { ListassignmentmarksComponent } from 'src/app/components/quiz/listassignmentmarks/listassignmentmarks.component';
+import { Dashboard1Component } from 'src/app/components/dashboard/dashboard1/dashboard1.component';
+import { ListallenquiriesComponent } from 'src/app/components/notice/listallenquiries/listallenquiries.component';
+import { GradingComponent } from 'src/app/components/Grading/grading/grading.component';
+import { ListStudentResultComponent } from 'src/app/components/result/list-student-result/list-student-result.component';
 
 const routes: Routes = [
   {
@@ -48,15 +53,20 @@ const routes: Routes = [
         children: [
           { path: 'payment', component: PaymentComponent },
           { path: 'exams',component:ExamsComponent},
+          { path: 'grading',component:GradingComponent},
           { path: 'exams/create-exam/:teacherID',component:CreateExamComponent},
           { path: 'exams/listallexam/:teacherID',component:ListallexamComponent},
           { path: 'exams/create-quiz/:teacherID',component:CreateQuizComponent},
           { path: 'exams/list-quiz/:teacherID',component:ListQuizComponent},
           { path: 'exams/addresult/:teacherID',component:AddresultComponent},
           { path: 'list-result/:teacherID',component:ListResultComponent},
+          { path: 'exams/listquizmarks',component:ListquizmarksComponent},
+          { path: 'exams/liststudentresult',component:ListStudentResultComponent},
+          { path: 'exams/listassignmentmarks/:teacherID',component:ListassignmentmarksComponent},
           { path: 'enroll-exam',component:EnrollExamComponent},
           { path: 'enroll-exam/attend-exam/:key/:id',component:AttendExamComponent},
-          { path: 'exams/display-all-marks/:key',component:DisplayAllMarksComponent},
+          { path: 'exams/display-all-marks/:key/:id',component:DisplayAllMarksComponent},
+          { path: 'dashboard/dashboard1',component:Dashboard1Component},
           { path: 'badge', component: BadgeComponent },
           { path: 'free-card', component: FreeCardComponent},
           { path: 'payment/view', component: ViewPaymentComponent },
@@ -74,6 +84,7 @@ const routes: Routes = [
           { path: 'notices',component:NoticesComponent},
           { path: 'notices/create-notice',component:CreateNoticeComponent},
           { path: 'notices/list-notice',component:ListNoticeComponent},
+          { path: 'notices/listallenquiries',component:ListallenquiriesComponent},
           { path: 'studentchat/:sid',component:StudentchatComponent},
           { path: 'teacherchat/:tid',component:TeacherchatComponent},
           { path: 'mypackage', component: MypackageComponent },

@@ -1,0 +1,51 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="form-box">
+<br><br><br>
+<table>
+    <div style="margin-left: 800px;">
+       <th>  <div class="chat-search-box">
+        <div class="input-group">
+            <input type="search" (ngModelChange)="searchResult(Key.value)"  #Key="ngModel"  ngModel  id="searchName" name="Key"   class="form-control" placeholder="Search">
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-primary">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div> </th>
+    <th><button (click)="printReport2()"  type="button" class="btn btn-primary" >Print Report As PDF</button></th>
+    <th><button (click)="printReport()"  type="button" class="btn btn-primary" >Print Report As Excel</button></th>
+</div>
+</table>
+
+
+
+<div class="container bootstrap snippets bootdey">
+    <div class="table-responsive">
+        <!-- PROJECT TABLE -->
+        <table class="table colored-header datatable project-list" id="assignment">
+            <thead>
+                <tr>
+                    <th>StudentID</th>
+                    <th>Term</th>
+                    <th>Assignment Marks</th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let results of result">
+                    <td>{{results.studentID}}</td>
+                    <td>{{results.term}}</td>
+                    <td>{{results.assignmentMarks}}</td>
+                    
+                   
+                    
+                </tr>
+             
+            </tbody>
+        </table>
+        <!-- END PROJECT TABLE -->
+    </div>
+</div>
+</div>
+

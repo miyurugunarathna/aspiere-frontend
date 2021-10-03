@@ -57,7 +57,7 @@ font-size: 16px;
 font-weight: bold;
 margin-left: 400px;
 border-radius: 30px;
-background: linear-gradient(to right,#ff105f,#ffad06);
+background: linear-gradient(to right,#103cff,#103cff);
 }
 .setbtn{
     padding: 10px 20px;
@@ -374,3 +374,14 @@ body .fc-widget-header a {
     color: #666;
     margin: 0;
 }
+
+.timer {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.4em;
+    letter-spacing: -1px;
+  }
+  .timer span {
+    font-size: 2em;
+    margin: 0 3px 0 15px;
+  }
