@@ -21,9 +21,13 @@
             <br><br>
            
         </div>
-        
+        <br><br>
+        <div class="profile-header-img" style="margin-left: 500px; width: 300px;height: 300px;">
+            <img src="https://www.pngitem.com/pimgs/m/18-182350_gold-cup-trophy-clipart-png-image-free-download.png" alt="" />
+        </div>
+       
 
-        <br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
         <div class="container bootstrap snippets bootdey">
             <div class="table-responsive">
@@ -31,10 +35,10 @@
                 <table class="table colored-header datatable project-list">
                     <thead>
                         <tr>
-                            <th>Title</th>
-                            <th>Date Start</th>
-                            <th>Days to Deadline</th>
-                            <th>Progress</th>
+                            <th>studentID</th>
+                            <th>Exam Key</th>
+                            <th>Status</th>
+                            <th>Quiz Marks</th>
                           
                         </tr>
                     </thead>
@@ -42,7 +46,7 @@
                         <tr  *ngFor="let marks of  markses">
                             <td>{{marks.sid}}</td>
                             <td>{{marks.key}}</td>
-                            <td>{{marks.mid}}</td>
+                            <td>finished attempt</td>
                             
                             <td><span class="label label-warning">{{marks. q_marks}}</span></td>
                             

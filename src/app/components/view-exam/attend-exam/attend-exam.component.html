@@ -24,7 +24,8 @@
                 </div>
                 <br><br>
                
-            </div>
+            </div><br>
+       
             <br><br><br>
     <form #addForm="ngForm" (ngSubmit)="onAddAnswer(addForm)" >
         <div *ngFor="let quiz of quizzes let i= index">
@@ -46,7 +47,7 @@
         <br>
         <div>
             <div class="buttnreg">
-                <input   [disabled]="addForm.invalid"  type="submit" class="addbtn" id="sub" name="sub" value="Add">
+                <input   [disabled]="addForm.invalid"  type="submit" class="addbtn" id="sub" name="sub" value="Submit">
                 
             </div>
             {{key}}<br>

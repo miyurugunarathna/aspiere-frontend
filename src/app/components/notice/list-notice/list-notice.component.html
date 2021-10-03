@@ -114,4 +114,59 @@
 </div>
     </div>
 </div>
+</div>
+
+<br><br><br>
+<table>
+    <div style="margin-left: 1000px;">
+
+       <th><div class="chat-search-box">
+            <div class="input-group">
+                <input type="search" (ngModelChange)="searchResult(Key.value)"  #Key="ngModel"  ngModel  id="searchName" name="Key"   class="form-control" placeholder="Search">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-primary">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div> </th> 
+    <th><button (click)="printReport2()"  type="button" class="btn btn-primary" >Print Report As PDF</button></th>
+    <th><button (click)="printReport()"  type="button" class="btn btn-primary" >Print Report As Excel</button></th>
+</div>
+</table>
+
+
+
+<div class="container bootstrap snippets bootdey">
+    <div class="table-responsive">
+        <!-- PROJECT TABLE -->
+        <table class="table colored-header datatable project-list" id="notice">
+            <thead>
+                <tr>
+                    <th>NoticeID</th>
+                    <th>Date</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let notice of notices">
+                    <td>{{notice.noticeID}}</td>
+                    <td>{{notice.date}}</td>
+                    <td>{{notice.title}}</td>
+                    <td>{{notice.description}}</td>
+                    
+                   
+                    
+                </tr>
+             
+            </tbody>
+        </table>
+        <!-- END PROJECT TABLE -->
+    </div>
+</div>
+
+
+</div>
     
