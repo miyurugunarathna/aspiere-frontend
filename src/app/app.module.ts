@@ -34,6 +34,13 @@ import { TeacherchatComponent } from './components/chat/teacherchat/teacherchat.
 import { ListallexamComponent } from './components/exam/listallexam/listallexam.component';
 import { AdminModule } from './layout/admin/admin.module';
 import { TeacherModule } from './layout/teacher/teacher.module';
+import { StudentclassComponent } from './components/studentclass/studentclass.component';
+import { StudentsubjectComponent } from './components/studentsubject/studentsubject.component';
+import { StudentcoursesComponent } from './components/studentcourses/studentcourses.component';
+import { CoursematerialComponent } from './components/coursematerial/coursematerial.component';
+import { TeachersubjectComponent } from './components/teachersubject/teachersubject.component';
+import { TeacherclassComponent } from './components/teacherclass/teacherclass.component';
+
 
 @NgModule({
   declarations: [
@@ -63,6 +70,13 @@ import { TeacherModule } from './layout/teacher/teacher.module';
     ListNoticeComponent,
     StudentchatComponent,
     TeacherchatComponent,
+    StudentclassComponent,
+    StudentsubjectComponent,
+    StudentcoursesComponent,
+    CoursematerialComponent,
+    TeachersubjectComponent,
+    TeacherclassComponent,
+ 
   ],
   imports: [
     HttpClientModule,

@@ -36,6 +36,10 @@ import { TeacherchatComponent } from 'src/app/components/chat/teacherchat/teache
 import { MypackageComponent } from 'src/app/components/packages/mypackage/mypackage.component';
 import { ChangepackageComponent } from 'src/app/components/packages/changepackage/changepackage.component';
 import { ClassComponent } from 'src/app/components/class/class.component';
+import { StudentclassComponent } from 'src/app/components/studentclass/studentclass.component';
+import { StudentsubjectComponent } from 'src/app/components/studentsubject/studentsubject.component';
+import { StudentcoursesComponent } from 'src/app/components/studentcourses/studentcourses.component';
+import { CoursematerialComponent } from 'src/app/components/coursematerial/coursematerial.component';
 
 
 const routes: Routes = [
@@ -78,7 +82,10 @@ const routes: Routes = [
           { path: 'teacherchat/:tid',component:TeacherchatComponent},
           { path: 'mypackage', component: MypackageComponent },
           { path: 'changepackage', component: ChangepackageComponent },
-          { path: 'classes', component: ClassComponent },
+          { path: 'studentclass', component: StudentclassComponent },
+          { path: 'studentsubject', component: StudentsubjectComponent },
+          { path: 'studentcourses', component: StudentcoursesComponent },
+          { path: 'coursematerial', component: CoursematerialComponent },
         ]
       }
     ]
