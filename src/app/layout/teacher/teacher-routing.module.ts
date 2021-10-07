@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BadgeComponent } from 'src/app/components/badge/badge.component';
-import { ClassComponent } from 'src/app/components/class/class.component';
 import { CoursesComponent } from 'src/app/components/courses/courses.component';
 import { CreateExamComponent } from 'src/app/components/exam/create-exam/create-exam.component';
 import { ListallexamComponent } from 'src/app/components/exam/listallexam/listallexam.component';
@@ -14,7 +13,9 @@ import { CreateQuizComponent } from 'src/app/components/quiz/create-quiz/create-
 import { ListQuizComponent } from 'src/app/components/quiz/list-quiz/list-quiz.component';
 import { AddresultComponent } from 'src/app/components/result/addresult/addresult.component';
 import { ListResultComponent } from 'src/app/components/result/list-result/list-result.component';
-import { SubjectComponent } from 'src/app/components/subject/subject.component';
+import { TeacherclassComponent } from 'src/app/components/teacherclass/teacherclass.component';
+import { TeachercourseviewComponent } from 'src/app/components/teachercourseview/teachercourseview.component';
+import { TeachersubjectComponent } from 'src/app/components/teachersubject/teachersubject.component';
 import { TestComponent } from 'src/app/components/test/test.component';
 import { AttendExamComponent } from 'src/app/components/view-exam/attend-exam/attend-exam.component';
 import { DisplayAllMarksComponent } from 'src/app/components/view-exam/display-all-marks/display-all-marks.component';
@@ -35,9 +36,10 @@ const routes: Routes = [
         path: '',
         children: [
           { path: 'fees', component: FeesComponent },
-          { path: 'classes', component: ClassComponent },
-          { path: 'subject', component: SubjectComponent },
+          { path: 'teacherclass', component: TeacherclassComponent },
+          { path: 'teachersubject', component: TeachersubjectComponent },
           { path: 'courses', component: CoursesComponent },
+          { path: 'teachercourseview', component: TeachercourseviewComponent },  
           { path: 'exams', component: ExamsComponent },
           { path: 'grading',component:GradingComponent},
           { path: 'exams/create-exam/:teacherID',component:CreateExamComponent},

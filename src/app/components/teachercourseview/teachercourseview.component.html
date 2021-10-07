@@ -44,33 +44,47 @@
     </div>
 </div>
 
-<div class="col-12 col-sm-12 col-lg-8 col-xl-9">
-    <div *ngFor="let coursematerial of coursematerials" class="data_list rounded-3 bg_white">
-        <div class="border-start border-5 bc_medium_blue d-flex  justify-content-end p-3 align-items-center gap-4">
-            <a class="cursor_p" (click)="getCourseTopic( coursematerial.coursetopicID )"><img src="/assets/images/icons/icon_edit.png" alt="mdo" width="30" height="30"></a>
-            <a class="cursor_p" (click)="deleteConfime( coursematerial.coursetopicID )"><img src="/assets/images/icons/icon_delete.png" alt="mdo" width="30" height="30"></a>
+<div class="row gx-4 gy-4">  
+    <br>
+    <div class="col-12 col-sm-12 col-lg-8 col-xl-9">
+        <br>
+        <div class="data_list">
+            <br>
+            <div *ngFor="let coursematerial of coursematerials" class="data_list rounded-3 bg_white">  
+                <br>
+                <div class="border-start border-5 bc_medium_blue d-flex  justify-content-end p-3 align-items-center gap-4">
+                    <a class="cursor_p" (click)="getCourseTopic( coursematerial.coursetopicID )"><img src="/assets/images/icons/icon_edit.png" alt="mdo" width="30" height="30"></a>
+                    <a class="cursor_p" (click)="deleteConfime( coursematerial.coursetopicID )"><img src="/assets/images/icons/icon_delete.png" alt="mdo" width="30" height="30"></a>
+                </div>
+
+                <div class="row border_aspire position-relative">
+                    <h4> <div class="col p-3">{{ coursematerial.title }}</div></h4>
+                    <h5> <div class="col p-3">{{ coursematerial.description }}</div></h5>
+                    <div class="url">
+                        <i class="fa fa-file-pdf-o" type= "url"    style="font-size:20px;color:red"><a href="{{ coursematerial.url }}">Lecture.pdf</a></i>
+                       </div>
+                       <br><br>
+                       <div class="url">
+                        <i class="fa fa-file-pdf-o" type= "url"    style="font-size:20px;color:red"><a href="{{ coursematerial.url }}">Tutorial.pdf</a></i>
+                       </div>
+                    
+                </div>
+                <span class="border-bottom"></span>
+            </div>
+            <div *ngIf="coursematerials.length == 0" class="data_list rounded-3 bg_white p-3 text-center">
+                No materials to show. Please add one to show.
+            </div>
         </div>
-       <h4> <div class="col p-3">{{ coursematerial.title }}</div></h4>
-       <video width="600" height="300" controls>
-        <source src="/assets/videos/1.mp4" type="video/mp4">
-      </video>
-       <h5> <div class="col p-3">{{ coursematerial.description }}</div></h5>
-       <div class="url">
-        <i class="fa fa-file-pdf-o" style="font-size:20px;color:red"><a href="{{ coursematerial.url }}">Tutorial 01.pdf</a></i>
-       </div>
- 
     </div>
-
-    <span class="border-bottom"></span>   
-</div>
-
 
 
 
 
 <div *ngIf="coursematerialOne.coursetopicID == ''; else UpdateBox" class="col-12 col-sm-12 col-lg-4 col-xl-3">
+    <br><br>
     <div class="row mb-4">
-        <span id="addOrUpdateCoursematerial" class="t_subtitle c_rich_black">Add New Material</span>
+        <br>
+        <span id="addOrUpdateFee" class="t_subtitle c_rich_black">Add New Fee</span>
     </div>
     <form class="d-flex flex-column gap-4 c_rich_black" #addCoursematerialForm="ngForm" (ngSubmit)="addCourseTopic(addCoursematerialForm)">
         <div class="col">
@@ -83,12 +97,18 @@
         </div>
         <div class="col">
             <label class="t_pre_title form-label" for="url">URL</label>
-            <input type="text" ngModel name="url" required placeholder="Default" class="form-control border-white c_davys_grey" id="">
+            <input type="url" ngModel name="url" required placeholder="" class="form-control border-white c_davys_grey" id="url">
         </div>
-
+        <div class="col">
+            <label class="t_pre_title form-label" for="url">URL</label>
+            <input type="url" ngModel name="url" required placeholder="" class="form-control border-white c_davys_grey" id="url">
+        </div>
         <button type="submit" [disabled]="addCoursematerialForm.invalid" id="btnAddOrUpdate" class="btn btn-primary rounded-pill t_button">Add</button>
     </form>
 </div>
+
+
+
 
 
 <ng-template #UpdateBox>
@@ -105,9 +125,15 @@
                 <label class="t_pre_title form-label" for="description">Description</label>
                 <input type="text" ngModel="{{ coursematerialOne.description }}" name="description"  required placeholder="Default" class="form-control border-white c_davys_grey" id="">
             </div>
+            
             <div class="col">
                 <label class="t_pre_title form-label" for="url">URL</label>
-                <input type="text" ngModel="{{ coursematerialOne.url }}" name="url"  required placeholder="Default" class="form-control border-white c_davys_grey" id="">
+                <input type="url" ngModel="{{ coursematerialOne.url }}" name="url"  required placeholder="Default" class="form-control border-white c_davys_grey" id="url">
+            </div>
+
+            <div class="col">
+                <label class="t_pre_title form-label" for="url">URL</label>
+                <input type="url" ngModel="{{ coursematerialOne.url }}" name="url"  required placeholder="Default" class="form-control border-white c_davys_grey" id="url">
             </div>
  
             <button type="submit" [disabled]="updateCoursematerialForm.invalid" id="btnAddOrUpdate" class="btn btn-primary rounded-pill t_button">Update</button>

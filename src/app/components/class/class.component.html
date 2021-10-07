@@ -28,7 +28,7 @@
                 <a class="cursor_p" (click)="onDismiss('insideNotice')"><img src="/assets/images/icons/icon_close.svg" alt="mdo" width="15" height="15"></a>
             </div>
         </div>
-    </div>
+      </div>
   </div>
   
   <div class="row t_subtitle mb-2">
@@ -81,7 +81,7 @@
         </div>
         <div class="col">
           <label class="t_pre_title form-label" for="created_date">Created Date</label>
-          <input type="text" ngModel name="createdDate" required placeholder="Default" class="form-control border-white c_davys_grey" id="">
+          <input type="date" ngModel name="createdDate" required placeholder="Default" class="form-control border-white c_davys_grey" id="">
       </div>
       <button type="submit" [disabled]="addClassForm.invalid" id="btnAdd" class="btn btn-primary rounded-pill t_button">Add</button>
     </form>

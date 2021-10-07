@@ -36,6 +36,12 @@ import { TeacherchatComponent } from './components/chat/teacherchat/teacherchat.
 import { ListallexamComponent } from './components/exam/listallexam/listallexam.component';
 import { AdminModule } from './layout/admin/admin.module';
 import { TeacherModule } from './layout/teacher/teacher.module';
+import { StudentclassComponent } from './components/studentclass/studentclass.component';
+import { StudentsubjectComponent } from './components/studentsubject/studentsubject.component';
+import { StudentcoursesComponent } from './components/studentcourses/studentcourses.component';
+import { CoursematerialComponent } from './components/coursematerial/coursematerial.component';
+import { TeachersubjectComponent } from './components/teachersubject/teachersubject.component';
+import { TeacherclassComponent } from './components/teacherclass/teacherclass.component';
 import { ListquizmarksComponent } from './components/quiz/listquizmarks/listquizmarks.component';
 import { ListassignmentmarksComponent } from './components/quiz/listassignmentmarks/listassignmentmarks.component';
 import { Dashboard1Component } from './components/dashboard/dashboard1/dashboard1.component';
@@ -73,12 +79,18 @@ import { ListStudentResultComponent } from './components/result/list-student-res
     ListNoticeComponent,
     StudentchatComponent,
     TeacherchatComponent,
+    StudentclassComponent,
+    StudentsubjectComponent,
+    StudentcoursesComponent,
+    CoursematerialComponent,
+    TeachersubjectComponent,
+    TeacherclassComponent,
     ListquizmarksComponent,
     ListassignmentmarksComponent,
     Dashboard1Component,
     ListallenquiriesComponent,
     GradingComponent,
-    ListStudentResultComponent,
+    ListStudentResultComponent
   ],
   imports: [
     HttpClientModule,

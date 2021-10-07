@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+<div class="row t_subtitle mb-2">
+  <div class="col">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item c_rich_black active" aria-current="page">#010001</li>
+          </ol>
+      </nav>
+  </div>
+</div>
+
+<div class="row gx-4 gy-4">  
+  <br>
+  <div class="col-12 col-sm-12 col-lg-8 col-xl-9">
+      <br>
+      <div class="data_list">
+          <br>
+          <div *ngFor="let coursematerial of coursematerials" class="data_list rounded-3 bg_white"> 
+              <div class="row border_aspire position-relative" >
+                  <h4> <div class="col p-3">{{ coursematerial.title }}</div></h4>
+                  <h5> <div class="col p-3">{{ coursematerial.description }}</div></h5>
+                  <div class="url">
+                      <i class="fa fa-file-pdf-o" type= "url"    style="font-size:20px;color:red"><a href="{{ coursematerial.url }}">Lecture.pdf</a></i>
+                     </div>
+                     <br><br>
+                     <div class="url">
+                      <i class="fa fa-file-pdf-o" type= "url"    style="font-size:20px;color:red"><a href="{{ coursematerial.url }}">Tutorial.pdf</a></i>
+                     </div> 
+              </div>
+              <span class="border-bottom" ></span>
+          </div>
+          <div *ngIf="coursematerials.length == 0" class="data_list rounded-3 bg_white p-3 text-center">
+              No materials to show. Please add one to show.
+          </div>
+      </div>
+  </div>

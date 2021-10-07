@@ -1,0 +1,36 @@
+<div class="row t_subtitle mb-2">
+  <div class="col">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item c_rich_black active" aria-current="page">Class</li>
+          </ol>
+      </nav>
+  </div>
+</div>
+
+
+<div class="container" id="main-container">
+    <div class="row">
+    <div *ngFor="let class of classes" class="col-md-4 col-xl-3">
+      <a [routerLink]="['/teacher/studentsubject']" class="nav-link c_davys_grey">
+      <a [routerLink]="['/app/studentsubject']" class="nav-link c_davys_grey">
+      <div class="card m-b-30">
+        <div class="card-body row">
+          <div class="col-6 card-title align-self-center mb-0">
+            <h5>{{class.className}}</h5>
+         </div>
+         <br><br>
+         <h6>5 subject</h6>
+         <ul class="images">
+          <a href=""><img src="/assets/images/class photo/1.jpg" alt="" width="32" height="32" class="rounded-circle"></a>
+          <a href=""><img src="/assets/images/class photo/2.jpg" alt="" width="27.72" height="32" class="rounded-circle"></a>
+          <a href=""><img src="/assets/images/class photo/3.jpg" alt="" width="27.72" height="32" class="rounded-circle"></a>
+          <a href=""><img src="/assets/images/class photo/4.jpg" alt="" width="27.72" height="32" class="rounded-circle"></a>
+       </ul>
+      </div>
+    </div>
+    </a>
+  </a>
+    </div>
+    </div>
+    </div>
