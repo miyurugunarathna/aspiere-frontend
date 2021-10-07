@@ -6,6 +6,7 @@ import { Notice } from '../models/notice';
 import { Question } from '../models/question';
 import { Reply } from '../models/reply';
 import { Enroll } from '../models/enrolltest2';
+import { Enquiry } from '../models/enquiry';
 
 @Injectable({
   providedIn: 'root'
@@ -88,5 +89,18 @@ export class NoticeService {
   public getTeacherdetails(teacherID:String):Observable<Enroll[]>{
     return this.http.get<Enroll[]>(`${this.apiServerUrl}/enroll/teacher/${teacherID}`);
   }
+
+
+  public createEnquiry(enquiry:Enquiry):Observable<Enquiry>{
+    return this.http.post<Enquiry>(`${this.apiServerUrl}/enquiries`,enquiry);
+  }
+  public deleteEnquiry(enquiryid:String):Observable<void> {
+    return this.http.delete<void>(`${this.apiServerUrl}/enquiries/${enquiryid}`);
+  }
+  public getAllEnquiry():Observable<Enquiry[]>{
+      return this.http.get<Enquiry[]>(`${this.apiServerUrl}/enquiries`);
+    
+  }
+
 
 }

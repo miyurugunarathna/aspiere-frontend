@@ -16,7 +16,9 @@ import { NgForm } from '@angular/forms';
 })
 export class DisplayAllMarksComponent implements OnInit {
   examKey="";
+  studentid="";
   public markses:Marks[] =[];
+  public markses2:Marks[] =[];
 
   constructor(private route: ActivatedRoute,private examService:ExamService ,private router:Router) { }
 
@@ -25,7 +27,14 @@ export class DisplayAllMarksComponent implements OnInit {
       let id:any =params.get('key');
       this.examKey=id;
     })
+
+    this.route.paramMap.subscribe(params => {
+      let nid:any =params.get('id');
+      this.studentid=nid;
+    })
+
     this.getAllByKey(this.examKey);
+    this.getAllBystudentID(this.studentid);
   }
 
 
@@ -40,6 +49,20 @@ export class DisplayAllMarksComponent implements OnInit {
       }
       );
       };
+
+
+
+      public getAllBystudentID(key:String):void{
+        this.examService.listmarksbystudentid(key).subscribe(
+          (response:Marks[])=>{
+            this.markses2 = response;
+          },
+          (error: HttpErrorResponse)=>{
+            alert(error.message);
+          }
+          );
+          };
+    
 
 
 }

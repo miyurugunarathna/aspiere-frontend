@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy   } from '@angular/core';
 import { Router , ActivatedRoute } from '@angular/router';
 import { ExamService } from 'src/app/services/exam.service';
 import { Exam } from 'src/app/models/exam';
@@ -6,6 +6,8 @@ import { Answer } from 'src/app/models/answer';
 import { Quiz } from 'src/app/models/quiz';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
+import { Subscription, interval } from 'rxjs';
+
 
 
 @Component({
@@ -17,6 +19,8 @@ export class AttendExamComponent implements OnInit {
   key="";
   studentID="";
   public quizzes:Quiz[] =[];
+  private subscription: Subscription;
+  
   constructor(private route: ActivatedRoute,private examService:ExamService ,private router:Router) { }
 
   ngOnInit(): void {
@@ -29,9 +33,12 @@ export class AttendExamComponent implements OnInit {
       let nid:any =params.get('id');
       this.studentID=nid;
     })
+
+   
    
     this.getAllByKey(this.key);
   }
+
 
   public getAllByKey(key:String):void{
     this.examService.getAllByKey(key).subscribe(
@@ -51,7 +58,7 @@ export class AttendExamComponent implements OnInit {
           (response: Answer)=>{
             console.log(response);
            this.onOpenModel('add');
-           this.router.navigate(['app/exams/display-all-marks',this.key]);
+           this.router.navigate(['app/exams/display-all-marks',this.key,this.studentID]);
            
           },
           (error:HttpErrorResponse)=>{
@@ -76,6 +83,8 @@ export class AttendExamComponent implements OnInit {
       container?.appendChild(button);
       button.click();
     }
+
+ 
 
 
 }

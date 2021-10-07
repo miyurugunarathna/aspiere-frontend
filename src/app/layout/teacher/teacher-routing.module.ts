@@ -21,6 +21,11 @@ import { AttendExamComponent } from 'src/app/components/view-exam/attend-exam/at
 import { DisplayAllMarksComponent } from 'src/app/components/view-exam/display-all-marks/display-all-marks.component';
 import { EnrollExamComponent } from 'src/app/components/view-exam/enroll-exam/enroll-exam.component';
 import { TeacherComponent } from './teacher.component';
+import { ListquizmarksComponent } from 'src/app/components/quiz/listquizmarks/listquizmarks.component';
+import { ListassignmentmarksComponent } from 'src/app/components/quiz/listassignmentmarks/listassignmentmarks.component';
+import { Dashboard1Component } from 'src/app/components/dashboard/dashboard1/dashboard1.component';
+import { GradingComponent } from 'src/app/components/Grading/grading/grading.component';
+import { TeacherchatComponent } from 'src/app/components/chat/teacherchat/teacherchat.component';
 
 const routes: Routes = [
   {
@@ -36,15 +41,20 @@ const routes: Routes = [
           { path: 'courses', component: CoursesComponent },
           { path: 'teachercourseview', component: TeachercourseviewComponent },  
           { path: 'exams', component: ExamsComponent },
+          { path: 'grading',component:GradingComponent},
           { path: 'exams/create-exam/:teacherID',component:CreateExamComponent},
           { path: 'exams/listallexam/:teacherID',component:ListallexamComponent},
           { path: 'exams/create-quiz/:teacherID',component:CreateQuizComponent},
           { path: 'exams/list-quiz/:teacherID',component:ListQuizComponent},
-          { path: 'addresult/:teacherID',component:AddresultComponent},
-          { path: 'list-result/:teacherID',component:ListResultComponent},
+          { path: 'exams/listquizmarks',component:ListquizmarksComponent},
+          { path: 'dashboard/dashboard1',component:Dashboard1Component},
+          { path: 'exams/listassignmentmarks/:teacherID',component:ListassignmentmarksComponent},
+          { path: 'exams/addresult/:teacherID',component:AddresultComponent},
+          { path: 'exams/list-result/:teacherID',component:ListResultComponent},
           { path: 'enroll-exam',component:EnrollExamComponent},
           { path: 'enroll-exam/attend-exam/:key/:id',component:AttendExamComponent},
-          { path: 'exams/display-all-marks/:key',component:DisplayAllMarksComponent},
+          { path: 'exams/display-all-marks/:key/:id',component:DisplayAllMarksComponent},
+          { path: 'teacherchat/:tid',component:TeacherchatComponent},
           { path: 'badge', component: BadgeComponent },
           { path: 'free-card', component: FreeCardComponent},
           { path: 'payment', component: TestComponent },

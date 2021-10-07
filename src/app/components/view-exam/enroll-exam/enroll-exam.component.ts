@@ -18,7 +18,7 @@ export class EnrollExamComponent implements OnInit {
   qnum=1;
   public quizzes:Quiz[] =[];
   private visible = true;
-  sid='T01';
+  sid='S01';
   
 
   constructor(private route: ActivatedRoute,private examService:ExamService ,private router:Router) { }

@@ -79,4 +79,35 @@ export class ListNoticeComponent implements OnInit {
  }
 
 
+ printReport(): void{
+  let dataType = 'application/vnd.ms-excel.sheet.macroEnabled.12';
+  let tableSelect = document.getElementById('notice');
+  let tableHtml = tableSelect?.outerHTML.replace(/ /g,'%20');
+  let downloadLink = document.createElement('a');
+  document.body.appendChild(downloadLink);
+  downloadLink.href = 'data:'+dataType+', '+tableHtml;
+  downloadLink.download = 'Assignment-Marks.xls';
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+}
+
+printReport2(): void{
+  window.print();
+}
+
+public searchResult(Key:string):void{
+  const rest : Notice[] =[];
+  for(const results of this.notices){
+     if(results.date.toLowerCase().indexOf(Key.toLowerCase())!==-1 ){
+       rest.push(results);
+     }
+  }
+  this.notices=rest;
+  if(rest.length ===0 || !Key){
+    this.getAll();
+  }
+}
+
+
+
 }

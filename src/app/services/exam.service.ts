@@ -53,7 +53,8 @@ export class ExamService {
   }
 
   public getStudentID(teacherID:String):Observable<Enroll[]>{
-    return this.http.get<Enroll[]>(`${this.apiServerUrl}/enroll/${teacherID}`);
+    return this.http.get<Enroll[]>(`${this.apiServerUrl}/enroll/teacher/${teacherID}`);
+  
   }
 
 
@@ -76,6 +77,12 @@ export class ExamService {
   }
 
   
+  public getResultByStudentID(studentID:String):Observable<Result[]>{
+    return this.http.get<Result[]>(`${this.apiServerUrl}/results/student/${studentID}`);
+  }
+
+
+  
   public addAnswer(answer:Answer):Observable<Answer>{
     return this.http.post<Answer>(`${this.apiServerUrl}/answers`,answer);
   }
@@ -95,6 +102,12 @@ export class ExamService {
   public addMarks(key:String):Observable<Marks[]>{
     return this.http.get<Marks[]>(`${this.apiServerUrl}/marks/${key}`);
   }
+
+  public listmarksbystudentid(sid:String):Observable<Marks[]>{
+    return this.http.get<Marks[]>(`${this.apiServerUrl}/marks/student/${sid}`);
+  }
+
+
 
 
 

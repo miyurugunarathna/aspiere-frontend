@@ -1,0 +1,44 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="form-box">
+<br><br><br>
+
+
+
+
+<div class="container bootstrap snippets bootdey">
+    <div class="table-responsive">
+        <!-- PROJECT TABLE -->
+        <table class="table colored-header datatable project-list" id="assignment">
+            <thead>
+                <tr>
+                    <th>StudentID</th>
+                    <th>Term</th>
+                    <th>Assignment Marks</th>
+                    <th>Quiz Marks</th>
+                    <th>Average</th>
+                    <th>Status</th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let results of result">
+                    <td>{{results.studentID}}</td>
+                    <td>{{results.term}}</td>
+                    <td>{{results.assignmentMarks}}</td>
+                    <td>{{results.quizMarks}}</td>
+                    <td>{{(results.assignmentMarks +results.quizMarks)/2}}</td>
+                    <td>{{results.status}}</td>
+                      
+                    
+                   
+                    
+                </tr>
+             
+            </tbody>
+        </table>
+        <!-- END PROJECT TABLE -->
+    </div>
+</div>
+</div>
+
+
