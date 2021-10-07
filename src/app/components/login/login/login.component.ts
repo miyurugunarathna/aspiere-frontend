@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Router } from '@angular/router';
+import { Person } from 'src/app/models/person';
 // import { ErrorStateMatcher } from '@angular/material/core';
 
 // /** Error when invalid control is dirty, touched, or submitted. */
@@ -26,12 +27,13 @@ export class LoginComponent implements OnInit {
   isLoginFailed = false;
   //matcher = new MyErrorStateMatcher();
   isLoadingResults = false;
+  person: any;
 
   constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      'email' : [null, Validators.required],
+      'userName' : [null, Validators.required],
       'password' : [null, Validators.required]
     });
   }
@@ -43,15 +45,15 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', res.token);
           this.isLoggedIn = true;
           alert(res.token);
-          alert(res.username);
-          let val = form.value;
-          if (res.username == 'student@gmail.com') {
+          this.person = this.getPerson(res.token);
+          console.log(this.person);
+          if (this.person.role == 'Student') {
             this.router.navigate([`app/classes`]);
           }
-          if (res.username == 'teacher@gmail.com') {
+          if (this.person.role == 'Teacher') {
             this.router.navigate([`teacher/classes`]);
           }
-          if (res.username == 'admin@gmail.com') {
+          if (this.person.sub == 'admin@gmail.com') {
             this.router.navigate([`admin/registrations`]);
           }
         }
@@ -65,6 +67,10 @@ export class LoginComponent implements OnInit {
 
   register() {
     this.router.navigate(['register']);
+  }
+
+  private getPerson(token: string) {
+    return JSON.parse(atob(token.split('.')[1]));
   }
 
 }

@@ -13,7 +13,7 @@ export class FeeService {
   private apiURL = 'http://localhost:8080/api';
 
   public getFees(): Observable<Fee[]> {
-    return this.http.get<Fee[]>(`${this.apiURL}/fees`);
+    return this.http.get<Fee[]>(`${this.apiURL}/fee/all`);
   }
 
   public getFee(feeID: string): Observable<Fee> {
