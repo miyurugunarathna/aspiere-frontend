@@ -1,0 +1,96 @@
+<div class="row t_subtitle mb-2">
+    <div class="col">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item c_rich_black active" aria-current="page">Payment Details</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class="row">
+  <div class="col">
+    <form action="https://sandbox.payhere.lk/pay/checkout" method="post">   
+      <input type="hidden" name="merchant_id" value="1218280">
+      <input type="hidden" name="return_url" value="http://localhost:8085/api/payments/">
+      <input type="hidden" name="cancel_url" value="http://sample.com/cancel">
+      <input type="hidden" name="notify_url" value="http://sample.com/notify">
+      <input type="hidden" name="order_id" value="{{ valueID }}">
+      <div class="row g-4">
+        <div class="col-12 col-sm-12 col-lg-8 col-xl-9 g-4">
+          <div class="row g-4">
+            <div class="col-12">
+                <label class="t_pre_title form-label" for="items">Description</label>
+                <input type="text" [readonly]="true" ngModel name="items" required value="Grade 09 Sinhala - Mrs. Yuri Natsuki - Class Fee" class="form-control c_davys_grey" id="">
+            </div>
+            <div class="col-6">
+                <label class="t_pre_title form-label" for="currency">Currency</label>
+                <input type="text" [readonly]="true" ngModel name="currency" required value="LKR" class="form-control c_davys_grey" id="">
+            </div>
+            <div class="col-6">
+                <label class="t_pre_title form-label" for="amount">Amount</label>
+                <input type="text" [readonly]="true" ngModel name="amount" required value="1000" class="form-control c_davys_grey" id="">
+            </div>
+            <div class="col-6">
+                <label class="t_pre_title form-label" for="first_name">First Name</label>
+                <input type="text" [readonly]="true" ngModel name="first_name" required value="Miyuru" class="form-control c_davys_grey" id="">
+            </div>
+            <div class="col-6">
+                <label class="t_pre_title form-label" for="last_name">Last Name</label>
+                <input type="text" [readonly]="true" ngModel name="last_name" required value="Gunarathna" class="form-control c_davys_grey" id="">
+            </div>
+            <div class="col-6">
+                <label class="t_pre_title form-label" for="email">Email</label>
+                <input type="text" [readonly]="true" ngModel name="email" required value="miyurupriyawadan@gmail.com" class="form-control c_davys_grey" id="">
+            </div>
+            <div class="col-6">
+                <label class="t_pre_title form-label" for="phone">Phone</label>
+                <input type="text" [readonly]="true" ngModel name="phone" required value="0776424889" class="form-control c_davys_grey" id="">
+            </div>
+            <div class="col-12">
+                <label class="t_pre_title form-label" for="address">Address</label>
+                <input type="text" [readonly]="true" ngModel name="address" required value="Wadugama Road, Nehinna, Dodangoda" class="form-control c_davys_grey" id="">
+            </div>
+            <div class="col-6">
+                <label class="t_pre_title form-label" for="city">City</label>
+                <input type="text" [readonly]="true" ngModel name="city" required value="Kalutara" class="form-control c_davys_grey" id="">
+            </div>
+            <div class="col-6">
+                <label class="t_pre_title form-label" for="country">Country</label>
+                <input type="text" [readonly]="true" ngModel name="country" required value="Sri Lanka" class="form-control c_davys_grey" id="">
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-lg-4 col-xl-3">
+          <div class="row mb-4 g-4">
+              <div class="col-12">
+                <span class="t_subtitle c_rich_black">Confirm</span>
+              </div>
+              <div class="col-12 d-flex flex-column">
+                <span class="t_pre_title">Class</span>
+                <span class="t_subtitle c_rich_black">Grade 09</span>
+              </div>
+              <div class="col-12 d-flex flex-column">
+                <span class="t_pre_title">Subject</span>
+                <span class="t_subtitle c_rich_black">Sinhala</span>
+              </div>
+              <div class="col-12 d-flex flex-column">
+                <span class="t_pre_title">Teacher</span>
+                <span class="t_subtitle c_rich_black">Mrs. Yuki Natsuki</span>
+              </div>
+              <div class="col-12 d-flex flex-column">
+                <span class="t_pre_title">Fee Type</span>
+                <span class="t_subtitle c_rich_black">Class Fee</span>
+              </div>
+              <div class="col-12 d-flex flex-column">
+                <span class="t_pre_title">Total Amount</span>
+                <span class="t_subtitle c_rich_black">LKR 1000</span>
+              </div>
+              <div class="col-12">
+                <button type="button" (click)="continuePay()" id="confirmBtn" class="btn w-100 btn-primary rounded-pill t_button">Confirm</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<div class="container" >
+
+    <div id="content" class="content p-0">
+        <div class="profile-header">
+            <br>
+            <div class="profile-header-cover"></div>
+    
+            <div class="profile-header-content">
+                <div class="profile-header-img">
+                    <img src="https://image.freepik.com/vecteurs-libre/test-examen-ligne-distance_108855-1371.jpg" alt="" />
+                </div>
+               
+                <div class="profile-header-info">
+                    <h4 class="m-t-sm">Net Exam</h4>
+                    <p class="m-b-sm">Aspire</p>
+                    
+                </div>
+                <br>
+            </div>
+            <br><br>
+           
+        </div>
+        <br><br>
+        <div class="profile-header-img" style="margin-left: 500px; width: 300px;height: 300px;">
+            <img src="https://www.pngitem.com/pimgs/m/18-182350_gold-cup-trophy-clipart-png-image-free-download.png" alt="" />
+        </div>
+       
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <div class="container bootstrap snippets bootdey">
+            <div class="table-responsive">
+                <!-- PROJECT TABLE -->
+                <table class="table colored-header datatable project-list">
+                    <thead>
+                        <tr>
+                            <th>studentID</th>
+                            <th>Exam Key</th>
+                            <th>Status</th>
+                            <th>Quiz Marks</th>
+                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr  *ngFor="let marks of  markses">
+                            <td>{{marks.sid}}</td>
+                            <td>{{marks.key}}</td>
+                            <td>finished attempt</td>
+                            
+                            <td><span class="label label-warning">{{marks. q_marks}}</span></td>
+                            
+                        </tr>
+                     
+                    </tbody>
+                </table>
+                <!-- END PROJECT TABLE -->
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>display-all-marks works!</p>
+{{examKey}}

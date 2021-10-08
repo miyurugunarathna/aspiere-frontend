@@ -1,0 +1,107 @@
+<div class="container bootstrap snippets bootdeys">
+  <div class="container" id="main-container">
+    <div class="col-md-7 col-xs-12 col-md-offset-2">
+      <!-- Panel Chat -->
+      <div class="panel" id="chat">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <i class="icon wb-chat-text" aria-hidden="true"></i> Chat
+          </h3>
+        </div>
+        <div class="panel-body">
+          <div class="chats">
+            <div class="chat" *ngFor="let question of questions">
+              <div class="chat-avatar">
+                <a class="avatar avatar-online" data-toggle="tooltip" href="#" data-placement="right" title="" data-original-title="June Lane">
+                  <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="...">
+                  <i></i>
+                </a>
+              </div>
+              <div class="chat-body">
+                <div class="chat-content">
+                  <p>StudentID  : {{question.sid}}</p>
+                  <p>QuestionID :{{question.qid}}</p>
+
+                  <p>
+                   <b>{{question.title}}</b>
+                    <br>{{question.description}}
+                  </p>
+                  <p>ClassID    : {{question.classID}}</p>
+
+                  <time class="chat-time" datetime="2015-07-01T11:37">{{question.date}}</time>
+                </div>
+              </div>
+            </div>
+            <div class="chat chat-left"  *ngFor="let reply of replyies">
+              <div class="chat-avatar">
+                <a class="avatar avatar-online" data-toggle="tooltip" href="#" data-placement="left" title="" data-original-title="Edward Fletcher">
+                  <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="...">
+                  <i></i>
+                </a>
+              </div>
+              <div class="chat-body">
+                <div class="chat-content">
+                  <p>TeacherID : {{reply.tid}}</p>
+                  <p>QuestionID : {{reply.qid}}</p>
+                  <p>{{reply.description}}</p>
+                  <time class="chat-time" datetime="2015-07-01T11:39">{{reply.date}}</time>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+        <div class="panel-footer">
+          <form  #addForm="ngForm" (ngSubmit)="onAddReply(addForm)">
+           
+            <input type="hidden"  ngModel="{{tid}}" class ="input-field" name="tid"   ><br>
+
+            <select    ngModel  class="form-select" id="inputGroupSelect01"  name="qid">
+              <option selected>Choose QuestionID</option>
+              <option *ngFor="let question of questions">{{question.qid}}</option>
+              
+            </select><br>
+
+            <select ngModel  class="form-select" id="inputGroupSelect01"  name="sid">
+              <option selected>Choose StudentID</option>
+              <option *ngFor="let enroll of enrolls">{{enroll.studentID}}</option>
+              
+            </select><br>
+            <input type="date"   ngModel  class="form-control"   name="date"><br>
+            
+            <div class="input-group">
+              <input type="text" ngModel  class="form-control" placeholder="Send Reply..." name="description">
+              <span class="input-group-btn">
+                <button   [disabled]="addForm.invalid"  class="btn btn-primary" type="submit">Send</button>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- End Panel Chat -->
+    </div>
+          
+<!-- add Modal -->
+<div class="modal fade" id="addReplyModal" tabindex="-1" role="dialog" aria-labelledby="addReplyModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div  class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="deleteModalLabel">Send Reply</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        
+       
+      </div>
+      
+      <div class="modal-body">
+        <p>Reply Send Successfuly</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+        
+      </div>
+    
+    </div>
+  </div>
+</div>
+</div>
+    </div>

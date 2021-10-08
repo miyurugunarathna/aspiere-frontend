@@ -1,0 +1,104 @@
+
+<div class="form-box">
+    <div class="button-box">
+        <div id="btn"></div>
+        <a [routerLink]="['/teacher/exams/addresult',sid]"><button type="button" class="toggle-btn">Add Result</button></a>
+        <a [routerLink]="['/teacher/exams/list-result',sid]"><button type="button" class="toggle-btn">View All</button></a>
+    </div>
+    <br><br>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+
+
+<div class="container" id="main-container">
+<div class="col-md-12 col-12 col-sm-12" >
+    <div class="card">
+      <div class="card-header"  >
+        <h4>Task Details</h4>
+      </div>
+      <div class="card-body" >
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <tbody><tr>
+              
+              <th>StudentID</th>
+              
+              <th><span style="margin-left: 60px;">Term</span><span style="margin-left: 160px;">Assignment Marks</span><span style="margin-left: 120px;">Quiz Marks</span><span style="margin-left: 190px; margin-right: 125px;">Status</span>Add</th>
+             
+
+
+            </tr>
+            <tr *ngFor="let enroll of enrolls">
+              
+              <td>{{enroll.studentID}}</td>
+
+              <td>
+                  <form #addForm="ngForm" (ngSubmit)="onAddResult(addForm)" >
+                    <div class="input-group mb-3">
+                      <input type="hidden" ngModel="{{enroll.studentID}}" name="studentID"/>
+                      <input type="hidden" ngModel="{{sid}}" name="teacherID"/>
+
+                      <select ngModel style="width: 100px; margin-right: 60px;"  name="term"  class="form-select" required>
+                        <option  >1st Term</option>
+                        <option >2nd Term</option>
+                        <option>3rd Term</option>
+                       </select>
+                      
+
+                      <input type="number"  ngModel style="width: 100px; margin-right: 60px; height: 37px;" class="form-control" name="assignmentMarks"  required/>
+
+                      <input type="number"  ngModel style="width: 100px; margin-right: 60px; height: 37px;"  class="form-control" name="quizMarks" required/>
+
+                     
+
+                      <select  ngModel style="width:  100px; margin-right: 60px;" name="status"  class="form-select" required>
+                        <option>Pass</option>
+                        <option>Fail</option>
+                       
+
+                      </select>
+
+                        <input  [disabled]="addForm.invalid" type="submit" class="addbtn" id="sub" name="sub" value="Add" />
+                      </div>
+                  </form></td>
+
+           
+            </tr>
+          </tbody></table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!-- add Modal -->
+<div class="modal fade" id="addResultModal" tabindex="-1" role="dialog" aria-labelledby="addResultModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div  class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="deleteModalLabel">Add Result</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        
+       
+      </div>
+      
+      <div class="modal-body">
+        <p>Result Added Successfuly</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+        
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+    </div>
+    
+    
+           
+            
+       
+       

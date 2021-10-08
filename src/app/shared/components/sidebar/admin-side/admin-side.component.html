@@ -1,0 +1,51 @@
+<div class="main">
+    <div class="d-flex flex-column p-3 bg_">
+        <ul class="nav nav-pills t_subtitle d-flex flex-column mb-auto">
+            <li>
+            <a [routerLink]="['/admin/registrations']" routerLinkActive="c_medium_blue" class="nav-link c_davys_grey">
+                <img src="/assets/images/icons/icon_registration.png" alt="mdo" width="30" height="30">
+                Registrations
+            </a>
+            </li>
+            <li class="nav-item">
+            <a [routerLink]="['/admin/classes']" routerLinkActive="c_medium_blue" class="nav-link c_davys_grey" aria-current="page">
+                <img src="/assets/images/icons/icon_class.png" alt="mdo" width="30" height="30">
+                Classes
+            </a>
+            </li>
+            <li>
+            <a [routerLink]="['/admin/subjects']" routerLinkActive="c_medium_blue"  class="nav-link c_davys_grey">
+                <img src="/assets/images/icons/icon_subject.png" alt="mdo" width="30" height="30">
+                Subjects
+            </a>
+            </li>
+            <li>
+            <a [routerLink]="['/admin/notices']" routerLinkActive="c_medium_blue" class="nav-link c_davys_grey">
+                <img src="/assets/images/icons/icon_notice.png" alt="mdo" width="30" height="30">
+                Notice
+            </a>
+            </li>
+            <li>
+            <a [routerLink]="['/admin/payment']" routerLinkActive="c_medium_blue" class="nav-link c_davys_grey">
+                <img src="/assets/images/icons/icon_payment.png" alt="mdo" width="30" height="30">
+                Payment
+            </a>
+            </li>
+            <li>
+            <a [routerLink]="['/admin/package']" routerLinkActive="c_medium_blue" class="nav-link c_davys_grey">
+                <img src="/assets/images/icons/icon_package.png" alt="mdo" width="30" height="30">
+                Package
+            </a>
+            </li>
+        </ul>
+        <ul class="nav nav-pills t_subtitle d-flex flex-column">
+            <li class="nav-item">
+            <a (click)="logout()" class="nav-link c_davys_grey cursor_p" aria-current="page">
+                <img src="/assets/images/icons/icon_logout.png" alt="mdo" width="30" height="30">
+                Logout
+            </a>
+            </li>
+        </ul>
+        </div>
+    </div>
+    

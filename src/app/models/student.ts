@@ -1,16 +1,15 @@
 export class Student {
     id: string;
-    sid: string;
+    pid: string;
     fname: string;
     lname: string;
+    dob: string;
+    gender: string;
     email: string;
-    
-   
-    constructor() {
-        this.id = '';
-        this.sid = '';
-        this.fname = '';
-        this.lname = '';
-        this.email = '';
-    }
+    phone: string;
+    password: string;
+    role: string;
+	approved: string;
+    active: boolean;
+    roles: Array<string>;
 }

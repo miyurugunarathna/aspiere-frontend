@@ -1,0 +1,33 @@
+<div class="row t_subtitle mb-2">
+  <div class="col">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item c_rich_black active" aria-current="page">Subject</li>
+          </ol>
+      </nav>
+  </div>
+</div>
+
+<div class="container" id="main-container">
+    <div class="row">
+    <div *ngFor="let subject of subject" class="col-md-6 col-xl-3">
+        <a [routerLink]="['/app/studentcourses']" class="nav-link c_davys_grey">
+      <div class="card m-b-30">
+        <div class="row" >
+          <div class="latest-img-wrapper">
+            <img src="/assets/images/subject photo/Mathematics.jpg" alt="" width="205" height="150">
+            </div>
+            <div class="subjectname">
+              <h5><b>{{subject.subjectName}}</b></h5>
+          </div>
+          <div class="description">
+              {{subject.description}}
+          </div>
+          <div class="class">
+              <a href="">  <img src="/assets/images/icons/icon_class.png" alt="" width="20" height="20"> </a>
+               12 classes
+          </div>             
+      </div>
+    </div>
+  </a>
+    </div>

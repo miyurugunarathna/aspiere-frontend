@@ -1,0 +1,142 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<div class="row" id="deleteConfime" style="display: none;">
+    <div class="modal-asp d-flex align-items-center" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content border-0 rounded-4">
+                <div class="modal-body p-4 text-left">
+                <h6 class="t_subtitle c_rich_black">Are you sure to delete this material?</h6>
+                <span class="t_body">If you delete this material, it cannot be undone. Please make sure that before taking the action.</span>
+                </div>
+                <div class="d-flex gap-4 justify-content-center my-4 p-0">
+                <button type="button" (click)="onDismiss('deleteConfime')" class="btn c_rich_black bg_surface col-5 rounded-2">Cancel</button>
+                <button type="button" (click)="deleteCourseTopic(delID)" class="btn c_white bg_medium_blue col-5 rounded-2">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row position-relative" style="z-index: 1; display: none;" id="insideNotice">
+    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 p-0 position-fixed bottom-0 end-0">
+        <div class="row d-flex align-items-center bg_white p-3 m-4 rounded-3 gap-4" style="box-shadow: 0 0 15px 0 #77777777;">
+            <div class="col-auto">
+                <img src="/assets/images/icons/icon_correct.png" alt="mdo" width="30" height="30">
+            </div>
+            <div class="col">
+                {{ addMessage }}
+            </div>
+            <div class="col-auto">
+                <a class="cursor_p" (click)="onDismiss('insideNotice')"><img src="/assets/images/icons/icon_close.svg" alt="mdo" width="15" height="15"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row t_subtitle mb-2">
+    <div class="col">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item c_rich_black active" aria-current="page">#010001</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="row gx-4 gy-4">  
+    <br>
+    <div class="col-12 col-sm-12 col-lg-8 col-xl-9">
+        <br>
+        <div class="data_list">
+            <br>
+            <div *ngFor="let coursematerial of coursematerials" class="data_list rounded-3 bg_white">  
+                <br>
+                <div class="border-start border-5 bc_medium_blue d-flex  justify-content-end p-3 align-items-center gap-4">
+                    <a class="cursor_p" (click)="getCourseTopic( coursematerial.coursetopicID )"><img src="/assets/images/icons/icon_edit.png" alt="mdo" width="30" height="30"></a>
+                    <a class="cursor_p" (click)="deleteConfime( coursematerial.coursetopicID )"><img src="/assets/images/icons/icon_delete.png" alt="mdo" width="30" height="30"></a>
+                </div>
+
+                <div class="row border_aspire position-relative">
+                    <h4> <div class="col p-3">{{ coursematerial.title }}</div></h4>
+                    <h5> <div class="col p-3">{{ coursematerial.description }}</div></h5>
+                    <div class="url">
+                        <i class="fa fa-file-pdf-o" type= "url"    style="font-size:20px;color:red"><a href="{{ coursematerial.url }}">Lecture.pdf</a></i>
+                       </div>
+                       <br><br>
+                       <div class="url">
+                        <i class="fa fa-file-pdf-o" type= "url"    style="font-size:20px;color:red"><a href="{{ coursematerial.url }}">Tutorial.pdf</a></i>
+                       </div>
+                    
+                </div>
+                <span class="border-bottom"></span>
+            </div>
+            <div *ngIf="coursematerials.length == 0" class="data_list rounded-3 bg_white p-3 text-center">
+                No materials to show. Please add one to show.
+            </div>
+        </div>
+    </div>
+
+
+
+
+<div *ngIf="coursematerialOne.coursetopicID == ''; else UpdateBox" class="col-12 col-sm-12 col-lg-4 col-xl-3">
+    <br><br>
+    <div class="row mb-4">
+        <br>
+        <span id="addOrUpdateFee" class="t_subtitle c_rich_black">Add New Fee</span>
+    </div>
+    <form class="d-flex flex-column gap-4 c_rich_black" #addCoursematerialForm="ngForm" (ngSubmit)="addCourseTopic(addCoursematerialForm)">
+        <div class="col">
+            <label class="t_pre_title form-label" for="title">Title</label>
+            <input type="text" ngModel name="title" required placeholder="Default" class="form-control border-white c_davys_grey" id="">
+        </div>
+        <div class="col">
+            <label class="t_pre_title form-label" for="description">Description</label>
+            <input type="text" ngModel name="description" required placeholder="Default" class="form-control border-white c_davys_grey" id="">
+        </div>
+        <div class="col">
+            <label class="t_pre_title form-label" for="url">URL</label>
+            <input type="url" ngModel name="url" required placeholder="" class="form-control border-white c_davys_grey" id="url">
+        </div>
+        <div class="col">
+            <label class="t_pre_title form-label" for="url">URL</label>
+            <input type="url" ngModel name="url" required placeholder="" class="form-control border-white c_davys_grey" id="url">
+        </div>
+        <button type="submit" [disabled]="addCoursematerialForm.invalid" id="btnAddOrUpdate" class="btn btn-primary rounded-pill t_button">Add</button>
+    </form>
+</div>
+
+
+
+
+
+<ng-template #UpdateBox>
+    <div class="col-12 col-sm-12 col-lg-4 col-xl-3">
+        <div class="row mb-4">
+            <span id="addOrUpdateFee" class="t_subtitle c_rich_black">Update Materials</span>
+        </div>
+        <form class="d-flex flex-column gap-4 c_rich_black" #updateCoursematerialForm="ngForm" (ngSubmit)="updateCourseTopic(updateCoursematerialForm, coursematerialOne.coursetopicID)">
+            <div class="col">
+                <label class="t_pre_title form-label" for="title">Title</label>
+                <input type="text" ngModel="{{ coursematerialOne.title }}" name="title"  required placeholder="Default" class="form-control border-white c_davys_grey" id="">
+            </div>
+            <div class="col">
+                <label class="t_pre_title form-label" for="description">Description</label>
+                <input type="text" ngModel="{{ coursematerialOne.description }}" name="description"  required placeholder="Default" class="form-control border-white c_davys_grey" id="">
+            </div>
+            
+            <div class="col">
+                <label class="t_pre_title form-label" for="url">URL</label>
+                <input type="url" ngModel="{{ coursematerialOne.url }}" name="url"  required placeholder="Default" class="form-control border-white c_davys_grey" id="url">
+            </div>
+
+            <div class="col">
+                <label class="t_pre_title form-label" for="url">URL</label>
+                <input type="url" ngModel="{{ coursematerialOne.url }}" name="url"  required placeholder="Default" class="form-control border-white c_davys_grey" id="url">
+            </div>
+ 
+            <button type="submit" [disabled]="updateCoursematerialForm.invalid" id="btnAddOrUpdate" class="btn btn-primary rounded-pill t_button">Update</button>
+        </form>
+    </div>
+    </ng-template>

@@ -1,0 +1,42 @@
+<div class="row t_subtitle mb-2">
+    <div class="col">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item c_rich_black active" aria-current="page">Courses</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+
+<div class="container" id="main-container">
+    <div class="row">
+    <div *ngFor="let course of courses" class="col-md-6 col-xl-3">
+        <a [routerLink]="['/app/coursematerial']" class="nav-link c_davys_grey">
+      <div class="card m-b-30">
+        <div class="row" >
+            <div class="latest-img-wrapper">
+                <img src="/assets/images/courses photo/Courses.jpg" alt="mdo" width="205" height="150">
+                </div>
+                <div class="teacher profile">
+                    <img src="/assets/images/class photo/1.jpg" alt="" width="27.72" height="27.72" class="rounded-circle">
+                    &nbsp; <b>Monika Sayoori</b>
+                </div>
+                <div class="latest-title">
+                    <p style="color:red">Mathematics</p>
+                </div>
+            <div class="description">
+                {{course.description}}
+            </div>
+            <div class="price">
+                <h5>LKR 1,200</h5>
+            </div>
+        <div class = "container">
+            <div class='button' >
+                <button type="enroll"  id="enroll" class="btn btn-primary rounded-pill t_button">ENROLL</button>
+            </div>     
+        </div>         
+      </div>
+    </div>
+</a>
+    </div> 

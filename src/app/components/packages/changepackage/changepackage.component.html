@@ -1,0 +1,159 @@
+<!-- Topic -->
+
+<div class="row t_subtitle">
+  <div class="col">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">My Package</a></li>
+              <li class="breadcrumb-item c_rich_black active" aria-current="page">Change Package</li>
+          </ol>
+      </nav>
+  </div>
+</div>
+
+<!-- END Topic -->
+
+
+
+
+<!--Grid Display -->
+<div class="row gx-4 gy-4">
+  <div class="col-12 col-sm-12 col-lg-8 col-xl-9">
+    <div class="grid-container" style="grid-auto-flow: row;">
+      <div *ngFor="let tpackage of tpackages" class="item">
+        <div class="t_subtitle c_rich_black">{{tpackage.packageName}}</div>
+        <br>
+          <table style="width:100%">
+          <tr>
+            <td class="t_bold">Type</td>
+            <td class="t_bold c_rich_black">
+              <div *ngIf="tpackage.comType == 1">Percentage</div>
+            <div *ngIf="tpackage.comType == 2">Fixed</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="t_bold">Commision</td>
+          <td class="t_bold c_rich_black">         
+            <div *ngIf="tpackage.comType == 1">{{ tpackageOne.commission}}%</div>
+            <div *ngIf="tpackage.comType == 2">Rs. {{ tpackageOne.commission}}</div>
+          </td>
+        
+             </tr>
+          <tr>
+            <td class="t_bold">Annual Fee(LKR)</td>
+            <td class="t_bold c_rich_black">{{tpackage.annualFee}}</td>
+          </tr>
+
+          <tr>
+            <td class="t_bold">Monthly Fee(LKR)</td>
+            <td class="t_bold c_rich_black">{{tpackage.monthlyFee}}</td>
+          </tr>
+
+          <tr>
+            <td class="t_bold">Classes</td>
+            <td class="t_bold c_rich_black">{{tpackage.maxCourse}}</td>
+          </tr>
+
+          <tr>
+            <td class="t_bold">Students</td>
+            <td class="t_bold c_rich_black">{{tpackage.maxStudent}}</td>
+          </tr>
+       
+          <br>
+        
+         
+          <tr >
+            <td colspan="2">
+            <button type="submit" class="btn btn-primary rounded-pill t_button" style="width:100%;,padding: 2px;">Change</button>
+            </td>
+           
+          </tr>
+         
+        </table> 
+    
+      
+      </div>
+      
+     </div> 
+  </div> 
+
+
+
+  <div class="col-12 col-sm-12 col-lg-4 col-xl-3">
+    <div class="row mb-4">
+      <span id="addOrUpdatePackage" class="t_subtitle c_rich_black">Current Package</span>
+    </div>
+
+    
+    <div class="grid-container">
+        
+         <table style="width:100%">
+         
+            <tr>
+              <td class="t_subtitle c_rich_black">{{tpackageOne.packageName}}</td>
+              <td><div class="circle_10 bg_success"></div> </td>
+            </tr>
+            
+            
+
+            <tr>
+              <td><i class="fas fa-cloud"></i></td>
+              <br>
+            </tr>
+
+           
+
+            <tr>
+              <td class="t_subtitle c_rich_black">#p{{tpackageOne.id}}</td>
+              <br>
+            </tr>
+
+            <br>
+
+        <tr>
+          <td class="t_bold">Type</td>
+                  
+          <td class="t_bold c_rich_black">
+            <div *ngIf="tpackageOne.comType == 1">Percentage</div>
+            <div *ngIf="tpackageOne.comType == 2">Fixed</div>
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="t_bold">Commision</td>
+          <td class="t_bold c_rich_black">            
+              <div *ngIf="tpackageOne.comType == 1">{{ tpackageOne.commission}}%</div>
+              <div *ngIf="tpackageOne.comType == 2">Rs. {{ tpackageOne.commission}}</div>
+          </td> 
+        </tr>
+        
+        <tr>
+          <td class="t_bold">Annual Fee(LKR)</td>
+          <td class="t_bold c_rich_black">{{tpackageOne.annualFee}}</td>
+        </tr>
+
+        <tr>
+          <td class="t_bold">Monthly Fee(LKR)</td>
+          <td class="t_bold c_rich_black">{{tpackageOne.monthlyFee}}</td>
+        </tr>
+
+        <tr>
+          <td class="t_bold">Classes</td>
+          <td class="t_bold c_rich_black">{{tpackageOne.maxCourse}}</td>
+        </tr>
+
+        <tr>
+          <td class="t_bold">Students</td>
+          <td class="t_bold c_rich_black">{{tpackageOne.maxStudent}}</td>
+        </tr>
+     
+        <br>
+      
+              
+      </table>  
+  
+    
+    </div>
+  
+  </div>
+</div>

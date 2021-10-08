@@ -1,0 +1,111 @@
+
+<div class="form-box">
+    <div class="button-box">
+        <div id="btn"></div>
+        <a [routerLink]="['/app/exams/create-quiz',sid]"><button type="button" class="toggle-btn">Create Quiz</button></a>
+        <a [routerLink]="['/app/exams/list-quiz',sid]"><button type="button" class="toggle-btn">View All</button></a>
+    </div>
+    <div   class="container" id="main-container">
+    <form #addForm="ngForm" (ngSubmit)="onAddQuiz(addForm)">
+        <table>
+            <tr>
+                <span style="margin-left: 350px;">{{sid}}</span>
+                <td><input type="hidden"  ngModel="{{sid}}" class ="input-field" name="teacherID"   ><br><br></td>
+            </tr>
+            <tr>
+                <label style="margin-left: 350px;">Select Question Number :</label>
+                <select ngModel class ="input-field" name="qnumber"   required>
+                        <option   >1</option>
+                        <option   >2</option>
+                        <option   >3</option>
+                        <option   >4</option>
+                        <option   >5</option>
+                        <option   >6</option>
+                        <option   >7</option>
+                        <option   >8</option>
+                        <option   >9</option>
+                        <option   >10</option>
+                      
+                        
+                        
+                     
+                        
+                </select>
+            </tr>
+            
+            <tr>
+                <select ngModel class ="input-field" name="examID"   required>
+                        <option  >Select Key</option>
+                        <option *ngFor="let exam of exams" >{{exam.key}}</option>
+                </select>
+            </tr>
+            <tr>
+                <td><input type="text" ngModel  class ="input-field" name="question"   placeholder="Question" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" ngModel  class ="input-field" name="opt1"   placeholder="Option 1" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" ngModel  class ="input-field" name="opt2" placeholder="Option 2" required></td>
+            </tr>
+            <tr>
+                <td><input type="text"  ngModel class ="input-field" name="opt3" placeholder="Option 3" required></td>
+            </tr>
+            <tr>
+                <td><input type="text"  ngModel class ="input-field" name="opt4" placeholder="Option 4" required></td>
+            </tr>
+            <tr>
+               
+                <td> <br><label style="margin-left: 350px;" >Answer : </label></td>
+            </tr>
+
+            
+            
+        </table>
+        <br>
+        <div style="margin-left: 350px;">
+        <input type="radio"   ngModel  style="margin-right: 10px;" name="answer" value="A" >A
+        <input type="radio"   ngModel  style="margin-right: 10px; margin-left: 10px;" name="answer" value="B">B
+        <input type="radio"   ngModel  style="margin-right: 10px;margin-left: 10px;" name="answer" value="C" >C
+        <input type="radio"   ngModel  style="margin-right: 10px;margin-left: 10px;" name="answer" value="D" >D
+        </div>
+        <br>
+        <br>
+        <div>
+            <div class="buttnreg">
+                <input  [disabled]="addForm.invalid" type="submit" class="addbtn" id="sub" name="sub" value="Add">
+                <button class="setbtn" id="sub1" name="sub1" onclick="reset()">Cancel</button>
+            </div>
+            
+        </div>
+        
+        
+    </form>
+
+    
+<!-- add Modal -->
+<div class="modal fade" id="addQuizModal" tabindex="-1" role="dialog" aria-labelledby="addQuizModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div  class="modal-header bg-success text-white">
+          <h5 class="modal-title" id="deleteModalLabel">Create Quiz</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          
+         
+        </div>
+        
+        <div class="modal-body">
+          <p>Quiz Created Successfuly</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+          
+        </div>
+      
+      </div>
+    </div>
+  </div>
+
+</div>
+    </div>
+    

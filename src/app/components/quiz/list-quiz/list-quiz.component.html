@@ -1,0 +1,149 @@
+<div class="form-box">
+    <div class="button-box">
+        <div id="btn"></div>
+        <a [routerLink]="['/app/exams/create-quiz',sid]"><button type="button" class="toggle-btn">Create Quiz</button></a>
+        <a [routerLink]="['/app/exams/list-quiz',sid]"><button type="button" class="toggle-btn">View All</button></a>
+    </div>
+   
+<br><br>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+
+
+<div class="container" id="main-container">
+<div class="col-md-12 col-12 col-sm-12" >
+    <div class="card">
+      <div class="card-header"  >
+        <h4>Task Details</h4>
+      </div>
+      <div class="card-body" >
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <tbody><tr>
+              
+              <th>Qnumber</th>
+              <th>Qid</th>
+              <th>Key</th>
+              <th>TeacherID</th>
+              <th>Question</th>
+              <th>Opt1</th>
+              <th>Opt2</th>
+              <th>Opt3</th>
+              <th>Opt4</th>
+              <th>Answer</th>
+              <th>Activity</th>
+
+
+            </tr>
+            <tr *ngFor="let quizz of quiz">
+              
+              <td>{{quizz.qnumber}}</td>
+              <td>{{quizz.qid}}</td>
+              <td>{{quizz.examID}}</td>
+              <td>{{quizz.teacherID}}</td>
+              <td>{{quizz.question}}</td>
+              <td>{{quizz.opt1}}</td>
+              <td>{{quizz.opt2}}</td>
+              <td>{{quizz.opt3}}</td>
+              <td>{{quizz.opt4}}</td>
+              <td>{{quizz.answer}}</td>
+
+              <td>
+                <a  (click)="onOpenModel(quizz,'edit')" ><img src="/assets/images/icons/icon_edit.png" width="30"></a>
+                <a  (click)="onOpenModel(quizz,'delete')"  data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')" data-original-title="Delete"><img src="/assets/images/icons/icon_delete.png" width="30"></a>
+              </td>
+            </tr>
+          </tbody></table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Update  Modal -->
+<div class="modal fade" id="updateQuizModal" tabindex="-1" role="dialog" aria-labelledby="updateQuizModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="exampleModalLabel">Update Quiz</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #editForm="ngForm" >
+          <div class="form-group">
+            <label for="qnum" class="form-label">Qnumber</label>
+            <input type="text" ngModel="{{updateQuiz?.qnumber}}" name="qnumber" class="form-control" id="qnum" placeholder="Qnumber" required>
+          </div>
+          <div class="form-group">
+            <label for="qid" class="form-label">Qid</label>
+            <input type="text" ngModel="{{updateQuiz?.qid}}"name="qid" class="form-control" id="qid" placeholder="Qid" required>
+          </div>
+
+          <div class="form-group">
+            <label for="key" class="form-label">Key</label>
+            <input type="text" ngModel="{{updateQuiz?.examID}}" name="examID" class="form-control" id="key" placeholder="Key" required>
+          </div>
+          <div class="form-group">
+            <label for="tid" class="form-label">TeacherID</label>
+            <input type="text" ngModel="{{updateQuiz?.teacherID}}"   name="teacherID" class="form-control" id="tid" placeholder="TeacherID" required>
+          </div>
+          <div class="form-group">
+            <label for="question" class="form-label">Question</label>
+            <input type="text" ngModel="{{updateQuiz?.question}}"  name="question" class="form-control" id="question" placeholder="Question" required>
+          </div>
+          <div class="form-group">
+            <label for="opt1" class="form-label">Opt1</label>
+            <input type="text" ngModel="{{updateQuiz?.opt1}}"   name="opt1" class="form-control" id="opt1" placeholder="Opt1" required>
+          </div>
+          <div class="form-group">
+            <label for="opt2" class="form-label">Opt2</label>
+            <input type="text" ngModel="{{updateQuiz?.opt2}}"   name="opt2" class="form-control" id="opt2" placeholder="Opt2" required>
+          </div>
+          <div class="form-group">
+            <label for="opt3" class="form-label">Opt3</label>
+            <input type="text" ngModel="{{updateQuiz?.opt3}}"   name="opt3" class="form-control" id="opt3" placeholder="Opt3" required>
+          </div>
+          <div class="form-group">
+            <label for="opt4" class="form-label">Opt4</label>
+            <input type="text" ngModel="{{updateQuiz?.opt4}}"   name="opt4" class="form-control" id="opt4" placeholder="Opt4" required>
+          </div>
+          
+            <label for="answer" class="form-label">Answer : </label><br>
+            
+            <input type="radio"   ngModel="{{updateQuiz?.answer}}"     name="answer" value="A" >A
+            <input type="radio"   ngModel="{{updateQuiz?.answer}}"     name="answer" value="B">B
+            <input type="radio"   ngModel="{{updateQuiz?.answer}}"    name="answer" value="C" >C
+            <input type="radio"   ngModel="{{updateQuiz?.answer}}"     name="answer" value="D" >D
+         
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button (click)="onUpdateQuiz(editForm.value)"  data-bs-dismiss="modal" type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteQuizModal" tabindex="-1" role="dialog" aria-labelledby="deleteQuizModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title" id="deleteModalLabel">Delete Quiz</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body">
+        <p>Are you sure you want to delete Exam {{deleteQuiz?.qid}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button  (click) = "ondeleteQuiz(deleteQuiz?.qid)"   class="btn btn-danger" data-bs-dismiss="modal">Yes</button>
+      </div>
+    
+    </div>
+  </div>
+</div>
+</div>
+
+    </div>
+    
+

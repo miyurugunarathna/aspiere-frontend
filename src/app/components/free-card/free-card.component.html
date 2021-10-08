@@ -1,0 +1,52 @@
+
+<div class= "body">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- <div class="col-6 col-md-4 col-lg-3 col-xl-2 bg_white" style="box-shadow: 1px 0 20px 0 #c7c4c438;">
+               
+            </div> -->
+            
+            <div class="row t_subtitle c_rich_black mb-2">
+                <div class="col">
+                    <b>Free Cards</b>
+                </div>
+            </div>
+            <br><br><br>    
+            <div class="col-6 col-md-4 col-lg-3 col-xl-11">
+            <form action="">
+                <div class="row t_subtitle mb-4 c_rich_black">
+                    
+                </div>
+            </form>
+            <div class="data_list">
+                <div class="row rounded-3 bg_white c_rich_black mb-4">
+                    <div class="col p-3"><b>Student</b></div>
+                    <div class="col p-3"><b>Class</b></div>
+                    <div class="col p-3"><b>Subject</b></div>
+                    <div class="col p-3"><b>Description</b></div>     
+                </div>
+                <div *ngFor = "let freeCard of freeCards" class="data_list rounded-3 bg_white">
+                    <div class="row border_aspire position-relative">
+                        <div class="col p-3">{{freeCard?.studentID}}</div>
+                        <div class="col p-3">{{freeCard?.classID}}</div>
+                        <div class="col p-3">{{freeCard?.subjectID}}</div>
+                        <div class="col p-3">{{freeCard?.description}}.</div>
+                       
+                        <div class="data_list hover_show">
+                            <div class="row overlay_gradient position-absolute top-0 w-100 h-100">
+                                <div class="border-start border-5 bc_medium_blue d-flex  justify-content-end p-3 align-items-center gap-4">
+                                <a href="#"><img src="/assets/images/icons/icon_view.png" alt="mdo" width="30" height="30"></a>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="border-bottom"></span>
+                
+                </div>
+            </div>
+        </div>
+     
+        </div>
+    </div>
+    </div>
