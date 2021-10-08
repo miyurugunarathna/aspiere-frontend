@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ViewStudentComponent implements OnInit {
 
-  id: string;
+  id: number;
   student: Student;
 
   constructor(private route: ActivatedRoute, private router: Router,
@@ -28,7 +28,7 @@ export class ViewStudentComponent implements OnInit {
       }, error => console.log(error));
   }
   
-  editStudent(id: string) {
+  editStudent(id: number) {
     this.router.navigate(['student/update', id]);
   }
 

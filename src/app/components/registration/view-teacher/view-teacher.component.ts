@@ -11,7 +11,7 @@ import { TeacherService } from 'src/app/services/teacher.service';
 })
 export class ViewTeacherComponent implements OnInit {
 
-  id: string;
+  id: number;
   teacher: Teacher;
 
   constructor(private route: ActivatedRoute, private router: Router,
@@ -19,18 +19,18 @@ export class ViewTeacherComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.teacher = new Teacher();
+     this.teacher = new Teacher();
 
     this.id = this.route.snapshot.params['id'];
     
      this.teacherService.get(this.id)
        .subscribe(data => {
          console.log(data)
-         //this.teacher = data;
+         this.teacher = data;
        }, error => console.log(error));
   }
   
-  editTeacher(id: string) {
+  editTeacher(id: number) {
     this.router.navigate(['teacher/update', id]);
   }
 

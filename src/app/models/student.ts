@@ -1,6 +1,5 @@
 export class Student {
-    id: string;
-    pid: string;
+    personid: number;
     fname: string;
     lname: string;
     dob: string;
@@ -9,7 +8,22 @@ export class Student {
     phone: string;
     password: string;
     role: string;
+    registeredDate: Date;
 	approved: string;
     active: boolean;
-    roles: Array<string>;
+    type: string;
+
+    constructor() {
+        this.dob = '';
+        this.email = '';
+        this.fname = '';
+        this.lname = '';
+        this.gender = '';
+        this.password = '';
+        this.phone = '';
+        this.registeredDate = new Date();
+        this.approved = 'Pending';
+        this.active = true;
+        this.type = 'Student';
+    }
 }

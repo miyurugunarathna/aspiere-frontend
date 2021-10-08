@@ -84,31 +84,31 @@
                   <label>Title:</label>
                   <!-- <input type="text" name="title" ngModel> -->
                   <select class="form-select" id = "title" name = "title"
-                  [(ngModel)] = "teacher.qualifications.title" #title="ngModel">
+                  [(ngModel)] = "teacher.qualifititle" #title="ngModel">
                     <option disabled selected>Select qualification...</option>
                     <option value="1">Doctoral Degree</option>
                     <option value="2">Masters Degree</option>
-                    <option value="1">Post Graduate Diploma</option>
-                    <option value="1">Post Graduate Certificate</option>
-                    <option value="2">Honours Bachelors Degree</option>
-                    <option value="3">Bachelors</option>
-                    <option value="4">Higher Diploma</option>
-                    <option value="5">Diploma</option>
-                    <option value="6">Advanced Certificate</option>
-                    <option value="7">Certificate</option>
+                    <option value="3">Post Graduate Diploma</option>
+                    <option value="4">Post Graduate Certificate</option>
+                    <option value="5">Honours Bachelors Degree</option>
+                    <option value="6">Bachelors</option>
+                    <option value="7">Higher Diploma</option>
+                    <option value="8">Diploma</option>
+                    <option value="9">Advanced Certificate</option>
+                    <option value="10">Certificate</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <label>Description:</label>
                   <!-- <input type="text" name="description" ngModel> -->
                   <input type="text" class ="form-control" id = "description" name = "description"
-                    [(ngModel)] = "teacher.qualifications.description" #bank="ngModel">
+                    [(ngModel)] = "teacher.description" #bank="ngModel">
                 </div>
                 <div class="form-group">
                   <label>University:</label>
                   <!-- <input type="text" name="university" ngModel> -->
                   <input type="text" class ="form-control" id = "university" name = "university"
-                    [(ngModel)] = "teacher.qualifications.university" #university="ngModel">
+                    [(ngModel)] = "teacher.university" #university="ngModel">
                 </div>
                 <!-- <button class="btn btn-primary" (click)="removeQualification(i)">Remove</button> -->
             </fieldset>
@@ -157,5 +157,5 @@
     <button class="btn btn-primary" [disabled]="!TeacherForm.valid" type="submit">Submit</button>
     &nbsp;<button class="btn btn-primary" (click)="reset()">Reset</button>
 
-    <p>Form Value: {{ TeacherForm.value | json }}</p>
+    <!-- <p>Form Value: {{ TeacherForm.value | json }}</p> -->
 </div>

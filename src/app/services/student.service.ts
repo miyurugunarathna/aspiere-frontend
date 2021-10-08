@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable, ElementRef } from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
@@ -24,7 +24,7 @@ export class StudentService {
         return this.http.get<Student[]>(getAllURL);
     }
 
-    get(id: string): Observable<any> {
+    get(id: number): Observable<any> {
         const getURL = environment.baseUrl + 'student/get/' + id;
         return this.http.get(getURL);
     }
@@ -34,12 +34,12 @@ export class StudentService {
         return this.http.post<void>(addURL, student);
     }
 
-    update(id: string, student: Student): Observable<Object> {
+    update(id: number, student: Student): Observable<Object> {
         const editURL = environment.baseUrl + 'student/update/' + id;
         return this.http.put(editURL, student);
     }
 
-    delete(id: string): Observable<any> {
+    delete(id: number): Observable<any> {
         const delURL = environment.baseUrl + 'student/delete/' + id;
         return this.http.delete(delURL);
     }
@@ -54,28 +54,28 @@ export class StudentService {
           );
       }
     
-      logout(): Observable<any> {
-        const logoutUrl = environment.baseUrl + 'student/logout';
-        return this.http.get<any>(logoutUrl)
-          .pipe(
-            tap(_ => this.isLoggedIn = false),
-            catchError(this.handleError('logout', []))
-          );
-      }
+    logout(): Observable<any> {
+      const logoutUrl = environment.baseUrl + 'student/logout';
+      return this.http.get<any>(logoutUrl)
+        .pipe(
+          tap(_ => this.isLoggedIn = false),
+          catchError(this.handleError('logout', []))
+        );
+    }
 
-      private handleError<T>(operation = 'operation', result?: T) {
-        return (error: any): Observable<T> => {
+    private handleError<T>(operation = 'operation', result?: T) {
+      return (error: any): Observable<T> => {
     
-          console.error(error); // log to console instead
-          this.log(`${operation} failed: ${error.message}`);
-          alert(error.message);
+        console.error(error); // log to console instead
+        this.log(`${operation} failed: ${error.message}`);
+        alert(error.message);
     
-          return of(result as T);
-        };
-      }
+        return of(result as T);
+      };
+    }
     
-      private log(message: string) {
-        console.log(message);
-      }
+    private log(message: string) {
+      console.log(message);
+    }
 
 }

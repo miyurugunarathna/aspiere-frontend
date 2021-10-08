@@ -84,7 +84,7 @@
                   <label>Title:</label>
                   <!-- <input type="text" name="title" ngModel> -->
                   <select class="form-select" id = "title" name = "title"
-                  [(ngModel)] = "teacher.qualifications.title" #title="ngModel">
+                  [(ngModel)] = "teacher.qualifititle" #title="ngModel">
                     <option disabled selected>Select qualification...</option>
                     <option value="1">Doctoral Degree</option>
                     <option value="2">Masters Degree</option>
@@ -102,13 +102,13 @@
                   <label>Description:</label>
                   <!-- <input type="text" name="description" ngModel> -->
                   <input type="text" class ="form-control" id = "description" name = "description"
-                    [(ngModel)] = "teacher.qualifications.description" #bank="ngModel">
+                    [(ngModel)] = "teacher.description" #bank="ngModel">
                 </div>
                 <div class="form-group">
                   <label>University:</label>
                   <!-- <input type="text" name="university" ngModel> -->
                   <input type="text" class ="form-control" id = "university" name = "university"
-                    [(ngModel)] = "teacher.qualifications.university" #university="ngModel">
+                    [(ngModel)] = "teacher.university" #university="ngModel">
                 </div>
                 <!-- <button class="btn btn-primary" (click)="removeQualification(i)">Remove</button> -->
             <!-- </fieldset> -->

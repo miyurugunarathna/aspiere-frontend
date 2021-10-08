@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminPanelComponent } from 'src/app/components/admin-panel/admin-panel.component';
 import { ClassComponent } from 'src/app/components/class/class.component';
 import { NoticesComponent } from 'src/app/components/notices/notices.component';
 import { TpackagesComponent } from 'src/app/components/packages/tpackages/tpackages.component';
-import { StudentListComponent } from 'src/app/components/registration/student-list/student-list.component';
 import { SubjectComponent } from 'src/app/components/subject/subject.component';
 import { TestComponent } from 'src/app/components/test/test.component';
 import { AdminComponent } from './admin.component';
@@ -16,7 +16,7 @@ const routes: Routes = [
       {
         path: '',
         children: [
-          { path: 'registrations', component: StudentListComponent },
+          { path: 'registrations', component: AdminPanelComponent },
           { path: 'classes', component: ClassComponent },
           { path: 'subjects', component: SubjectComponent },
           { path: 'notices', component: NoticesComponent },
