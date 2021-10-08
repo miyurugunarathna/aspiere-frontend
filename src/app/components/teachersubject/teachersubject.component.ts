@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'src/app/models/subject/subject';
 import { SubjectService } from 'src/app/services/subject/subject.service';
 
@@ -15,12 +15,16 @@ export class TeachersubjectComponent implements OnInit {
   public subjectOne: Subject = new Subject;
   public addMessage: any;
   public delID: any;
+  public class_id: any;
 
-  constructor(private subjectService:SubjectService, private router:Router) { }
+  constructor(private subjectService:SubjectService, private router:Router, private active:ActivatedRoute) { }
 
   ngOnInit(): void {
     console.log(this.subjectOne);
     this.getSubjects();
+
+    this.class_id = this.active.snapshot.paramMap.get('id');
+    console.log(this.class_id);
   }
 
   public onDismiss(dismisEle: string): void {
@@ -32,7 +36,7 @@ export class TeachersubjectComponent implements OnInit {
   }
 
   public getSubjects(): void {
-    this.subjectService.getSubjects().subscribe(
+    this.subjectService.getSubjects(this.class_id).subscribe(
       (response: Subject[]) => {
         this.subject = response;
       },

@@ -14,7 +14,7 @@ export class ClassService {
   private apiURL = 'http://localhost:8080/api';
 
   public getClasses(): Observable<Class[]> {
-    return this.http.get<Class[]>(`${this.apiURL}/classes`);
+    return this.http.get<Class[]>(`${this.apiURL}/class/all`);
   }
 
   public getClass(classID: string): Observable<Class> {

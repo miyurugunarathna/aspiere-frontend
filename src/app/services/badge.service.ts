@@ -17,22 +17,22 @@ export class BadgeService {
     constructor (private http:HttpClient) {}
 
     public getBadges() : Observable <Badge[]> {
-        return this.http.get<Badge[]> (`${this.apiServerUrl}badges`);
+        return this.http.get<Badge[]> (`${this.apiServerUrl}badge/all`);
     }
 
-    public getBadge(badgeID: string): Observable<Badge> {
+    public getBadge(badgeID: number): Observable<Badge> {
         return this.http.get<Badge>(`${this.apiServerUrl}badge/${badgeID}`);
       }
 
     public addBadge(badge: Badge) : Observable <string> {
-        return this.http.post<string> (`${this.apiServerUrl}addbadge`, badge, {responseType: 'text' as 'json'});
+        return this.http.post<string> (`${this.apiServerUrl}badge/add`, badge, {responseType: 'text' as 'json'});
     }
 
-    public updateBadge(badge: Badge, badgeID : string) : Observable <string> {
+    public updateBadge(badge: Badge, badgeID : number) : Observable <string> {
         return this.http.put<string> (`${this.apiServerUrl}badge/update/${badgeID}`, badge, {responseType: 'text' as 'json'});
     }
     
-    public deleteBadge(badgeID: String) : Observable <void> {
+    public deleteBadge(badgeID: number) : Observable <void> {
         return this.http.delete<void> (`${this.apiServerUrl}badge/delete/${badgeID}`, {responseType: 'text' as 'json'});
     }
 

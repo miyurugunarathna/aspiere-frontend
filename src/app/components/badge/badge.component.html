@@ -61,7 +61,7 @@
                 <div class="row border_aspire position-relative">
                     <div class="col p-3">{{badge?.badgeName}}</div>
                     <div class="col p-3">{{badge?.classID}}</div>
-                    <div class="col p-3">{{badge?.subjectID}}</div>
+                    <div class="col p-3">{{badge?.subjectName}}</div>
                    
                     <div class="data_list hover_show">
                         <div class="row overlay_gradient position-absolute top-0 w-100 h-100">
@@ -90,7 +90,7 @@
         <div class="col-6 col-md-4 col-lg-3 col-xl-3 " >
 
             <!-- <div *ngIf="feeOne.feeID == ''; else UpdateBox" class="col-12 col-sm-12 col-lg-4 col-xl-3"> -->
-                <div *ngIf="badgeOne.badgeID == ''; else UpdateBox" class="col-12 col-sm-12 col-lg-4 col-xl-12">
+                <div *ngIf="badgeOne.badgeID == 0; else UpdateBox" class="col-12 col-sm-12 col-lg-4 col-xl-12">
                 <div class="row mb-4">
                     <span id="addOrUpdateBadge" class="t_subtitle c_rich_black">Add New Badge</span>
                 </div>
@@ -105,11 +105,11 @@
                     </div>
                     <div class="col">
                         <label class="t_pre_title form-label" for="subject">Subject</label>
-                        <input type="text" ngModel name="subjectID" required placeholder="" class="form-control border-white c_davys_grey" id="">
+                        <input type="text" ngModel name="subjectName" required placeholder="" class="form-control border-white c_davys_grey" id="">
                     </div>
                     <div class="col">
                         <label class="t_pre_title form-label" for="condition">Condition</label>
-                        <input type="text" ngModel name="condition" required placeholder="" class="form-control border-white c_davys_grey" id="">
+                        <input type="text" ngModel name="conditions" required placeholder="" class="form-control border-white c_davys_grey" id="">
                     </div>
                     <div class="col">
                         <label class="t_pre_title form-label" for="description">Description</label>
@@ -135,11 +135,11 @@
                         </div>
                         <div class="col">
                             <label class="t_pre_title form-label" for="subject">Subject</label>
-                            <input type="text" ngModel="{{ badgeOne.subjectID }}" name="subjectID"  required placeholder="Default" class="form-control border-white c_davys_grey" id="">
+                            <input type="text" ngModel="{{ badgeOne.subjectName }}" name="subjectID"  required placeholder="Default" class="form-control border-white c_davys_grey" id="">
                         </div>
                         <div class="col">
                             <label class="t_pre_title form-label" for="condition">Condition</label>
-                            <input type="text" ngModel="{{ badgeOne.condition }}" name="condition"  required placeholder="Default" class="form-control border-white c_davys_grey" id="">
+                            <input type="text" ngModel="{{ badgeOne.conditions }}" name="conditions"  required placeholder="Default" class="form-control border-white c_davys_grey" id="">
                         </div>
                         <div class="col">
                             <label class="t_pre_title form-label" for="description">Description</label>

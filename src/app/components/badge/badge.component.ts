@@ -47,7 +47,7 @@ export class BadgeComponent implements OnInit {
         );
   }
 
-  public getBadge(id: string): void {
+  public getBadge(id: number): void {
     this.badgeService.getBadge(id).subscribe(
       (response: Badge) => {
         console.log(response);
@@ -77,7 +77,7 @@ export class BadgeComponent implements OnInit {
     );
   }
   
-  public updateBadge(updateBadgeForm: NgForm, id:string): void {
+  public updateBadge(updateBadgeForm: NgForm, id:number): void {
     this.badgeService.updateBadge(updateBadgeForm.value, id).subscribe(
       (response : any) => {
         console.log(response);
@@ -98,7 +98,7 @@ export class BadgeComponent implements OnInit {
 
  
 
-  public deleteConfirm(id: string): void {
+  public deleteConfirm(id: number): void {
     let deleteConfirm = document.getElementById('deleteConfirm');
     if(deleteConfirm?.style.display) {
       deleteConfirm.style.display = 'block';
@@ -107,7 +107,7 @@ export class BadgeComponent implements OnInit {
     console.log(deleteConfirm);
   }
 
-  public deleteBadge(id: string): void {
+  public deleteBadge(id: number): void {
     this.onDismiss('deleteConfirm');
     this.badgeService.deleteBadge(id).subscribe(
       (response: any) => {

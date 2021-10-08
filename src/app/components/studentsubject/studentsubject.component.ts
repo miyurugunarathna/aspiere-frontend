@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'src/app/models/subject/subject';
 import { SubjectService } from 'src/app/services/subject/subject.service';
 
@@ -15,12 +15,15 @@ export class StudentsubjectComponent implements OnInit {
   public subjectOne: Subject = new Subject;
   public addMessage: any;
   public delID: any;
+  public class_id: any;
 
-  constructor(private subjectService:SubjectService, private router:Router) { }
+  constructor(private subjectService:SubjectService, private router:Router, private active:ActivatedRoute) { }
 
   ngOnInit(): void {
     console.log(this.subjectOne);
-    this.getSubjects();
+    this.class_id = this.active.snapshot.paramMap.get('id');
+    console.log(this.class_id);
+    this.getSubjects(this.class_id);
   }
 
   public onDismiss(dismisEle: string): void {
@@ -31,8 +34,8 @@ export class StudentsubjectComponent implements OnInit {
     }
   }
 
-  public getSubjects(): void {
-    this.subjectService.getSubjects().subscribe(
+  public getSubjects(classid: number): void {
+    this.subjectService.getSubjects(classid).subscribe(
       (response: Subject[]) => {
         this.subject = response;
       },
@@ -55,7 +58,7 @@ export class StudentsubjectComponent implements OnInit {
     )
   }
 
-  public addSubject(addSubjectForm: NgForm): void {
+  /* public addSubject(addSubjectForm: NgForm): void {
     this.subjectService.addSubject(addSubjectForm.value).subscribe(
       (response: string) => {
         console.log(response);
@@ -71,7 +74,7 @@ export class StudentsubjectComponent implements OnInit {
         alert(error.message);
       }
     );
-  }
+  } */
 
   public deleteConfime(id: string): void {
     let deleteConfime = document.getElementById('deleteConfime');
@@ -82,7 +85,7 @@ export class StudentsubjectComponent implements OnInit {
     console.log(deleteConfime);
   }
 
-  public deleteSubject(id: string): void {
+  /* public deleteSubject(id: string): void {
     this.onDismiss('deleteConfime');
     this.subjectService.deleteSubject(id).subscribe(
       (response: string) => {
@@ -98,5 +101,5 @@ export class StudentsubjectComponent implements OnInit {
         alert(error.message);
       }
     )
-  }
+  } */
 }

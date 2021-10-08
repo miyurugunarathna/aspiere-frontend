@@ -27,6 +27,7 @@ import { Dashboard1Component } from 'src/app/components/dashboard/dashboard1/das
 import { GradingComponent } from 'src/app/components/Grading/grading/grading.component';
 import { TeacherchatComponent } from 'src/app/components/chat/teacherchat/teacherchat.component';
 import { ClassComponent } from 'src/app/components/class/class.component';
+import { StudentclassComponent } from 'src/app/components/studentclass/studentclass.component';
 
 const routes: Routes = [
   {
@@ -36,10 +37,9 @@ const routes: Routes = [
       {
         path: '',
         children: [
-          { path: 'classes', component: ClassComponent },
+          { path: 'classes', component: TeacherclassComponent },
           { path: 'fees', component: FeesComponent },
-          { path: 'teacherclass', component: TeacherclassComponent },
-          { path: 'teachersubject', component: TeachersubjectComponent },
+          { path: 'subject/:id', component: TeachersubjectComponent },
           { path: 'courses', component: CoursesComponent },
           { path: 'teachercourseview', component: TeachercourseviewComponent },  
           { path: 'exams', component: ExamsComponent },

@@ -93,11 +93,10 @@ const routes: Routes = [
           { path: 'teacherchat/:tid',component:TeacherchatComponent},
           { path: 'mypackage', component: MypackageComponent },
           { path: 'changepackage', component: ChangepackageComponent },
-          { path: 'studentclass', component: StudentclassComponent },
-          { path: 'studentsubject', component: StudentsubjectComponent },
+          { path: 'subject/:id', component: StudentsubjectComponent },
           { path: 'studentcourses', component: StudentcoursesComponent },
           { path: 'coursematerial', component: CoursematerialComponent },
-          { path: 'classes', component: ClassComponent },
+          { path: 'classes', component: StudentclassComponent },
         ]
       }
     ]

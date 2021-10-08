@@ -1,11 +1,12 @@
 export interface Badge {
-    badgeID : string;
+    badgeID : number;
     badgeName : string;
     description : string;
-    condition : string;
+    conditions : string;
     createdDate : string;
     modifiedDate : string;
-    subjectID : string;
-    classID : string;
+    subjectName : string;
+    classID : number;
+    teacherID: number;
 
 }

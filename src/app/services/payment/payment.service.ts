@@ -13,15 +13,15 @@ export class PaymentService {
   private apiURL = 'http://localhost:8080/api';
 
   public getPayments(): Observable<Payment[]> {
-    return this.http.get<Payment[]>(`${this.apiURL}/payments`);
+    return this.http.get<Payment[]>(`${this.apiURL}/payment/all`);
   }
 
   public getPayment(paymentID: string): Observable<Payment> {
-    return this.http.get<Payment>(`${this.apiURL}/payments/${paymentID}`);
+    return this.http.get<Payment>(`${this.apiURL}/payment/${paymentID}`);
   }
 
   public savePayment(payment: Payment): Observable<string> {
-    return this.http.post<string>(`${this.apiURL}/payments/add`, payment, {responseType: 'text' as 'json'});
+    return this.http.post<string>(`${this.apiURL}/payment/add`, payment, {responseType: 'text' as 'json'});
   }
 
 }

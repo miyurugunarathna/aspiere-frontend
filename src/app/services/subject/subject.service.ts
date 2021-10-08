@@ -12,8 +12,8 @@ export class SubjectService {
 
   private apiURL = 'http://localhost:8080/api';
 
-  public getSubjects(): Observable<Subject[]> {
-    return this.http.get<Subject[]>(`${this.apiURL}/subject`);
+  public getSubjects(classID: any): Observable<Subject[]> {
+    return this.http.get<Subject[]>(`${this.apiURL}/subject/all/${classID}`);
   }
 
   public getSubject(subjectID: string): Observable<Subject> {

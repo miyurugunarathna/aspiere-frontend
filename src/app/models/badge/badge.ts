@@ -1,21 +1,23 @@
 export class Badges {
-    badgeID : string;
+    badgeID : number;
     badgeName : string;
     description : string;
-    condition : string;
+    conditions : string;
     createdDate : string;
     modifiedDate : string;
-    subjectID : string;
-    classID : string;
+    subjectName : string;
+    classID : number;
+    teacherID: number;
 
     constructor() {
-        this.badgeID = '';
+        this.badgeID = 0;
         this.badgeName = '';
         this.description = '';
-        this.condition = '';
+        this.conditions = '';
         this.createdDate = '';
         this.modifiedDate = '';
-        this.subjectID = '';
-        this.classID = '';
+        this.subjectName = '';
+        this.classID = 0;
+        this.teacherID = 0;
     }
 }
