@@ -10,7 +10,7 @@ import { StudentService } from 'src/app/services/student.service';
 })
 export class EditStudentComponent implements OnInit {
 
-  id: string;
+  id: number;
   sid: string;
   fname: string;
   lname: string;

@@ -1,9 +1,9 @@
 export class Person {
-    personID: number;
-    dob: Date;
+    personid: number;
+    dob: string;
     email: string;
-    fName: string;
-    lName: string;
+    fname: string;
+    lname: string;
     gender: string;
     password: string;
     phone: number;
@@ -13,15 +13,16 @@ export class Person {
     type: string;
 
     constructor() {
-        this.personID = 0;
-        this.dob = new Date;
+        this.personid = 0;
+        this.dob = '';
         this.email = '';
-        this.fName = '';
+        this.fname = '';
+        this.lname = '';
         this.gender = '';
         this.password = '';
         this.phone = 0;
         this.imgURL = '';
-        this.registeredDate = new Date;
+        this.registeredDate = new Date();
         this.status = '';
         this.type = '';
     }

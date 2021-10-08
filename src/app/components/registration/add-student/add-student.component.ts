@@ -60,7 +60,7 @@ export class AddStudentComponent implements OnInit {
       this.isSuccessful = true;
     }, error => console.log(error));
       this.student = new Student();
-      this.router.navigate(['/login'])
+      this.router.navigate(['/admin/student/all'])
   }
 
   login() {

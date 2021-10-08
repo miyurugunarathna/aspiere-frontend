@@ -48,6 +48,7 @@ import { Dashboard1Component } from './components/dashboard/dashboard1/dashboard
 import { ListallenquiriesComponent } from './components/notice/listallenquiries/listallenquiries.component';
 import { GradingComponent } from './components/Grading/grading/grading.component';
 import { ListStudentResultComponent } from './components/result/list-student-result/list-student-result.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { ListStudentResultComponent } from './components/result/list-student-res
     AddresultComponent,
     ListResultComponent,
     ListQuizComponent,
+    AdminPanelComponent,
     TeacherListComponent,
     ViewTeacherComponent,
     EditTeacherComponent,

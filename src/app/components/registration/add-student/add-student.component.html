@@ -2,7 +2,7 @@
     <div class="col-md-6 offset-md-3">
     <div class="card" >
     <h3>Create Student</h3>
-    <form #AddStudentForm = "ngForm" (ngSubmit) = "onSubmit()" method = "POST">
+    <form #AddStudentForm = "ngForm" (ngSubmit) = "onSubmit()" method = "POST" *ngIf="isSuccessful == false">
     
         <div class="form-group">
             <label> First Name</label>
@@ -94,5 +94,5 @@
         <button (click)="login()" class="btn btn-primary">Login</button>
     </div>
     </div>
-    <p>Form Value: {{ AddStudentForm.value | json }}</p>
+    <!-- <p>Form Value: {{ AddStudentForm.value | json }}</p> -->
 </div>
