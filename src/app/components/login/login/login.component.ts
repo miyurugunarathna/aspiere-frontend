@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
         if (res.token) {
           localStorage.setItem('token', res.token);
           this.isLoggedIn = true;
-          alert(res.token);
+          // alert(res.token);
           this.person = this.getPerson(res.token);
           console.log(this.person);
           if (this.person.role == 'Student') {
@@ -65,8 +65,12 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  register() {
-    this.router.navigate(['register']);
+  studentSignup() {
+    this.router.navigate(['student/add']);
+  }
+
+  teacherSignup() {
+    this.router.navigate(['teacher/add']);
   }
 
   private getPerson(token: string) {

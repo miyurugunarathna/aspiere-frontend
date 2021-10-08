@@ -25,7 +25,7 @@ export class TeacherService {
         return this.http.get<Teacher[]>(getAllURL);
     }
 
-    get(id: string): Observable<any> {
+    get(id: number): Observable<any> {
         const getURL = environment.baseUrl + 'teacher/get/' + id;
         return this.http.get(getURL);
     }
@@ -35,12 +35,12 @@ export class TeacherService {
         return this.http.post<void>(addURL, teacher);
     }
 
-    update(id: string, teacher: Teacher): Observable<Object> {
+    update(id: number, teacher: Teacher): Observable<Object> {
         const editURL = environment.baseUrl + 'teacher/update/' + id;
         return this.http.put(editURL, teacher);
     }
 
-    delete(id: string): Observable<any> {
+    delete(id: number): Observable<any> {
         const delURL = environment.baseUrl + 'teacher/delete/' + id;
         return this.http.delete(delURL);
     }

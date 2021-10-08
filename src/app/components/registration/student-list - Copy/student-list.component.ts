@@ -18,6 +18,10 @@ import html2canvas from 'html2canvas';
 })
 export class StudentListComponent implements OnInit {
 
+  factures = [];
+columns  = ["fname","lname","dob","gender"];
+btnText:  String = "Export CSV";
+
   students: Student[] = [];
   sid = '';
 
@@ -50,15 +54,15 @@ export class StudentListComponent implements OnInit {
     this.router.navigate(['student/add']);
   }
   
-  viewStudent(id: number) {
+  viewStudent(id: string) {
     this.router.navigate(['student/view', id]);
   }
 
-  editStudent(id: number) {
+  editStudent(id: string) {
     this.router.navigate(['student/update', id]);
   }
 
-  deleteStudent(id: number) {
+  deleteStudent(id: string) {
     this.studentService.delete(id).subscribe(data => {
       console.log(data);
       this.getStudents();
@@ -106,7 +110,7 @@ export class StudentListComponent implements OnInit {
     };
     this.students.forEach(student => {
       udt.data.push({
-        A: student.personid,
+        A: student.id,
         B: student.fname,
         C: student.lname,
         D: student.dob,

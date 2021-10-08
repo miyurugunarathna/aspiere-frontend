@@ -12,34 +12,12 @@ import { Router } from '@angular/router';
 })
 export class AddTeacherComponent implements OnInit {
 
-  teacher: Teacher = {
-    id: '',
-    pid: '',
-    fname: '',
-    lname: '',
-    dob: '',
-    gender: '',
-    email: '',
-    phone: '',
-    password: '',
-    role: '',
-    qualifications: {
-      title: '',
-      description: '',
-      university: '',
-    },
-    bank: '',
-    branch: '',
-    accnum: '',
-    approved: 'Pending',
-    roles: [],
-    active: true,
-  };
+  teacher: Teacher = new Teacher();
   
   submitted = false;
 
   constructor(
-    private personService: TeacherService,
+    private teacherService: TeacherService,
     private router: Router) {  }
 
   ngOnInit(): void {
@@ -62,10 +40,10 @@ export class AddTeacherComponent implements OnInit {
 
 saveTeacher() {
   alert('Saved')
-  this.personService.create(this.teacher).subscribe ( data =>
+  this.teacherService.create(this.teacher).subscribe ( data =>
     console.log(data), error => console.log(error));
     this.teacher = new Teacher();
-    this.router.navigate(['/teachers'])
+    this.router.navigate(['/admin/teacher/all'])
 }
 
 }

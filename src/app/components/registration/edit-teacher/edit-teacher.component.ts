@@ -10,8 +10,7 @@ import { TeacherService } from 'src/app/services/teacher.service';
 })
 export class EditTeacherComponent implements OnInit {
 
-  id: string;
-  pid: string;
+  id: number;
   fname: string;
   lname: string;
   dob: Date;
@@ -35,14 +34,14 @@ export class EditTeacherComponent implements OnInit {
     private teacherService: TeacherService) { }
 
   ngOnInit(): void {
-    // this.teacher = new Teacher();
+    this.teacher = new Teacher();
 
     this.id = this.route.snapshot.params['id'];
     
      this.teacherService.get(this.id)
        .subscribe(data => {
          console.log(data)
-    //     this.teacher = data;
+         this.teacher = data;
        }, error => console.log(error));
   }
 
@@ -53,12 +52,12 @@ export class EditTeacherComponent implements OnInit {
   updateTeacher() {
     this.teacherService.update(this.id, this.teacher)
       .subscribe(data => console.log(data), error => console.log(error));
-    // this.teacher = new Teacher();
-    this.router.navigate(['/teachers'])
+    this.teacher = new Teacher();
+    this.router.navigate(['admin/teacher/all'])
   }
 
   discard() {
-    this.router.navigate(['/teacher/all'])
+    this.router.navigate(['admin/teacher/all'])
   }
 
 }
