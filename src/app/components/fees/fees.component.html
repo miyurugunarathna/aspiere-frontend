@@ -52,9 +52,9 @@
             </div>
             <div *ngFor="let fee of fees" class="data_list rounded-3 bg_white">
                 <div class="row border_aspire position-relative">
-                    <div class="col p-3">{{ fee.feeName }}</div>
-                    <div class="col p-3" *ngIf="fee.feeType == '1'">Class Fees</div>
-                    <div class="col p-3" *ngIf="fee.feeType == '2'">Tute Fees</div>
+                    <div class="col p-3">{{ fee.feesName }}</div>
+                    <div class="col p-3" *ngIf="fee.feesType == '1'">Class Fees</div>
+                    <div class="col p-3" *ngIf="fee.feesType == '2'">Tute Fees</div>
                     <div class="col p-3">LKR {{ fee.amount }}</div>
                     <div class="col p-3" *ngIf="fee.frequency == 1">Per Month</div>
                     <div class="col p-3" *ngIf="fee.frequency == 2">Per Year</div>
@@ -82,11 +82,11 @@
         <form class="d-flex flex-column gap-4 c_rich_black" #addFeeForm="ngForm" (ngSubmit)="addFee(addFeeForm)">
             <div class="col">
                 <label class="t_pre_title form-label" for="fees_name">Fees Name</label>
-                <input type="text" ngModel name="feeName" required placeholder="Default" class="form-control border-white c_davys_grey" id="">
+                <input type="text" ngModel name="feesName" required placeholder="Default" class="form-control border-white c_davys_grey" id="">
             </div>
             <div class="col">
                 <label class="t_pre_title form-label" for="fees_type">Fees Type</label>
-                <select ngModel="1" name="feeType" required class="form-control form-select border-white c_davys_grey" id="">
+                <select ngModel="1" name="feesType" required class="form-control form-select border-white c_davys_grey" id="">
                     <option value="1">Class Fees</option>
                     <option value="2">Tute Fees</option>
                 </select>
@@ -117,11 +117,11 @@
         <form class="d-flex flex-column gap-4 c_rich_black" #updateFeeForm="ngForm" (ngSubmit)="updateFee(updateFeeForm, feeOne.feeID)">
             <div class="col">
                 <label class="t_pre_title form-label" for="fees_name">Fees Name</label>
-                <input type="text" ngModel="{{ feeOne.feeName }}" name="feeName"  required placeholder="Default" class="form-control border-white c_davys_grey" id="">
+                <input type="text" ngModel="{{ feeOne.feesName }}" name="feesName"  required placeholder="Default" class="form-control border-white c_davys_grey" id="">
             </div>
             <div class="col">
                 <label class="t_pre_title form-label" for="fees_type">Fees Type</label>
-                <select ngModel="{{ feeOne.feeType }}" name="feeType" required class="form-control form-select border-white c_davys_grey" id="">
+                <select ngModel="{{ feeOne.feesType }}" name="feesType" required class="form-control form-select border-white c_davys_grey" id="">
                     <option value="1" selected>Class Fees</option>
                     <option value="2">Tute Fees</option>
                 </select>

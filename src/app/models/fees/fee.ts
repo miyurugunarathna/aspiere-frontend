@@ -1,14 +1,14 @@
 export class Fee {
     feeID: string;
-    feeName: string;
-    feeType: string;
+    feesName: string;
+    feesType: string;
     amount: number;
     frequency: number;
 
     constructor() {
         this.feeID = '';
-        this.feeName = '';
-        this.feeType = '';
+        this.feesName = '';
+        this.feesType = '';
         this.amount = 0.0;
         this.frequency = 0;
     }

@@ -97,6 +97,7 @@ const routes: Routes = [
           { path: 'studentsubject', component: StudentsubjectComponent },
           { path: 'studentcourses', component: StudentcoursesComponent },
           { path: 'coursematerial', component: CoursematerialComponent },
+          { path: 'classes', component: ClassComponent },
         ]
       }
     ]
