@@ -12,6 +12,9 @@ import { Router } from '@angular/router';
 })
 export class AddTeacherComponent implements OnInit {
 
+  TeacherForm: any = {};
+  isSuccessful = false;
+
   teacher: Teacher = new Teacher();
   
   submitted = false;
@@ -33,17 +36,24 @@ export class AddTeacherComponent implements OnInit {
   }
 
   onSubmit() {
-     console.log(this.teacher);
+    // alert('onSubmit() method called');
+    console.log(this.teacher);
      this.submitted = true;
      this.saveTeacher();
   }
 
 saveTeacher() {
-  alert('Saved')
-  this.teacherService.create(this.teacher).subscribe ( data =>
-    console.log(data), error => console.log(error));
+  // alert('Saved')
+  this.teacherService.create(this.teacher).subscribe ( data => {
+    console.log(data);
+      this.isSuccessful = true;
+    }, error => console.log(error));
     this.teacher = new Teacher();
-    this.router.navigate(['/admin/teacher/all'])
+    this.router.navigate(['/admin/registrations'])
+}
+
+login() {
+  this.router.navigate(['/login'])
 }
 
 }

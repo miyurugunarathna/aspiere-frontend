@@ -178,13 +178,11 @@
             [(ngModel)]="teacher.active" #active="ngModel" class="form-check-input">
     </div>
 </div>
-
+<button class="btn btn-primary" [disabled]="!UpdateTeacherForm.valid" type="submit">Update</button>
+&nbsp;<button class="btn btn-primary" (click)="discard()">Discard</button>
     </form>
 </div>
     
 
-<button class="btn btn-primary" [disabled]="!UpdateTeacherForm.valid" type="submit">Update</button>
-&nbsp;<button class="btn btn-primary" (click)="discard()">Discard</button>
-
-    <p>Form Value: {{ UpdateTeacherForm.value | json }}</p>
+    <!-- <p>Form Value: {{ UpdateTeacherForm.value | json }}</p> -->
 </div>
