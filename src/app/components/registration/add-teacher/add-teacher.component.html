@@ -2,7 +2,7 @@
     <div class="col-md-6 offset-md-3">
         <div class="card" >
             <h3>Create Teacher</h3>
-    <form #TeacherForm = "ngForm" (ngSubmit) = "onSubmit()" method = "POST">
+    <form #TeacherForm = "ngForm" (ngSubmit) = "onSubmit()" method = "POST" *ngIf="isSuccessful == false">
         <div class="card" >
             
         <div class="form-group">
@@ -150,12 +150,19 @@
                 [(ngModel)] = "teacher.accnum" #bank="ngModel">
         </div>
     </div>
+    <button class="btn btn-primary" [disabled]="!TeacherForm.valid" type="submit">Submit</button>
+    &nbsp;<button class="btn btn-primary" (click)="reset()">Reset</button>
     </form>
+    
+    <div class="alert alert-success" *ngIf="isSuccessful">
+        Your registration is successful!
+        <button (click)="login()" class="btn btn-primary">Login</button>
+    </div>
+
 </div>
     
 
-    <button class="btn btn-primary" [disabled]="!TeacherForm.valid" type="submit">Submit</button>
-    &nbsp;<button class="btn btn-primary" (click)="reset()">Reset</button>
+    
 
     <!-- <p>Form Value: {{ TeacherForm.value | json }}</p> -->
 </div>

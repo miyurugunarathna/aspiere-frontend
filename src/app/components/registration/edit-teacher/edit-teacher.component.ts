@@ -53,11 +53,11 @@ export class EditTeacherComponent implements OnInit {
     this.teacherService.update(this.id, this.teacher)
       .subscribe(data => console.log(data), error => console.log(error));
     this.teacher = new Teacher();
-    this.router.navigate(['admin/teacher/all'])
+    this.router.navigate(['admin/registrations'])
   }
 
   discard() {
-    this.router.navigate(['admin/teacher/all'])
+    this.router.navigate(['admin/registrations'])
   }
 
 }

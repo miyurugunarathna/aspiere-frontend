@@ -47,11 +47,11 @@ export class EditStudentComponent implements OnInit {
     this.studentService.update(this.id, this.student)
       .subscribe(data => console.log(data), error => console.log(error));
     this.student = new Student();
-    this.router.navigate(['/student/all'])
+    this.router.navigate(['/admin/registrations'])
   }
 
   discard() {
-    this.router.navigate(['/student/all'])
+    this.router.navigate(['/admin/registrations'])
   }
 
 }
